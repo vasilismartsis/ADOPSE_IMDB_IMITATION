@@ -32,6 +32,9 @@ namespace ADOPSE_IMDB_IMITATION
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.HomePageButton = new System.Windows.Forms.ToolStripMenuItem();
             this.ProfileButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.RegisterButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.LoginButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.LogoutButton = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchIMDBInput = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,14 +59,42 @@ namespace ADOPSE_IMDB_IMITATION
             // ProfileButton
             // 
             this.ProfileButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.ProfileButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.RegisterButton,
+            this.LoginButton,
+            this.LogoutButton});
             this.ProfileButton.Name = "ProfileButton";
             this.ProfileButton.Size = new System.Drawing.Size(53, 20);
             this.ProfileButton.Text = "Profile";
+            this.ProfileButton.MouseEnter += new System.EventHandler(this.ProfileButton_MouseEnter);
+            // 
+            // RegisterButton
+            // 
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(116, 22);
+            this.RegisterButton.Text = "Register";
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            // 
+            // LoginButton
+            // 
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(116, 22);
+            this.LoginButton.Text = "Login";
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            // 
+            // LogoutButton
+            // 
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(180, 22);
+            this.LogoutButton.Text = "Logout";
+            this.LogoutButton.Visible = false;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // SearchIMDBInput
             // 
             this.SearchIMDBInput.AcceptsReturn = true;
             this.SearchIMDBInput.AcceptsTab = true;
+            this.SearchIMDBInput.AccessibleName = "";
             this.SearchIMDBInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -97,5 +128,8 @@ namespace ADOPSE_IMDB_IMITATION
         private System.Windows.Forms.ToolStripMenuItem HomePageButton;
         private System.Windows.Forms.ToolStripMenuItem ProfileButton;
         private System.Windows.Forms.TextBox SearchIMDBInput;
+        private System.Windows.Forms.ToolStripMenuItem RegisterButton;
+        private System.Windows.Forms.ToolStripMenuItem LoginButton;
+        private System.Windows.Forms.ToolStripMenuItem LogoutButton;
     }
 }

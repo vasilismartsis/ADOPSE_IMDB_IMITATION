@@ -7,4 +7,8 @@ D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMD
 D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csproj.CoreCompileInputs.cache
 D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.exe
 D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.pdb
-D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Form1.resources
+D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\ADOPSE_IMDB_IMITATION.mdf
+D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\ADOPSE_IMDB_IMITATION_log.ldf
+D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MainPage.resources
+D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Login.resources
+D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Register.resources
