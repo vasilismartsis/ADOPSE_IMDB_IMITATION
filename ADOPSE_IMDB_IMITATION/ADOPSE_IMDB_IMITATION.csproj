@@ -61,43 +61,108 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.cs">
+    <Compile Include="UserControls\AddMovie.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="UserControls\AddMovie.Designer.cs">
+      <DependentUpon>AddMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CreateList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CreateList.Designer.cs">
+      <DependentUpon>CreateList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\List.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Register.cs">
+    <Compile Include="UserControls\MainPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Register.Designer.cs">
+    <Compile Include="UserControls\MainPage.Designer.cs">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\MainPanelUserControlOpener.cs" />
+    <Compile Include="UserControls\Movie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Movie.Designer.cs">
+      <DependentUpon>Movie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ShowUserLists.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ShowUserLists.Designer.cs">
+      <DependentUpon>ShowUserLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\PopupMessage.cs" />
+    <Compile Include="UserControls\ProfileSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProfileSettings.Designer.cs">
+      <DependentUpon>ProfileSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Register.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainPage.Designer.cs">
-      <DependentUpon>MainPage.cs</DependentUpon>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuBar.cs">
+    <Compile Include="UserControls\MenuBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MenuBar.Designer.cs">
+    <Compile Include="UserControls\MenuBar.Designer.cs">
       <DependentUpon>MenuBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Scripts\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SessionTempData.cs" />
-    <EmbeddedResource Include="Login.resx">
+    <Compile Include="Scripts\Session.cs" />
+    <EmbeddedResource Include="UserControls\AddMovie.resx">
+      <DependentUpon>AddMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CreateList.resx">
+      <DependentUpon>CreateList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainPage.resx">
+    <EmbeddedResource Include="UserControls\MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuBar.resx">
+    <EmbeddedResource Include="UserControls\Movie.resx">
+      <DependentUpon>Movie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ShowUserLists.resx">
+      <DependentUpon>ShowUserLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ProfileSettings.resx">
+      <DependentUpon>ProfileSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MenuBar.resx">
       <DependentUpon>MenuBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -123,10 +188,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ADOPSE_IMDB_IMITATION.mdf">
+    <Content Include="Databases\ADOPSE_IMDB_IMITATION.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ADOPSE_IMDB_IMITATION_log.ldf">
+    <Content Include="Databases\ADOPSE_IMDB_IMITATION_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ADOPSE_IMDB_IMITATION.mdf</DependentUpon>
     </Content>
