@@ -66,6 +66,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomControls\PopupMessage.cs" />
+    <Compile Include="Scripts\CheckIfUserRatedActor.cs" />
+    <Compile Include="Scripts\CheckIfUserRatedMovie.cs" />
+    <Compile Include="Scripts\GetActorScores.cs" />
+    <Compile Include="Scripts\GetMovieScores.cs" />
+    <Compile Include="Scripts\RateActors.cs" />
+    <Compile Include="Scripts\RateMovies.cs" />
     <Compile Include="UserControls\AddMovie.cs">
       <SubType>UserControl</SubType>
     </Compile>
