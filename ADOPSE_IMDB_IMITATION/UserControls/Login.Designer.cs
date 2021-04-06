@@ -31,8 +31,8 @@ namespace ADOPSE_IMDB_IMITATION
         {
             System.Windows.Forms.Label UsernameLabel;
             System.Windows.Forms.Label PasswordLabel;
-            this.UsernameTextBox = new System.Windows.Forms.TextBox();
-            this.PasswordTextBox = new System.Windows.Forms.TextBox();
+            this.UsernameTextBox = new PlaceholderTextBox();
+            this.PasswordTextBox = new PlaceholderTextBox();
             this.LoginButton = new System.Windows.Forms.Button();
             UsernameLabel = new System.Windows.Forms.Label();
             PasswordLabel = new System.Windows.Forms.Label();
@@ -103,9 +103,9 @@ namespace ADOPSE_IMDB_IMITATION
 
         #endregion
 
-        private System.Windows.Forms.TextBox UsernameTextBox;
+        private PlaceholderTextBox UsernameTextBox;
 
-        private System.Windows.Forms.TextBox PasswordTextBox;
+        private PlaceholderTextBox PasswordTextBox;
 
         private System.Windows.Forms.Button LoginButton;
     }

@@ -30,12 +30,10 @@ namespace ADOPSE_IMDB_IMITATION
         private void InitializeComponent()
         {
             this.AddMovieLable = new System.Windows.Forms.Label();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.TypeTextBox = new System.Windows.Forms.TextBox();
-            this.ImageTextBox = new System.Windows.Forms.TextBox();
-            this.TrailerTextBox = new System.Windows.Forms.TextBox();
+            this.NameTextBox = new PlaceholderTextBox();
+            this.ImageTextBox = new PlaceholderTextBox();
+            this.TrailerTextBox = new PlaceholderTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,7 +42,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.GenresListBox = new System.Windows.Forms.CheckedListBox();
             this.GenresLabel = new System.Windows.Forms.Label();
             this.IsSeriesCheckBox = new System.Windows.Forms.CheckBox();
-            this.DirectorTextBox = new System.Windows.Forms.TextBox();
+            this.DirectorTextBox = new PlaceholderTextBox();
             this.DirectorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -61,34 +59,35 @@ namespace ADOPSE_IMDB_IMITATION
             // NameTextBox
             // 
             this.NameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NameTextBox.ForeColor = System.Drawing.Color.DarkGray;
             this.NameTextBox.Location = new System.Drawing.Point(62, 80);
             this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Placeholder = "Add Name";
             this.NameTextBox.Size = new System.Drawing.Size(100, 20);
             this.NameTextBox.TabIndex = 1;
-            // 
-            // TypeTextBox
-            // 
-            this.TypeTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TypeTextBox.Location = new System.Drawing.Point(62, 123);
-            this.TypeTextBox.Name = "TypeTextBox";
-            this.TypeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.TypeTextBox.TabIndex = 2;
+            this.NameTextBox.Text = "Add Name";
             // 
             // ImageTextBox
             // 
             this.ImageTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ImageTextBox.ForeColor = System.Drawing.Color.DarkGray;
             this.ImageTextBox.Location = new System.Drawing.Point(62, 220);
             this.ImageTextBox.Name = "ImageTextBox";
+            this.ImageTextBox.Placeholder = "Add Image URL";
             this.ImageTextBox.Size = new System.Drawing.Size(100, 20);
             this.ImageTextBox.TabIndex = 4;
+            this.ImageTextBox.Text = "Add Image URL";
             // 
             // TrailerTextBox
             // 
             this.TrailerTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TrailerTextBox.ForeColor = System.Drawing.Color.DarkGray;
             this.TrailerTextBox.Location = new System.Drawing.Point(62, 268);
             this.TrailerTextBox.Name = "TrailerTextBox";
+            this.TrailerTextBox.Placeholder = "Add Trailer";
             this.TrailerTextBox.Size = new System.Drawing.Size(100, 20);
             this.TrailerTextBox.TabIndex = 5;
+            this.TrailerTextBox.Text = "Add Trailer";
             // 
             // label1
             // 
@@ -99,16 +98,6 @@ namespace ADOPSE_IMDB_IMITATION
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Name";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(100, 107);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Type";
             // 
             // label3
             // 
@@ -143,7 +132,7 @@ namespace ADOPSE_IMDB_IMITATION
             // AddMovieButton
             // 
             this.AddMovieButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddMovieButton.Location = new System.Drawing.Point(71, 516);
+            this.AddMovieButton.Location = new System.Drawing.Point(71, 481);
             this.AddMovieButton.Name = "AddMovieButton";
             this.AddMovieButton.Size = new System.Drawing.Size(75, 23);
             this.AddMovieButton.TabIndex = 11;
@@ -181,7 +170,7 @@ namespace ADOPSE_IMDB_IMITATION
             // 
             this.IsSeriesCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.IsSeriesCheckBox.AutoSize = true;
-            this.IsSeriesCheckBox.Location = new System.Drawing.Point(80, 437);
+            this.IsSeriesCheckBox.Location = new System.Drawing.Point(80, 121);
             this.IsSeriesCheckBox.Name = "IsSeriesCheckBox";
             this.IsSeriesCheckBox.Size = new System.Drawing.Size(66, 17);
             this.IsSeriesCheckBox.TabIndex = 16;
@@ -191,10 +180,13 @@ namespace ADOPSE_IMDB_IMITATION
             // DirectorTextBox
             // 
             this.DirectorTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DirectorTextBox.ForeColor = System.Drawing.Color.DarkGray;
             this.DirectorTextBox.Location = new System.Drawing.Point(62, 397);
             this.DirectorTextBox.Name = "DirectorTextBox";
+            this.DirectorTextBox.Placeholder = "Add Director";
             this.DirectorTextBox.Size = new System.Drawing.Size(100, 20);
             this.DirectorTextBox.TabIndex = 17;
+            this.DirectorTextBox.Text = "Add Director";
             // 
             // DirectorLabel
             // 
@@ -220,11 +212,9 @@ namespace ADOPSE_IMDB_IMITATION
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TrailerTextBox);
             this.Controls.Add(this.ImageTextBox);
-            this.Controls.Add(this.TypeTextBox);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.AddMovieLable);
             this.Name = "AddMovie";
@@ -238,12 +228,10 @@ namespace ADOPSE_IMDB_IMITATION
         #endregion
 
         private System.Windows.Forms.Label AddMovieLable;
-        private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.TextBox TypeTextBox;
-        private System.Windows.Forms.TextBox ImageTextBox;
-        private System.Windows.Forms.TextBox TrailerTextBox;
+        private PlaceholderTextBox NameTextBox;
+        private PlaceholderTextBox ImageTextBox;
+        private PlaceholderTextBox TrailerTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -252,7 +240,7 @@ namespace ADOPSE_IMDB_IMITATION
         private System.Windows.Forms.CheckedListBox GenresListBox;
         private System.Windows.Forms.Label GenresLabel;
         private System.Windows.Forms.CheckBox IsSeriesCheckBox;
-        private System.Windows.Forms.TextBox DirectorTextBox;
+        private PlaceholderTextBox DirectorTextBox;
         private System.Windows.Forms.Label DirectorLabel;
     }
 }

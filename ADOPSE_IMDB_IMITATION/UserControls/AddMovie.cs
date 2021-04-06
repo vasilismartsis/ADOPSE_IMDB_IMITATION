@@ -49,15 +49,14 @@ namespace ADOPSE_IMDB_IMITATION
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
             {
                 const string commandText = "" +
-                    "INSERT INTO Movies (Name, Type, ReleaseDate, Image, Trailer, Director, IsSeries) " +
-                    "VALUES (@Name, @Type, @ReleaseDate, @Image, @Trailer, @Director, @IsSeries);" +
+                    "INSERT INTO Movies (Name, ReleaseDate, Image, Trailer, Director, IsSeries) " +
+                    "VALUES (@Name, @ReleaseDate, @Image, @Trailer, @Director, @IsSeries);" +
                     "SELECT SCOPE_IDENTITY()" +
                     ";";
 
                 SqlCommand command = new SqlCommand(commandText, connection);
 
                 command.Parameters.AddWithValue("@Name", NameTextBox.Text);
-                command.Parameters.AddWithValue("@Type", TypeTextBox.Text);
                 command.Parameters.AddWithValue("@ReleaseDate", ReleaseDateTimePicker.Value.ToShortDateString());
                 command.Parameters.AddWithValue("@Image", ImageTextBox.Text);
                 command.Parameters.AddWithValue("@Trailer", TrailerTextBox.Text);

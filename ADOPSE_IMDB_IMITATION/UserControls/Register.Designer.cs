@@ -34,10 +34,10 @@ namespace ADOPSE_IMDB_IMITATION
             System.Windows.Forms.Label FirstNameLabel;
             System.Windows.Forms.Label LastNameLabel;
             System.Windows.Forms.Label DateOfBirthLabel;
-            this.UsernameTextBox = new System.Windows.Forms.TextBox();
-            this.PasswordTextBox = new System.Windows.Forms.TextBox();
-            this.FirstNameTextBox = new System.Windows.Forms.TextBox();
-            this.LastNameTextBox = new System.Windows.Forms.TextBox();
+            this.UsernameTextBox = new PlaceholderTextBox();
+            this.PasswordTextBox = new PlaceholderTextBox();
+            this.FirstNameTextBox = new PlaceholderTextBox();
+            this.LastNameTextBox = new PlaceholderTextBox();
             this.DateOfBirthDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.RegisterButton = new System.Windows.Forms.Button();
             UsernameLabel = new System.Windows.Forms.Label();
@@ -173,10 +173,10 @@ namespace ADOPSE_IMDB_IMITATION
         #endregion
 
 
-        private System.Windows.Forms.TextBox UsernameTextBox;
-        private System.Windows.Forms.TextBox PasswordTextBox;
-        private System.Windows.Forms.TextBox FirstNameTextBox;
-        private System.Windows.Forms.TextBox LastNameTextBox;
+        private PlaceholderTextBox UsernameTextBox;
+        private PlaceholderTextBox PasswordTextBox;
+        private PlaceholderTextBox FirstNameTextBox;
+        private PlaceholderTextBox LastNameTextBox;
         private System.Windows.Forms.DateTimePicker DateOfBirthDateTimePicker;
         private System.Windows.Forms.Button RegisterButton;
     }

@@ -30,7 +30,7 @@ namespace ADOPSE_IMDB_IMITATION
         private void InitializeComponent()
         {
             this.ListNameLabel = new System.Windows.Forms.Label();
-            this.ListNameText = new System.Windows.Forms.TextBox();
+            this.ListNameText = new PlaceholderTextBox();
             this.CreateListButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -80,7 +80,7 @@ namespace ADOPSE_IMDB_IMITATION
         #endregion
 
         private System.Windows.Forms.Label ListNameLabel;
-        private System.Windows.Forms.TextBox ListNameText;
+        private PlaceholderTextBox ListNameText;
         private System.Windows.Forms.Button CreateListButton;
     }
 }

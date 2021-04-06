@@ -40,7 +40,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.MyListsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AdministratorFunctionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SearchIMDBInput = new System.Windows.Forms.TextBox();
+            this.SearchIMDBInput = new PlaceholderTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,8 +141,8 @@ namespace ADOPSE_IMDB_IMITATION
             this.SearchIMDBInput.AcceptsReturn = true;
             this.SearchIMDBInput.AcceptsTab = true;
             this.SearchIMDBInput.AccessibleName = "";
-            this.SearchIMDBInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.SearchIMDBInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchIMDBInput.ForeColor = System.Drawing.Color.DarkGray;
             this.SearchIMDBInput.Location = new System.Drawing.Point(203, 2);
@@ -173,7 +173,7 @@ namespace ADOPSE_IMDB_IMITATION
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem HomePageButton;
         private System.Windows.Forms.ToolStripMenuItem ProfileButton;
-        private System.Windows.Forms.TextBox SearchIMDBInput;
+        private PlaceholderTextBox SearchIMDBInput;
         private System.Windows.Forms.ToolStripMenuItem RegisterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LoginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LogoutToolStripMenuItem;
