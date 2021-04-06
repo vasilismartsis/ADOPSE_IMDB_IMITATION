@@ -20,3 +20,4 @@ D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMD
 D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\Databases\ADOPSE_IMDB_IMITATION.mdf
 D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\Databases\ADOPSE_IMDB_IMITATION_log.ldf
 D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csprojAssemblyReference.cache
+D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Complaints.resources
