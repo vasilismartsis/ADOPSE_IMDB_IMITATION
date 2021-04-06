@@ -34,7 +34,7 @@ namespace ADOPSE_IMDB_IMITATION
 
                 connection.Open();
 
-                var rowsAffected = command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
             }
         }
     }

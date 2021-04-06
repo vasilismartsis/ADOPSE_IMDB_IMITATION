@@ -91,5 +91,10 @@ namespace ADOPSE_IMDB_IMITATION
                     }
             }
         }
+
+        private void MoviesLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

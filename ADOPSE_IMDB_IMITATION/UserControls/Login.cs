@@ -48,14 +48,14 @@ namespace ADOPSE_IMDB_IMITATION
                             {
                                 Session.userId = reader.GetInt32(0);
                                 Session.administrator = (bool)reader["administrator"];
-                                PopupMessage.ShowToolTip(ParentForm, "You have successfuly loged in!", Color.Green);
+                                PopupMessage1.ShowToolTip(ParentForm, "You have successfuly loged in!", Color.Green);
                                 MainPanelUserControlOpener.OpenUserControl(new MainPage());
                             }
                             return true;
                         }
                     else
                     {
-                        PopupMessage.ShowToolTip(ParentForm, "The user does not exists!", Color.Red);
+                        PopupMessage1.ShowToolTip(ParentForm, "The user does not exists!", Color.Red);
                         return false;
                     }
 

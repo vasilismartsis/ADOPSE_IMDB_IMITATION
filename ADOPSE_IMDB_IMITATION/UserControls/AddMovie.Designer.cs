@@ -43,17 +43,20 @@ namespace ADOPSE_IMDB_IMITATION
             this.ReleaseDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.GenresListBox = new System.Windows.Forms.CheckedListBox();
             this.GenresLabel = new System.Windows.Forms.Label();
+            this.IsSeriesCheckBox = new System.Windows.Forms.CheckBox();
+            this.DirectorTextBox = new System.Windows.Forms.TextBox();
+            this.DirectorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // AddMovieLable
             // 
             this.AddMovieLable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddMovieLable.AutoSize = true;
-            this.AddMovieLable.Location = new System.Drawing.Point(77, 11);
+            this.AddMovieLable.Location = new System.Drawing.Point(52, 11);
             this.AddMovieLable.Name = "AddMovieLable";
-            this.AddMovieLable.Size = new System.Drawing.Size(69, 13);
+            this.AddMovieLable.Size = new System.Drawing.Size(120, 13);
             this.AddMovieLable.TabIndex = 0;
-            this.AddMovieLable.Text = "Add a movie:";
+            this.AddMovieLable.Text = "Add a movie or a series:";
             // 
             // NameTextBox
             // 
@@ -140,7 +143,7 @@ namespace ADOPSE_IMDB_IMITATION
             // AddMovieButton
             // 
             this.AddMovieButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddMovieButton.Location = new System.Drawing.Point(71, 391);
+            this.AddMovieButton.Location = new System.Drawing.Point(71, 516);
             this.AddMovieButton.Name = "AddMovieButton";
             this.AddMovieButton.Size = new System.Drawing.Size(75, 23);
             this.AddMovieButton.TabIndex = 11;
@@ -174,10 +177,42 @@ namespace ADOPSE_IMDB_IMITATION
             this.GenresLabel.TabIndex = 13;
             this.GenresLabel.Text = "Genres";
             // 
+            // IsSeriesCheckBox
+            // 
+            this.IsSeriesCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.IsSeriesCheckBox.AutoSize = true;
+            this.IsSeriesCheckBox.Location = new System.Drawing.Point(80, 437);
+            this.IsSeriesCheckBox.Name = "IsSeriesCheckBox";
+            this.IsSeriesCheckBox.Size = new System.Drawing.Size(66, 17);
+            this.IsSeriesCheckBox.TabIndex = 16;
+            this.IsSeriesCheckBox.Text = "Is Series";
+            this.IsSeriesCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // DirectorTextBox
+            // 
+            this.DirectorTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DirectorTextBox.Location = new System.Drawing.Point(62, 397);
+            this.DirectorTextBox.Name = "DirectorTextBox";
+            this.DirectorTextBox.Size = new System.Drawing.Size(100, 20);
+            this.DirectorTextBox.TabIndex = 17;
+            // 
+            // DirectorLabel
+            // 
+            this.DirectorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DirectorLabel.AutoSize = true;
+            this.DirectorLabel.Location = new System.Drawing.Point(89, 381);
+            this.DirectorLabel.Name = "DirectorLabel";
+            this.DirectorLabel.Size = new System.Drawing.Size(44, 13);
+            this.DirectorLabel.TabIndex = 18;
+            this.DirectorLabel.Text = "Director";
+            // 
             // AddMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.DirectorLabel);
+            this.Controls.Add(this.DirectorTextBox);
+            this.Controls.Add(this.IsSeriesCheckBox);
             this.Controls.Add(this.GenresLabel);
             this.Controls.Add(this.GenresListBox);
             this.Controls.Add(this.ReleaseDateTimePicker);
@@ -193,7 +228,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.AddMovieLable);
             this.Name = "AddMovie";
-            this.Size = new System.Drawing.Size(216, 428);
+            this.Size = new System.Drawing.Size(216, 553);
             this.Load += new System.EventHandler(this.AddMovie_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -216,5 +251,8 @@ namespace ADOPSE_IMDB_IMITATION
         private System.Windows.Forms.DateTimePicker ReleaseDateTimePicker;
         private System.Windows.Forms.CheckedListBox GenresListBox;
         private System.Windows.Forms.Label GenresLabel;
+        private System.Windows.Forms.CheckBox IsSeriesCheckBox;
+        private System.Windows.Forms.TextBox DirectorTextBox;
+        private System.Windows.Forms.Label DirectorLabel;
     }
 }

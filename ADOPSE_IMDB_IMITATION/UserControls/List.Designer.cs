@@ -43,6 +43,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.MoviesLayoutPanel.Padding = new System.Windows.Forms.Padding(10);
             this.MoviesLayoutPanel.Size = new System.Drawing.Size(557, 444);
             this.MoviesLayoutPanel.TabIndex = 0;
+            this.MoviesLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MoviesLayoutPanel_Paint);
             // 
             // ListNameLabel
             // 

@@ -31,7 +31,7 @@ namespace ADOPSE_IMDB_IMITATION
 
                 //Check if user exists
                 if (login.LoginToSystem(UsernameTextBox.Text, PasswordTextBox.Text, true))
-                    PopupMessage.ShowToolTip(ParentForm, "User already exists!", Color.Red);
+                    PopupMessage1.ShowToolTip(ParentForm, "User already exists!", Color.Red);
                 //If user doesn't exist, add user to the database
                 else
                 {
@@ -54,7 +54,7 @@ namespace ADOPSE_IMDB_IMITATION
 
                     AddUserSettings();
 
-                    PopupMessage.ShowToolTip(ParentForm, "You have successfuly created an account!", Color.Green);
+                    PopupMessage1.ShowToolTip(ParentForm, "You have successfuly created an account!", Color.Green);
 
                     login.LoginToSystem(UsernameTextBox.Text, PasswordTextBox.Text);
                 }

@@ -49,8 +49,8 @@ namespace ADOPSE_IMDB_IMITATION
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
             {
                 const string commandText = "" +
-                    "INSERT INTO Movies (Name, Type, ReleaseDate, Image, Trailer) " +
-                    "VALUES (@Name, @Type, @ReleaseDate, @Image, @Trailer);" +
+                    "INSERT INTO Movies (Name, Type, ReleaseDate, Image, Trailer, Director, IsSeries) " +
+                    "VALUES (@Name, @Type, @ReleaseDate, @Image, @Trailer, @Director, @IsSeries);" +
                     "SELECT SCOPE_IDENTITY()" +
                     ";";
 
@@ -60,7 +60,9 @@ namespace ADOPSE_IMDB_IMITATION
                 command.Parameters.AddWithValue("@Type", TypeTextBox.Text);
                 command.Parameters.AddWithValue("@ReleaseDate", ReleaseDateTimePicker.Value.ToShortDateString());
                 command.Parameters.AddWithValue("@Image", ImageTextBox.Text);
-                command.Parameters.AddWithValue("@Trailer", ImageTextBox.Text);
+                command.Parameters.AddWithValue("@Trailer", TrailerTextBox.Text);
+                command.Parameters.AddWithValue("@Director", DirectorTextBox.Text);
+                command.Parameters.AddWithValue("@IsSeries", IsSeriesCheckBox.Checked);
 
                 connection.Open();
 
@@ -68,7 +70,7 @@ namespace ADOPSE_IMDB_IMITATION
 
                 AddMovieToGenreEntriesTable(movieId);
 
-                PopupMessage.ShowToolTip(ParentForm, "You have successfuly added a movie!", Color.Green);
+                PopupMessage1.ShowToolTip(ParentForm, "You have successfuly added a movie!", Color.Green);
             }
         }
 

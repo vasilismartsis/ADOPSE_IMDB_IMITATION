@@ -24,7 +24,7 @@ namespace ADOPSE_IMDB_IMITATION
         {
             mainPanel = MainPanel;
 
-            MainPanelUserControlOpener.OpenUserControl(new MainPage());
+            MainPanelUserControlOpener.OpenUserControl(new Movie(14));
         }
     }
 }
