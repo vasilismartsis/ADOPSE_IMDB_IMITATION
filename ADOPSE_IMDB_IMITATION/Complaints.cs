@@ -25,15 +25,15 @@ namespace ADOPSE_IMDB_IMITATION
             {
                 MailMessage msg = new MailMessage();
                 msg.From = new MailAddress("vasilismartsis97@gmail.com");
-                msg.To.Add("aleksandramartsi@yahoo.gr");
+                msg.To.Add("vasilismartsis@yahoo.gr");
                 msg.Subject = SubjectTextBox.Text;
                 msg.Body = BodyRichTextBox.Text;
 
                 SmtpClient smt = new SmtpClient();
                 smt.Host = "smtp.gmail.com";
                 NetworkCredential ntcd = new NetworkCredential();
-                ntcd.UserName = "vasilismartsis97@gmail.com";
-                ntcd.Password = "";
+                ntcd.UserName = "therealdeal917@gmail.com";
+                ntcd.Password = "B16301850b";
                 smt.Credentials = ntcd;
                 smt.EnableSsl = true;
                 smt.Port = 587;
