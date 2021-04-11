@@ -72,6 +72,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomControls\PopupMessage.cs" />
+    <Compile Include="DataAccess\ActorDataAccess.cs" />
+    <Compile Include="Models\Actor.cs" />
     <Compile Include="Scripts\CheckIfUserRatedActor.cs" />
     <Compile Include="Scripts\CheckIfUserRatedMovie.cs" />
     <Compile Include="Scripts\GetFromdatabase\GetActorScores.cs" />
@@ -80,6 +82,18 @@
     <Compile Include="Scripts\GetFromdatabase\GetMovieScores.cs" />
     <Compile Include="Scripts\ChangeDatabase\RateActors.cs" />
     <Compile Include="Scripts\ChangeDatabase\RateMovies.cs" />
+    <Compile Include="UserControls\Actors\AddEditActorUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Actors\AddEditActorUserControl.Designer.cs">
+      <DependentUpon>AddEditActorUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Actors\ShowAllActorsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Actors\ShowAllActorsUserControl.Designer.cs">
+      <DependentUpon>ShowAllActorsUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\MovieRelated\AddMovie.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -163,8 +177,15 @@
     <Compile Include="UserControls\MovieRelated\SmallWindowMovie.Designer.cs">
       <DependentUpon>SmallWindowMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\ActorViewModel.cs" />
     <EmbeddedResource Include="Complaints.resx">
       <DependentUpon>Complaints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Actors\AddEditActorUserControl.resx">
+      <DependentUpon>AddEditActorUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Actors\ShowAllActorsUserControl.resx">
+      <DependentUpon>ShowAllActorsUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MovieRelated\AddMovie.resx">
       <DependentUpon>AddMovie.cs</DependentUpon>
@@ -235,6 +256,28 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ADOPSE_IMDB_IMITATION.mdf</DependentUpon>
     </Content>
+    <Content Include="Images\actors.png" />
+    <Content Include="Images\General\add.png" />
+    <Content Include="Images\General\add2.png" />
+    <Content Include="Images\General\administrator.png" />
+    <Content Include="Images\General\back.png" />
+    <Content Include="Images\General\browse_folder.png" />
+    <Content Include="Images\General\check.png" />
+    <Content Include="Images\General\correct.png" />
+    <Content Include="Images\General\database.png" />
+    <Content Include="Images\General\delete.png" />
+    <Content Include="Images\General\duplicate.png" />
+    <Content Include="Images\General\information.png" />
+    <Content Include="Images\General\plus.png" />
+    <Content Include="Images\General\question.png" />
+    <Content Include="Images\General\recycle.png" />
+    <Content Include="Images\General\refresh.png" />
+    <Content Include="Images\General\reset.png" />
+    <Content Include="Images\General\restart.png" />
+    <Content Include="Images\General\save.png" />
+    <Content Include="Images\General\search.png" />
+    <Content Include="Images\General\tick.png" />
+    <Content Include="Images\General\waitPoliceOffice.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

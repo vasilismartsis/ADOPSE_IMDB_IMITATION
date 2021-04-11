@@ -46,3 +46,30 @@ C:\Users\Marios\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin
 C:\Users\Marios\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\ADOPSE_IMDB_IMITATION.pdb
 C:\Users\Marios\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.SmallWindowMovie.resources
 C:\Users\Marios\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.BrowseMovies.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\bin\Debug\Databases\ADOPSE_IMDB_IMITATION.mdf
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\bin\Debug\Databases\ADOPSE_IMDB_IMITATION_log.ldf
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\bin\Debug\ADOPSE_IMDB_IMITATION.exe.config
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\bin\Debug\ADOPSE_IMDB_IMITATION.exe
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\bin\Debug\ADOPSE_IMDB_IMITATION.pdb
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Complaints.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.Nena.AddEditActorUserControl.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.Nena.ShowAllActorsUserControl.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.AddMovie.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.BrowseMovies.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.CreateList.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.List.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Login.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MainPage.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Movie.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MyLists.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.ProfileSettings.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Register.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MainForm.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MenuBar.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Properties.Resources.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.SmallWindowMovie.resources
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csproj.GenerateResource.cache
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.exe
+C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.pdb

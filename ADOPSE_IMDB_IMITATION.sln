@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADOPSE_IMDB_IMITATION", "ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION.csproj", "{419B1BD0-ED60-44E9-8ECA-36A4547FD874}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adopse.UnitTests", "Adopse.UnitTests\Adopse.UnitTests.csproj", "{C8D70591-BBFC-4987-B0F3-77DEDD07EFA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{419B1BD0-ED60-44E9-8ECA-36A4547FD874}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{419B1BD0-ED60-44E9-8ECA-36A4547FD874}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{419B1BD0-ED60-44E9-8ECA-36A4547FD874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8D70591-BBFC-4987-B0F3-77DEDD07EFA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8D70591-BBFC-4987-B0F3-77DEDD07EFA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8D70591-BBFC-4987-B0F3-77DEDD07EFA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8D70591-BBFC-4987-B0F3-77DEDD07EFA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
