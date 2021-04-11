@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ADOPSE_IMDB_IMITATION.UserControls.Nena;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace ADOPSE_IMDB_IMITATION
         public MainPage()
         {
             InitializeComponent();
+
+            //Test code till we make a proper main menu
+            AddNewActorBtn.Visible = Session.userId > 0;
+            ShowAllActorsBtn.Visible = Session.userId > 0;
+        }
+
+        private void AddNewActorBtn_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new AddEditActorUserControl());
+        }
+
+        private void ShowAllActorsBtn_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new ShowAllActorsUserControl());
         }
     }
 }
