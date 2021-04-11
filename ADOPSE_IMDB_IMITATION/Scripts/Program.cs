@@ -17,6 +17,8 @@ namespace ADOPSE_IMDB_IMITATION
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
+
+            ///this is a test comment
         }
     }
 }
