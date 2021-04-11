@@ -81,13 +81,20 @@ namespace ADOPSE_IMDB_IMITATION
                 using (SqlDataReader reader = command.ExecuteReader())
                     while (reader.Read())
                     {
-                        Button listButton = new Button();
+                        SmallWindowMovie x = new SmallWindowMovie(reader.GetInt32(0));
+                        MoviesLayoutPanel.Controls.Add(x);
+                        
+                        
+                        
+                        
+                        
+                        /*Button listButton = new Button();
                         listButton.Text = reader.GetString(1);
                         int movieId = reader.GetInt32(0);
                         listButton.AutoSize = true;
                         listButton.TextAlign = ContentAlignment.MiddleCenter;
                         listButton.Click += (s, ev) => { MainPanelUserControlOpener.OpenUserControl(new Movie(movieId)); };
-                        MoviesLayoutPanel.Controls.Add(listButton);
+                        MoviesLayoutPanel.Controls.Add(listButton);*/
                     }
             }
         }
