@@ -26,23 +26,12 @@ namespace ADOPSE_IMDB_IMITATION.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Databases\\ADO" +
-            "PSE_IMDB_IMITATION.mdf;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"D:\\Google Drive\\Projects\\C# " +
+            "visual studio desktop apps .net framework\\ADOPSE_IMDB_IMITATION\\ADOPSE_IMDB_IMIT" +
+            "ATION\\Databases\\ADOPSE_IMDB_IMITATION.mdf\";Integrated Security=True")]
         public string MyConnectionString {
             get {
                 return ((string)(this["MyConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Setting {
-            get {
-                return ((string)(this["Setting"]));
-            }
-            set {
-                this["Setting"] = value;
             }
         }
     }

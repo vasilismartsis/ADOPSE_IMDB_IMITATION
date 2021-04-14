@@ -40,7 +40,7 @@ namespace ADOPSE_IMDB_IMITATION
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainPanel.Location = new System.Drawing.Point(0, 24);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(796, 432);
+            this.MainPanel.Size = new System.Drawing.Size(982, 637);
             this.MainPanel.TabIndex = 1;
             // 
             // menuBar1
@@ -49,14 +49,14 @@ namespace ADOPSE_IMDB_IMITATION
             | System.Windows.Forms.AnchorStyles.Right)));
             this.menuBar1.Location = new System.Drawing.Point(0, 0);
             this.menuBar1.Name = "menuBar1";
-            this.menuBar1.Size = new System.Drawing.Size(796, 24);
+            this.menuBar1.Size = new System.Drawing.Size(982, 24);
             this.menuBar1.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 456);
+            this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.menuBar1);
             this.Name = "MainForm";

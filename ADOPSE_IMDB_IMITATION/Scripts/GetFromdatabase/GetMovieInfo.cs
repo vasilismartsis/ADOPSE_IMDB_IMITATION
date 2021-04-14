@@ -9,9 +9,9 @@ namespace ADOPSE_IMDB_IMITATION.Scripts
 {
     class GetMovieInfo
     {
-        public Movie retrieveAllMovieColumnsDataAndSet(int movieid) // retrieves all the columns from table Movies of a specific movie using id
+        public MovieUserControl retrieveAllMovieColumnsDataAndSet(int movieid) // retrieves all the columns from table Movies of a specific movie using id
         {
-            Movie m = new Movie();
+            MovieUserControl m = new MovieUserControl();
             using(SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
             {
                 string commandText = "" + "SELECT * " +

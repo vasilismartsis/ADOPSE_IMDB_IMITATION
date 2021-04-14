@@ -21,7 +21,13 @@ class PlaceholderTextBox : TextBox
     public PlaceholderTextBox()
     {
         ForeColor = Color.DarkGray;
-        Task.Delay(1).ContinueWith(t => setPlaceholderValue());
+    }
+
+    protected override void OnCreateControl()
+    {
+        base.OnCreateControl();
+
+        setPlaceholderValue();
     }
 
     void setPlaceholderValue()

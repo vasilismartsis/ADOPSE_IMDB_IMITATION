@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ADOPSE_IMDB_IMITATION.UserControls.Movies;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -100,12 +101,17 @@ namespace ADOPSE_IMDB_IMITATION
 
         private void AddMovieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new AddMovie());
+            MainPanelUserControlOpener.OpenUserControl(new AddEditMovie());
         }
 
         private void HomePageButton_Click(object sender, EventArgs e)
         {
             MainPanelUserControlOpener.OpenUserControl(new MainPage());
+        }
+
+        private void EditMovieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new ShowAllMovies());
         }
     }
 }

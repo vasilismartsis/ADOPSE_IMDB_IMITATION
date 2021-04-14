@@ -62,10 +62,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Complaints.cs">
+    <Compile Include="ADOPSE_IMDB_IMITATIONDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADOPSE_IMDB_IMITATIONDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\GenresDataAccess.cs" />
+    <Compile Include="DataAccess\MovieDataAccess.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Movie.cs" />
+    <Compile Include="UserControls\Complaints.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Complaints.Designer.cs">
+    <Compile Include="UserControls\Complaints.Designer.cs">
       <DependentUpon>Complaints.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\PlaceholderTextBox.cs">
@@ -94,34 +103,34 @@
     <Compile Include="UserControls\Actors\ShowAllActorsUserControl.Designer.cs">
       <DependentUpon>ShowAllActorsUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\MovieRelated\AddMovie.cs">
+    <Compile Include="UserControls\Movies\AddEditMovie.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\MovieRelated\AddMovie.Designer.cs">
-      <DependentUpon>AddMovie.cs</DependentUpon>
+    <Compile Include="UserControls\Movies\AddEditMovie.Designer.cs">
+      <DependentUpon>AddEditMovie.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\MovieRelated\BrowseMovies.cs">
+    <Compile Include="UserControls\Movies\BrowseMovies.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\MovieRelated\BrowseMovies.Designer.cs">
+    <Compile Include="UserControls\Movies\BrowseMovies.Designer.cs">
       <DependentUpon>BrowseMovies.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\CreateList.cs">
+    <Compile Include="UserControls\Lists\CreateList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\CreateList.Designer.cs">
+    <Compile Include="UserControls\Lists\CreateList.Designer.cs">
       <DependentUpon>CreateList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\List.cs">
+    <Compile Include="UserControls\Lists\List.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\List.Designer.cs">
+    <Compile Include="UserControls\Lists\List.Designer.cs">
       <DependentUpon>List.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Login.cs">
+    <Compile Include="UserControls\LoginSystem\Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Login.Designer.cs">
+    <Compile Include="UserControls\LoginSystem\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MainPage.cs">
@@ -131,16 +140,22 @@
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Scripts\MainPanelUserControlOpener.cs" />
-    <Compile Include="UserControls\MovieRelated\Movie.cs">
+    <Compile Include="UserControls\Movies\ShowAllMovies.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\MovieRelated\Movie.Designer.cs">
-      <DependentUpon>Movie.cs</DependentUpon>
+    <Compile Include="UserControls\Movies\ShowAllMovies.Designer.cs">
+      <DependentUpon>ShowAllMovies.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ShowUserLists.cs">
+    <Compile Include="UserControls\Movies\MovieUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ShowUserLists.Designer.cs">
+    <Compile Include="UserControls\Movies\MovieUserControl.Designer.cs">
+      <DependentUpon>MovieUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Lists\ShowUserLists.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Lists\ShowUserLists.Designer.cs">
       <DependentUpon>ShowUserLists.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\PopupMessage1.cs" />
@@ -150,10 +165,10 @@
     <Compile Include="UserControls\ProfileSettings.Designer.cs">
       <DependentUpon>ProfileSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Register.cs">
+    <Compile Include="UserControls\LoginSystem\Register.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Register.Designer.cs">
+    <Compile Include="UserControls\LoginSystem\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
@@ -171,14 +186,14 @@
     <Compile Include="Scripts\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\Session.cs" />
-    <Compile Include="UserControls\MovieRelated\SmallWindowMovie.cs">
+    <Compile Include="UserControls\Movies\SmallWindowMovie.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\MovieRelated\SmallWindowMovie.Designer.cs">
+    <Compile Include="UserControls\Movies\SmallWindowMovie.Designer.cs">
       <DependentUpon>SmallWindowMovie.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ActorViewModel.cs" />
-    <EmbeddedResource Include="Complaints.resx">
+    <EmbeddedResource Include="UserControls\Complaints.resx">
       <DependentUpon>Complaints.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Actors\AddEditActorUserControl.resx">
@@ -187,34 +202,37 @@
     <EmbeddedResource Include="UserControls\Actors\ShowAllActorsUserControl.resx">
       <DependentUpon>ShowAllActorsUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MovieRelated\AddMovie.resx">
-      <DependentUpon>AddMovie.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Movies\AddEditMovie.resx">
+      <DependentUpon>AddEditMovie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MovieRelated\BrowseMovies.resx">
+    <EmbeddedResource Include="UserControls\Movies\BrowseMovies.resx">
       <DependentUpon>BrowseMovies.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\CreateList.resx">
+    <EmbeddedResource Include="UserControls\Lists\CreateList.resx">
       <DependentUpon>CreateList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\List.resx">
+    <EmbeddedResource Include="UserControls\Lists\List.resx">
       <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Login.resx">
+    <EmbeddedResource Include="UserControls\LoginSystem\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MovieRelated\Movie.resx">
-      <DependentUpon>Movie.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Movies\ShowAllMovies.resx">
+      <DependentUpon>ShowAllMovies.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ShowUserLists.resx">
+    <EmbeddedResource Include="UserControls\Movies\MovieUserControl.resx">
+      <DependentUpon>MovieUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Lists\ShowUserLists.resx">
       <DependentUpon>ShowUserLists.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ProfileSettings.resx">
       <DependentUpon>ProfileSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Register.resx">
+    <EmbeddedResource Include="UserControls\LoginSystem\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
@@ -232,9 +250,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControls\MovieRelated\SmallWindowMovie.resx">
+    <EmbeddedResource Include="UserControls\Movies\SmallWindowMovie.resx">
       <DependentUpon>SmallWindowMovie.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ADOPSE_IMDB_IMITATIONDataSet.xsc">
+      <DependentUpon>ADOPSE_IMDB_IMITATIONDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ADOPSE_IMDB_IMITATIONDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ADOPSE_IMDB_IMITATIONDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ADOPSE_IMDB_IMITATIONDataSet.xss">
+      <DependentUpon>ADOPSE_IMDB_IMITATIONDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

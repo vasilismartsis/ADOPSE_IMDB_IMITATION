@@ -14,12 +14,9 @@ D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMD
 D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.CreateList.resources
 D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MyLists.resources
 D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.List.resources
-D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.AddMovie.resources
 D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MainForm.resources
-D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Movie.resources
 D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\Databases\ADOPSE_IMDB_IMITATION.mdf
 D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\Databases\ADOPSE_IMDB_IMITATION_log.ldf
-D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csprojAssemblyReference.cache
 D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Complaints.resources
 C:\Users\Marios\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csprojAssemblyReference.cache
 C:\Users\Marios\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Complaints.resources
@@ -73,3 +70,11 @@ C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE
 C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csproj.CoreCompileInputs.cache
 C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.exe
 C:\Users\user\Desktop\Adopse Ergasia repo\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.pdb
+D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.Nena.AddEditActorUserControl.resources
+D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.Nena.ShowAllActorsUserControl.resources
+D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.BrowseMovies.resources
+D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.SmallWindowMovie.resources
+D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MovieUserControl.resources
+D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csprojAssemblyReference.cache
+D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.AddEditMovie.resources
+D:\Google Drive\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.Movies.ShowAllMovies.resources

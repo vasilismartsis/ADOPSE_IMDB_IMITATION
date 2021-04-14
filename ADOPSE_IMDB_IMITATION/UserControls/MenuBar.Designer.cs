@@ -41,6 +41,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.AdministratorFunctionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchIMDBInput = new PlaceholderTextBox();
+            this.EditMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,7 +125,8 @@ namespace ADOPSE_IMDB_IMITATION
             // AdministratorFunctionsToolStripMenuItem
             // 
             this.AdministratorFunctionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddMovieToolStripMenuItem});
+            this.AddMovieToolStripMenuItem,
+            this.EditMovieToolStripMenuItem});
             this.AdministratorFunctionsToolStripMenuItem.Name = "AdministratorFunctionsToolStripMenuItem";
             this.AdministratorFunctionsToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.AdministratorFunctionsToolStripMenuItem.Text = "Administrator Functions";
@@ -141,17 +143,25 @@ namespace ADOPSE_IMDB_IMITATION
             this.SearchIMDBInput.AcceptsReturn = true;
             this.SearchIMDBInput.AcceptsTab = true;
             this.SearchIMDBInput.AccessibleName = "";
-            this.SearchIMDBInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.SearchIMDBInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchIMDBInput.ForeColor = System.Drawing.Color.DarkGray;
             this.SearchIMDBInput.Location = new System.Drawing.Point(203, 2);
             this.SearchIMDBInput.Name = "SearchIMDBInput";
+            this.SearchIMDBInput.Placeholder = "Search IMDB";
             this.SearchIMDBInput.Size = new System.Drawing.Size(163, 20);
             this.SearchIMDBInput.TabIndex = 1;
             this.SearchIMDBInput.Text = "Search IMDB";
             this.SearchIMDBInput.Enter += new System.EventHandler(this.SearchIMDBInput_Enter);
             this.SearchIMDBInput.Leave += new System.EventHandler(this.SearchIMDBInput_Leave);
+            // 
+            // EditMovieToolStripMenuItem
+            // 
+            this.EditMovieToolStripMenuItem.Name = "EditMovieToolStripMenuItem";
+            this.EditMovieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.EditMovieToolStripMenuItem.Text = "Edit Movie";
+            this.EditMovieToolStripMenuItem.Click += new System.EventHandler(this.EditMovieToolStripMenuItem_Click);
             // 
             // MenuBar
             // 
@@ -182,5 +192,6 @@ namespace ADOPSE_IMDB_IMITATION
         private System.Windows.Forms.ToolStripMenuItem CreateListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AdministratorFunctionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AddMovieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem EditMovieToolStripMenuItem;
     }
 }

@@ -18,7 +18,7 @@ namespace ADOPSE_IMDB_IMITATION
             tooltip.ForeColor = Color.White;
             tooltip.BackColor = backgroundColor;
 
-            tooltip.Show(message, senderForm, Cursor.Position.X - senderForm.Location.X + 20, Cursor.Position.Y - senderForm.Location.Y + 20, 1000);
+            tooltip.Show(message, new MainForm(), Cursor.Position.X - senderForm.Location.X + 20, Cursor.Position.Y - senderForm.Location.Y + 20, 1000);
         }
 
         public static void DrawTooltip(object sender, DrawToolTipEventArgs e)
