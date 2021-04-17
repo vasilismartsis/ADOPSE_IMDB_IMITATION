@@ -1,4 +1,5 @@
 ﻿using ADOPSE_IMDB_IMITATION.DataAccess;
+using ADOPSE_IMDB_IMITATION.UserControls;
 using ADOPSE_IMDB_IMITATION.UserControls.Movies;
 using ADOPSE_IMDB_IMITATION.UserControls.Nena;
 using System;
@@ -22,26 +23,7 @@ namespace ADOPSE_IMDB_IMITATION
             Session.SetThemeColor(this);
         }
 
-
-        //SearchIMDBInput Placeholder
-        private void SearchIMDBInput_Enter(object sender, EventArgs e)
-        {
-            if (SearchIMDBInput.Text == "Search IMDB")
-            {
-                SearchIMDBInput.Text = "";
-                SearchIMDBInput.ForeColor = Color.Black;
-            }
-        }
-
-        //SearchIMDBInput Placeholder
-        private void SearchIMDBInput_Leave(object sender, EventArgs e)
-        {
-            if (SearchIMDBInput.Text == "")
-            {
-                SearchIMDBInput.Text = "Search IMDB";
-                SearchIMDBInput.ForeColor = Color.DarkGray;
-            }
-        }
+        #region Initialize controls
 
         private void ProfileButton_MouseEnter(object sender, EventArgs e)
         {
@@ -135,5 +117,72 @@ namespace ADOPSE_IMDB_IMITATION
         {
             MainPanelUserControlOpener.OpenUserControl(new Complaints());
         }
+
+        private void browseMoviesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMovies());
+        }
+
+        #endregion
+
+        #region TypeCombobox
+
+        private void TypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetTypeComboBoxToSelectedChildSize();
+        }
+
+        private void TypeComboBox_Enter(object sender, EventArgs e)
+        {
+            SetTypeComboBoxToMaxChildSize();
+        }
+
+        private void TypeComboBox_Leave(object sender, EventArgs e)
+        {
+            SetTypeComboBoxToSelectedChildSize();
+        }
+
+        void SetTypeComboBoxToSelectedChildSize()
+        {
+            Label label1 = new Label();
+            label1.Text = TypeComboBox.SelectedItem.ToString();
+            label1.AutoSize = true;
+
+            TypeComboBox.Width = label1.PreferredWidth + 17;
+
+            label1.Dispose();
+        }
+
+        void SetTypeComboBoxToMaxChildSize()
+        {
+            int maxWidth = 0;
+            Label label1 = new Label();
+
+            foreach (Object obj in TypeComboBox.Items)
+            {
+                label1.Text = obj.ToString();
+                label1.AutoSize = true;
+                int temp = label1.PreferredWidth;
+                if (temp > maxWidth)
+                    maxWidth = temp;
+            }
+
+            TypeComboBox.Width = maxWidth + 17;
+
+            ComboBoxTimer.Interval = 1;
+            ComboBoxTimer.Start();
+
+
+            label1.Dispose();
+        }
+
+        private void ComboBoxTimer_Tick(object sender, EventArgs e)
+        {
+            TypeComboBox.DroppedDown = true;
+
+            ComboBoxTimer.Stop();
+        }
+
+        #endregion
     }
 }

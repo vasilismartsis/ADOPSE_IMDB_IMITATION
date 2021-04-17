@@ -162,10 +162,10 @@
       <DependentUpon>ShowUserLists.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\PopupMessage1.cs" />
-    <Compile Include="UserControls\ProfileSettings.cs">
+    <Compile Include="UserControls\Users\ProfileSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ProfileSettings.Designer.cs">
+    <Compile Include="UserControls\Users\ProfileSettings.Designer.cs">
       <DependentUpon>ProfileSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Users\Register.cs">
@@ -238,7 +238,7 @@
     <EmbeddedResource Include="UserControls\Lists\ShowUserLists.resx">
       <DependentUpon>ShowUserLists.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ProfileSettings.resx">
+    <EmbeddedResource Include="UserControls\Users\ProfileSettings.resx">
       <DependentUpon>ProfileSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Users\Register.resx">

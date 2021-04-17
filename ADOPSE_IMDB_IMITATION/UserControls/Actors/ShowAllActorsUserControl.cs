@@ -18,6 +18,8 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Nena
         {
             InitializeComponent();
 
+            Session.SetThemeColor(this);
+
             var myViewModel = new ActorViewModel();
 
             //#1 Load all Actors from DB with an sql script

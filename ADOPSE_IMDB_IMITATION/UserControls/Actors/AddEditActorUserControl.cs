@@ -22,6 +22,8 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Nena
         {
             InitializeComponent();
 
+            Session.SetThemeColor(this);
+
             _myViewModel = new ActorViewModel();
             _isInAddMode = !actorId.HasValue;
 

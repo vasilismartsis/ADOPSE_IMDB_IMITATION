@@ -20,7 +20,7 @@ namespace ADOPSE_IMDB_IMITATION
                 if (UserDataAccess.GetUserById(Session.userId).UserSettings.Theme == "Light")
                     return SystemColors.Control;
                 else if (UserDataAccess.GetUserById(Session.userId).UserSettings.Theme == "Dark")
-                    return Color.FromArgb(40, 40, 40);
+                    return Color.FromArgb(0, 0, 0);
                 else
                     return SystemColors.Control;
             }
@@ -32,14 +32,14 @@ namespace ADOPSE_IMDB_IMITATION
             if (Session.userId != 0)
             {
                 if (UserDataAccess.GetUserById(Session.userId).UserSettings.Theme == "Light")
-                    return Color.FromArgb(40, 40, 40);
+                    return Color.FromArgb(0, 0, 0);
                 else if (UserDataAccess.GetUserById(Session.userId).UserSettings.Theme == "Dark")
                     return SystemColors.Control;
                 else
-                    return Color.FromArgb(40, 40, 40);
+                    return Color.FromArgb(0, 0, 0);
             }
             else
-                return Color.FromArgb(40, 40, 40);
+                return Color.FromArgb(0, 0, 0);
         }
         public static void SetThemeColor(UserControl userControl)
         {
