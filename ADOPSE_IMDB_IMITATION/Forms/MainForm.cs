@@ -15,6 +15,7 @@ namespace ADOPSE_IMDB_IMITATION
     public partial class MainForm : Form
     {
         public static Panel mainPanel;
+        public static MenuBar menuBar;
 
         public MainForm()
         {
@@ -24,6 +25,7 @@ namespace ADOPSE_IMDB_IMITATION
         private void MainPage_Load(object sender, EventArgs e)
         {
             mainPanel = MainPanel;
+            menuBar = MenuBar;
 
             MainPanelUserControlOpener.OpenUserControl(new MainPage());
         }

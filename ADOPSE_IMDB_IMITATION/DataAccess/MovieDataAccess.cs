@@ -30,16 +30,17 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 {
                     while (reader.Read())
                     {
-                        Movie movie = new Movie();
-
-                        movie.id = int.Parse(reader["Id"].ToString());
-                        movie.name = reader["name"].ToString();
-                        movie.releaseDate = reader["releaseDate"].ToString();
-                        movie.image = reader["image"].ToString();
-                        movie.trailer = reader["trailer"].ToString();
-                        movie.director = reader["director"].ToString();
-                        movie.isSeries = Convert.ToBoolean(reader["isSeries"]);
-                        movie.description = reader["description"].ToString();
+                        Movie movie = new Movie
+                        {
+                            Id = int.Parse(reader["Id"].ToString()),
+                            Name = reader["name"].ToString(),
+                            ReleaseDate = reader["releaseDate"].ToString(),
+                            Image = reader["image"].ToString(),
+                            Trailer = reader["trailer"].ToString(),
+                            Director = reader["director"].ToString(),
+                            IsSeries = Convert.ToBoolean(reader["isSeries"]),
+                            Description = reader["description"].ToString()
+                        };
 
                         movies.Add(movie);
                     }
@@ -63,13 +64,13 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
 
                 SqlCommand command = new SqlCommand(commandText, connection);
 
-                command.Parameters.AddWithValue("@name", movie.name);
-                command.Parameters.AddWithValue("@releaseDate", DateTime.Parse(movie.releaseDate).Date);
-                command.Parameters.AddWithValue("@image", movie.image);
-                command.Parameters.AddWithValue("@trailer", movie.trailer);
-                command.Parameters.AddWithValue("@director", movie.director);
-                command.Parameters.AddWithValue("@isSeries", movie.isSeries);
-                command.Parameters.AddWithValue("@description", movie.description);
+                command.Parameters.AddWithValue("@name", movie.Name);
+                command.Parameters.AddWithValue("@releaseDate", DateTime.Parse(movie.ReleaseDate).Date);
+                command.Parameters.AddWithValue("@image", movie.Image);
+                command.Parameters.AddWithValue("@trailer", movie.Trailer);
+                command.Parameters.AddWithValue("@director", movie.Director);
+                command.Parameters.AddWithValue("@isSeries", movie.IsSeries);
+                command.Parameters.AddWithValue("@description", movie.Description);
 
                 connection.Open();
 
@@ -97,6 +98,188 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 connection.Open();
 
                 command.ExecuteNonQuery();
+            }
+        }
+
+        public static Movie GetMovieById(int movieId)
+        {
+            Movie movie = new Movie();
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                const string commandText = "" +
+                    "SELECT * " +
+                    "FROM Movies " +
+                    "WHERE Id = @movieId" +
+                    ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@movieId", movieId);
+
+                connection.Open();
+
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    movie.Id = int.Parse(reader["Id"].ToString());
+                    movie.Name = reader["name"].ToString();
+                    movie.ReleaseDate = reader["releaseDate"].ToString();
+                    movie.Image = reader["image"].ToString();
+                    movie.Trailer = reader["trailer"].ToString();
+                    movie.Director = reader["director"].ToString();
+                    movie.IsSeries = Convert.ToBoolean(reader["isSeries"]);
+                    movie.Description = reader["description"].ToString();
+                    movie.Score = GetMovieScoreByMovieId(movieId);
+                };
+            }
+
+            return movie;
+        }
+
+        public static List<Movie> GetMoviesByIds(int[] movieIds)
+        {
+            List<Movie> movies = new List<Movie>();
+
+            foreach (int movieId in movieIds)
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+                {
+                    const string commandText = "" +
+                        "SELECT * " +
+                        "FROM Movies " +
+                        "WHERE Id = @movieId" +
+                        ";";
+
+                    SqlCommand command = new SqlCommand(commandText, connection);
+
+                    command.Parameters.AddWithValue("@movieId", movieId);
+
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                        movies.Add(new Movie
+                        {
+                            Id = int.Parse(reader["Id"].ToString()),
+                            Name = reader["name"].ToString(),
+                            ReleaseDate = reader["releaseDate"].ToString(),
+                            Image = reader["image"].ToString(),
+                            Trailer = reader["trailer"].ToString(),
+                            Director = reader["director"].ToString(),
+                            IsSeries = (bool)reader["isSeries"],
+                            Description = reader["description"].ToString(),
+                            Score = GetMovieScoreByMovieId(movieId)
+                        });
+                }
+
+            return movies;
+        }
+
+        static float GetMovieScoreByMovieId(int movieId)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                const string commandText = "" +
+                    "SELECT score " +
+                    "FROM MovieRatings " +
+                    "WHERE movieId = @movieID" +
+                    ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@movieId", movieId);
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    int sum = 0;
+                    int total = 0;
+
+                    while (reader.Read())
+                    {
+                        sum += reader.GetInt32(0);
+                        total++;
+                    }
+
+                    if (total != 0)
+                        return sum / total;
+                    else
+                        return 10;
+                }
+            }
+        }
+
+        public static void RateMovie(int movieId, int score)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                //If movie is not rated by currently loged in user, insert new entry into MovieRatings table
+                if (!IsMovieRatedByCurrentUser(movieId))
+                {
+                    const string commandText = "" +
+                    "INSERT INTO MovieRatings (userId, movieId, score) " +
+                    "VALUES (@userId, @movieId, @score);" +
+                    ";";
+
+                    SqlCommand command = new SqlCommand(commandText, connection);
+
+                    command.Parameters.AddWithValue("@userId,", Session.userId);
+                    command.Parameters.AddWithValue("@movieId", movieId);
+                    command.Parameters.AddWithValue("@score", score);
+
+                    connection.Open();
+
+                    command.ExecuteNonQuery();
+                }
+                //Else update entry in MovieRatings table
+                else
+                {
+                    const string commandText = "" +
+                        "UPDATE MovieRatings " +
+                        "SET score = @score " +
+                        "WHERE userId = @userId AND movieId = @movieId" +
+                        ";";
+
+                    SqlCommand command = new SqlCommand(commandText, connection);
+
+                    command.Parameters.AddWithValue("@userId,", Session.userId);
+                    command.Parameters.AddWithValue("@movieId", movieId);
+                    command.Parameters.AddWithValue("@score", score);
+
+                    connection.Open();
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        static bool IsMovieRatedByCurrentUser(int movieId)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                const string commandText = "" +
+                    "SELECT movieId " +
+                    "FROM MovieRatings " +
+                    "WHERE userId = @userId" +
+                    ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@userId,", Session.userId);
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                        if (reader.GetInt32(0) == movieId)
+                            return true;
+
+                    return false;
+                }
             }
         }
     }

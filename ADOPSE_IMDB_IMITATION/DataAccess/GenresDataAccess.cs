@@ -56,8 +56,8 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 {
                     Genre genre = new Genre();
 
-                    genre.id = int.Parse(reader["Id"].ToString());
-                    genre.name = reader["name"].ToString();
+                    genre.Id = int.Parse(reader["Id"].ToString());
+                    genre.Name = reader["name"].ToString();
 
                     genres.Add(genre);
                 }

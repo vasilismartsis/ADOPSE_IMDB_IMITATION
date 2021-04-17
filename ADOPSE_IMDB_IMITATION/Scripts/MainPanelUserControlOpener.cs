@@ -9,18 +9,18 @@ namespace ADOPSE_IMDB_IMITATION
 {
     public static class MainPanelUserControlOpener
     {
-        static UserControl displayedForm;
+        static UserControl displayedUserControl;
 
         //Opens the, given as parameter, usercontrol on the MainForm
         public static void OpenUserControl(UserControl userControl)
         {
-            if (displayedForm != null)
-                displayedForm.Dispose();
+            if (displayedUserControl != null)
+                displayedUserControl.Dispose();
 
-            displayedForm = userControl;
-            MainForm.mainPanel.Controls.Add(displayedForm);
-            displayedForm.Dock = DockStyle.Fill;
-            displayedForm.Show();
+            displayedUserControl = userControl;
+            MainForm.mainPanel.Controls.Add(displayedUserControl);
+            displayedUserControl.Dock = DockStyle.Fill;
+            displayedUserControl.Show();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ADOPSE_IMDB_IMITATION.DataAccess;
+using ADOPSE_IMDB_IMITATION.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +18,8 @@ namespace ADOPSE_IMDB_IMITATION
         public MyLists()
         {
             InitializeComponent();
+
+            Session.SetThemeColor(this);
         }
 
         private void MyLists_Load(object sender, EventArgs e)
@@ -25,34 +29,16 @@ namespace ADOPSE_IMDB_IMITATION
 
         void DisplayUserLists()
         {
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            foreach (ImdbList list in ImdbListDataAccess.GetListsByUserId(Session.userId))
             {
-                const string commandText = "" +
-                    "SELECT Id, name " +
-                    "FROM Lists " +
-                    "WHERE userId = @userId" +
-                    ";";
-
-                SqlCommand command = new SqlCommand(commandText, connection);
-
-                command.Parameters.AddWithValue("@userId", Session.userId);
-
-                connection.Open();
-
-                using (SqlDataReader reader = command.ExecuteReader())
+                Button listButton = new Button
                 {
-                    while (reader.Read())
-                    {
-                        Button listButton = new Button();
-                        listButton.Text = reader["name"].ToString();
-                        listButton.AutoSize = true;
-                        listButton.TextAlign = ContentAlignment.MiddleCenter;
-                        int listId = (int)reader["Id"];
-                        string listName = reader["name"].ToString();
-                        listButton.Click += (s, ev) => { MainPanelUserControlOpener.OpenUserControl(new List(listId, listName)); };
-                        ListLayoutPanel.Controls.Add(listButton);
-                    }
-                }
+                    Text = list.Name,
+                    AutoSize = true,
+                    TextAlign = ContentAlignment.MiddleCenter
+                };
+                listButton.MouseClick += (o, e) => { MainPanelUserControlOpener.OpenUserControl(new ListUserControl(list.Id, list.Name)); };
+                ListLayoutPanel.Controls.Add(listButton);
             }
         }
     }

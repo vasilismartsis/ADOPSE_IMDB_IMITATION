@@ -18,11 +18,13 @@ namespace ADOPSE_IMDB_IMITATION
         Movie movie = new Movie();
         List<int> genres = new List<int>();
 
-        bool inEditMode;
+        bool isInEditMode;
 
         public AddEditMovie()
         {
             InitializeComponent();
+
+            Session.SetThemeColor(this, new List<Object> { new Button() });
         }
 
         public AddEditMovie(Movie movie)
@@ -30,30 +32,30 @@ namespace ADOPSE_IMDB_IMITATION
             InitializeComponent();
 
             this.movie = movie;
-            inEditMode = true;
+            isInEditMode = true;
         }
 
         private void AddMovie_Load(object sender, EventArgs e)
         {
             FillGenresListBox();
 
-            if (inEditMode)
+            if (isInEditMode)
                 InitializeEditUserControl();
         }
 
         void InitializeEditUserControl()
         {
-            NameTextBox.Placeholder = movie.name;
+            NameTextBox.Placeholder = movie.Name;
             NameTextBox.ForeColor = Color.Black;
-            ReleaseDateTimePicker.Value = DateTime.Parse(movie.releaseDate);
-            ImageTextBox.Text = movie.image;
+            ReleaseDateTimePicker.Value = DateTime.Parse(movie.ReleaseDate);
+            ImageTextBox.Text = movie.Image;
             ImageTextBox.ForeColor = Color.Black;
-            TrailerTextBox.Text = movie.trailer;
+            TrailerTextBox.Text = movie.Trailer;
             TrailerTextBox.ForeColor = Color.Black;
-            DirectorTextBox.Text = movie.director;
+            DirectorTextBox.Text = movie.Director;
             DirectorTextBox.ForeColor = Color.Black;
-            IsSeriesCheckBox.Checked = movie.isSeries;
-            DescriptionTextBox.Text = movie.description;
+            IsSeriesCheckBox.Checked = movie.IsSeries;
+            DescriptionTextBox.Text = movie.Description;
             DescriptionTextBox.ForeColor = Color.Black;
             AddMovieLabel.Text = "Edit Movie or Series";
             AddEditMovieButton.Text = "Edit Movie";
@@ -63,34 +65,35 @@ namespace ADOPSE_IMDB_IMITATION
         void FillGenresListBox()
         {
             foreach (Genre genre in GenresDataAccess.GetAllGenres())
-                GenresListBox.Items.Add(genre.name);
+                GenresListBox.Items.Add(genre.Name);
         }
 
         private void AddEditMovieButton_Click(object sender, EventArgs e)
         {
-            FillMovie();
-            FillMovieGenres();
+            InitializeMovie();
+            InitializeGenres();
 
-            if (!inEditMode)
-                AddNewMovie();
-            else
-                EditExistingMovie();
+            if (NameTextBox.Text != null || ImageTextBox.Text != null || TrailerTextBox.Text != null || DescriptionTextBox.Text != null)
+                if (!isInEditMode)
+                    AddNewMovie();
+                else
+                    EditExistingMovie();
 
             MainPanelUserControlOpener.OpenUserControl(new AddEditMovie());
         }
 
-        void FillMovie()
+        void InitializeMovie()
         {
-            movie.name = NameTextBox.Text;
-            movie.releaseDate = ReleaseDateTimePicker.Value.ToShortDateString();
-            movie.image = ImageTextBox.Text;
-            movie.trailer = TrailerTextBox.Text;
-            movie.director = DirectorTextBox.Text;
-            movie.isSeries = IsSeriesCheckBox.Checked;
-            movie.description = DescriptionTextBox.Text;
+            movie.Name = NameTextBox.Text;
+            movie.ReleaseDate = ReleaseDateTimePicker.Value.ToShortDateString();
+            movie.Image = ImageTextBox.Text;
+            movie.Trailer = TrailerTextBox.Text;
+            movie.Director = DirectorTextBox.Text;
+            movie.IsSeries = IsSeriesCheckBox.Checked;
+            movie.Description = DescriptionTextBox.Text;
         }
 
-        void FillMovieGenres()
+        void InitializeGenres()
         {
             foreach (object genresListBoxIndex in GenresListBox.CheckedItems)
                 genres.Add(GenresDataAccess.GetGenreIdByName(GenresListBox.GetItemText(genresListBoxIndex)));
@@ -103,13 +106,13 @@ namespace ADOPSE_IMDB_IMITATION
 
         void EditExistingMovie()
         {
-            MovieDataAccess.DeleteMovie(movie.id);
+            MovieDataAccess.DeleteMovie(movie.Id);
             MovieDataAccess.AddMovie(movie, genres);
         }
 
         private void DeleteMovieButton_Click(object sender, EventArgs e)
         {
-            MovieDataAccess.DeleteMovie(movie.id);
+            MovieDataAccess.DeleteMovie(movie.Id);
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

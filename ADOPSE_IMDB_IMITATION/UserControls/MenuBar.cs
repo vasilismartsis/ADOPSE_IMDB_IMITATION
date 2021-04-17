@@ -1,4 +1,6 @@
-﻿using ADOPSE_IMDB_IMITATION.UserControls.Movies;
+﻿using ADOPSE_IMDB_IMITATION.DataAccess;
+using ADOPSE_IMDB_IMITATION.UserControls.Movies;
+using ADOPSE_IMDB_IMITATION.UserControls.Nena;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +18,10 @@ namespace ADOPSE_IMDB_IMITATION
         public MenuBar()
         {
             InitializeComponent();
+
+            Session.SetThemeColor(this);
         }
+
 
         //SearchIMDBInput Placeholder
         private void SearchIMDBInput_Enter(object sender, EventArgs e)
@@ -81,7 +86,9 @@ namespace ADOPSE_IMDB_IMITATION
         private void LogoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Session.userId = 0;
+            Session.SetThemeColor(MainForm.menuBar);
             LogoutToolStripMenuItem.Visible = false;
+            MainPanelUserControlOpener.OpenUserControl(new MainPage());
         }
 
         private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,6 +119,21 @@ namespace ADOPSE_IMDB_IMITATION
         private void EditMovieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanelUserControlOpener.OpenUserControl(new ShowAllMovies());
+        }
+
+        private void AddActorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new AddEditActorUserControl());
+        }
+
+        private void EditActorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new ShowAllActorsUserControl());
+        }
+
+        private void reportAProblemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new Complaints());
         }
     }
 }

@@ -135,5 +135,108 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 connection.Close();
             }
         }
+
+        public static float GetActorScoreByActorId(int actorId)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                const string commandText = "" +
+                    "SELECT score " +
+                    "FROM ActorRatings " +
+                    "WHERE actorId = @actorId" +
+                    ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@actorId", actorId);
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    int sum = 0;
+                    int total = 0;
+
+                    while (reader.Read())
+                    {
+                        sum += reader.GetInt32(0);
+                        total++;
+                    }
+
+                    return sum / total;
+                }
+            }
+        }
+
+        public static void RateActor(int actorId, int score)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                //If movie is not rated by currently loged in user, insert new entry into MovieRatings table
+                if (!IsActorRatedByCurrentUser(actorId))
+                {
+                    const string commandText = "" +
+                        "INSERT INTO ActorRatings (userId, actorId, score) " +
+                        "VALUES (@userId, @movieId, @score);" +
+                        ";";
+
+                    SqlCommand command = new SqlCommand(commandText, connection);
+
+                    command.Parameters.AddWithValue("@userId,", Session.userId);
+                    command.Parameters.AddWithValue("@actorId", actorId);
+                    command.Parameters.AddWithValue("@score", score);
+
+                    connection.Open();
+
+                    command.ExecuteNonQuery();
+                }
+                //Else update entry in MovieRatings table
+                else
+                {
+                    const string commandText = "" +
+                        "UPDATE ActorRatings " +
+                        "SET score = @score " +
+                        "WHERE userId = @userId AND actorId = @actorId" +
+                        ";";
+
+                    SqlCommand command = new SqlCommand(commandText, connection);
+
+                    command.Parameters.AddWithValue("@userId,", Session.userId);
+                    command.Parameters.AddWithValue("@actorId", actorId);
+                    command.Parameters.AddWithValue("@score", score);
+
+                    connection.Open();
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static bool IsActorRatedByCurrentUser(int actorId)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                const string commandText = "" +
+                    "SELECT actorId " +
+                    "FROM ActorRatings " +
+                    "WHERE userId = @userId" +
+                    ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@userId,", Session.userId);
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                        if (reader.GetInt32(0) == actorId)
+                            return true;
+
+                    return false;
+                }
+            }
+        }
     }
 }

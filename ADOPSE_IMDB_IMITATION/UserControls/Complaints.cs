@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
+using ADOPSE_IMDB_IMITATION.DataAccess;
 
 namespace ADOPSE_IMDB_IMITATION
 {
@@ -17,6 +18,8 @@ namespace ADOPSE_IMDB_IMITATION
         public Complaints()
         {
             InitializeComponent();
+
+            Session.SetThemeColor(this);
         }
 
         private void SendButton_Click(object sender, EventArgs e)

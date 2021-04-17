@@ -19,6 +19,8 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
         public ShowAllMovies()
         {
             InitializeComponent();
+
+            Session.SetThemeColor(this);
         }
 
         private void EditMovie_Load(object sender, EventArgs e)

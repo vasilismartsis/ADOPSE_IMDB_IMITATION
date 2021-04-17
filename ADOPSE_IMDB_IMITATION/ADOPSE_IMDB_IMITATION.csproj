@@ -68,9 +68,14 @@
       <DependentUpon>ADOPSE_IMDB_IMITATIONDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\GenresDataAccess.cs" />
+    <Compile Include="DataAccess\ImdbListDataAccess.cs" />
     <Compile Include="DataAccess\MovieDataAccess.cs" />
+    <Compile Include="DataAccess\UserDataAccess.cs" />
     <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\ImdbList.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserSettings.cs" />
     <Compile Include="UserControls\Complaints.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -83,14 +88,6 @@
     <Compile Include="CustomControls\PopupMessage.cs" />
     <Compile Include="DataAccess\ActorDataAccess.cs" />
     <Compile Include="Models\Actor.cs" />
-    <Compile Include="Scripts\CheckIfUserRatedActor.cs" />
-    <Compile Include="Scripts\CheckIfUserRatedMovie.cs" />
-    <Compile Include="Scripts\GetFromdatabase\GetActorScores.cs" />
-    <Compile Include="Scripts\GetFromdatabase\GetIdsFromDB.cs" />
-    <Compile Include="Scripts\GetFromdatabase\GetMovieInfo.cs" />
-    <Compile Include="Scripts\GetFromdatabase\GetMovieScores.cs" />
-    <Compile Include="Scripts\ChangeDatabase\RateActors.cs" />
-    <Compile Include="Scripts\ChangeDatabase\RateMovies.cs" />
     <Compile Include="UserControls\Actors\AddEditActorUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +99,12 @@
     </Compile>
     <Compile Include="UserControls\Actors\ShowAllActorsUserControl.Designer.cs">
       <DependentUpon>ShowAllActorsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MainPage\MainPageCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MainPage\MainPageCategory.Designer.cs">
+      <DependentUpon>MainPageCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Movies\AddEditMovie.cs">
       <SubType>UserControl</SubType>
@@ -121,22 +124,22 @@
     <Compile Include="UserControls\Lists\CreateList.Designer.cs">
       <DependentUpon>CreateList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Lists\List.cs">
+    <Compile Include="UserControls\Lists\ListUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Lists\List.Designer.cs">
-      <DependentUpon>List.cs</DependentUpon>
+    <Compile Include="UserControls\Lists\ListUserControl.Designer.cs">
+      <DependentUpon>ListUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\LoginSystem\Login.cs">
+    <Compile Include="UserControls\Users\Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\LoginSystem\Login.Designer.cs">
+    <Compile Include="UserControls\Users\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\MainPage.cs">
+    <Compile Include="UserControls\MainPage\MainPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\MainPage.Designer.cs">
+    <Compile Include="UserControls\MainPage\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Scripts\MainPanelUserControlOpener.cs" />
@@ -165,10 +168,10 @@
     <Compile Include="UserControls\ProfileSettings.Designer.cs">
       <DependentUpon>ProfileSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\LoginSystem\Register.cs">
+    <Compile Include="UserControls\Users\Register.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\LoginSystem\Register.Designer.cs">
+    <Compile Include="UserControls\Users\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
@@ -202,6 +205,12 @@
     <EmbeddedResource Include="UserControls\Actors\ShowAllActorsUserControl.resx">
       <DependentUpon>ShowAllActorsUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MainPage\MainPageCategory.aa-ER.resx">
+      <DependentUpon>MainPageCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MainPage\MainPageCategory.resx">
+      <DependentUpon>MainPageCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Movies\AddEditMovie.resx">
       <DependentUpon>AddEditMovie.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,13 +220,13 @@
     <EmbeddedResource Include="UserControls\Lists\CreateList.resx">
       <DependentUpon>CreateList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Lists\List.resx">
-      <DependentUpon>List.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Lists\ListUserControl.resx">
+      <DependentUpon>ListUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\LoginSystem\Login.resx">
+    <EmbeddedResource Include="UserControls\Users\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MainPage.resx">
+    <EmbeddedResource Include="UserControls\MainPage\MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Movies\ShowAllMovies.resx">
@@ -232,7 +241,7 @@
     <EmbeddedResource Include="UserControls\ProfileSettings.resx">
       <DependentUpon>ProfileSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\LoginSystem\Register.resx">
+    <EmbeddedResource Include="UserControls\Users\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
@@ -320,6 +329,8 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="TempScripts\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

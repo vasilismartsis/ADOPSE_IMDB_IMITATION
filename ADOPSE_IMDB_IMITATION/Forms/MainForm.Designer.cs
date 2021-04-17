@@ -30,7 +30,7 @@ namespace ADOPSE_IMDB_IMITATION
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.menuBar1 = new ADOPSE_IMDB_IMITATION.MenuBar();
+            this.MenuBar = new ADOPSE_IMDB_IMITATION.MenuBar();
             this.SuspendLayout();
             // 
             // MainPanel
@@ -38,19 +38,19 @@ namespace ADOPSE_IMDB_IMITATION
             this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MainPanel.Location = new System.Drawing.Point(0, 24);
+            this.MainPanel.Location = new System.Drawing.Point(0, 27);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(982, 637);
+            this.MainPanel.Size = new System.Drawing.Size(984, 634);
             this.MainPanel.TabIndex = 1;
             // 
-            // menuBar1
+            // MenuBar
             // 
-            this.menuBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.menuBar1.Location = new System.Drawing.Point(0, 0);
-            this.menuBar1.Name = "menuBar1";
-            this.menuBar1.Size = new System.Drawing.Size(982, 24);
-            this.menuBar1.TabIndex = 0;
+            this.MenuBar.BackColor = System.Drawing.SystemColors.Control;
+            this.MenuBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MenuBar.Location = new System.Drawing.Point(0, 0);
+            this.MenuBar.Name = "MenuBar";
+            this.MenuBar.Size = new System.Drawing.Size(984, 24);
+            this.MenuBar.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -58,7 +58,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.MainPanel);
-            this.Controls.Add(this.menuBar1);
+            this.Controls.Add(this.MenuBar);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainPage_Load);
@@ -68,7 +68,7 @@ namespace ADOPSE_IMDB_IMITATION
 
         #endregion
 
-        private MenuBar menuBar1;
+        private MenuBar MenuBar;
         private System.Windows.Forms.Panel MainPanel;
     }
 }

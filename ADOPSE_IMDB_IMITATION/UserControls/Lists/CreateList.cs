@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ADOPSE_IMDB_IMITATION.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,26 +17,16 @@ namespace ADOPSE_IMDB_IMITATION
         public CreateList()
         {
             InitializeComponent();
+
+            Session.SetThemeColor(this);
         }
 
         private void CreateListButton_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
-            {
-                const string commandText = "" +
-                    "INSERT INTO Lists (userId, name) " +
-                    "VALUES (@userId, @name)" +
-                    ";";
+            int listId = ImdbListDataAccess.AddList(ListNameText.Text);
+            string listName = ImdbListDataAccess.GetListById(listId).Name;
 
-                SqlCommand command = new SqlCommand(commandText, connection);
-
-                command.Parameters.AddWithValue("@userId", Session.userId);
-                command.Parameters.AddWithValue("@name", ListNameText.Text);
-
-                connection.Open();
-
-                command.ExecuteNonQuery();
-            }
+            MainPanelUserControlOpener.OpenUserControl(new ListUserControl(listId, listName));
         }
     }
 }

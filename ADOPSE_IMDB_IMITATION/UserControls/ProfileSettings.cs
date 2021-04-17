@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ADOPSE_IMDB_IMITATION.DataAccess;
+using ADOPSE_IMDB_IMITATION.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,25 +18,22 @@ namespace ADOPSE_IMDB_IMITATION
         public ProfileSettings()
         {
             InitializeComponent();
+
+            Session.SetThemeColor(this);
+
+            StateComboBox.SelectedIndex = StateComboBox.FindStringExact(UserDataAccess.GetUserById(Session.userId).UserSettings.State);
+            ThemeComboBox.SelectedIndex = ThemeComboBox.FindStringExact(UserDataAccess.GetUserById(Session.userId).UserSettings.Theme);
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            UserDataAccess.UpdateUserSettings(new UserSettings
             {
-                const string commandText = "UPDATE UserSettings SET state = @state, theme = @theme WHERE userId = @userId;";
+                State = StateComboBox.SelectedItem.ToString(),
+                Theme = ThemeComboBox.SelectedItem.ToString()
+            });
 
-                SqlCommand command = new SqlCommand(commandText, connection);
-
-                command.Parameters.AddWithValue("@state", StateComboBox.SelectedItem.ToString());
-                command.Parameters.AddWithValue("@theme", ThemeComboBox.SelectedItem.ToString());
-                command.Parameters.AddWithValue("@userId", Session.userId);
-
-                connection.Open();
-
-                var reader = command.ExecuteNonQuery();
-            }
-
+            Session.SetThemeColor(MainForm.menuBar);
             MainPanelUserControlOpener.OpenUserControl(new MainPage());
         }
 

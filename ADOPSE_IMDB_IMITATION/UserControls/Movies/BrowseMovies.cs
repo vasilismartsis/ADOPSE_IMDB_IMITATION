@@ -1,4 +1,5 @@
-﻿using ADOPSE_IMDB_IMITATION.Scripts;
+﻿using ADOPSE_IMDB_IMITATION.DataAccess;
+using ADOPSE_IMDB_IMITATION.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,36 +14,32 @@ namespace ADOPSE_IMDB_IMITATION.UserControls
 {
     public partial class BrowseMovies : UserControl
     {
-        List<int> ListWithIds = new List<int>();
-        
-        
-        
-          
-     public void fillList() // Get the ids of the movies
+        List<Movie> movies;
+
+        public void FillList() // Get the ids of the movies
         {
-            GetIdsFromDB List = new GetIdsFromDB();
-            this.ListWithIds = List.returnList();
-        }   
+            movies = MovieDataAccess.GetAllMovies();
+        }
         public BrowseMovies()
         {
             InitializeComponent();
 
+            Session.SetThemeColor(this);
         }
-        public void showAllSmallWindowMovie() 
-        { 
-            for(int i=0; i<ListWithIds.Count(); i++)
+        public void ShowAllSmallWindowMovie()
+        {
+            for (int i = 0; i < movies.Count(); i++)
             {
-                SmallWindowMovie x = new SmallWindowMovie(ListWithIds[i]);
+                SmallWindowMovie x = new SmallWindowMovie(movies[i].Id);
                 flowLayoutBrowseMovies.Controls.Add(x);
             }
         }
 
-
         private void BrowseMoviesUI_Load(object sender, EventArgs e)
         {
-            fillList();
-            showAllSmallWindowMovie();
-           
+            FillList();
+            ShowAllSmallWindowMovie();
+
         }
     }
 }
