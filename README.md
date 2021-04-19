@@ -1,9 +1,9 @@
 # IMDB IMITATION
-<h1>This project is a partial implementation of the functionality of the site imdb.com.</h1>
+<h1>Summary of this project</h1>
 <table>
   <tr>
     <td>What</td>
-    <td></td>
+    <td>This project is a partial implementation of the functionality of the site imdb.com.</td>
   </tr>
   <tr>
     <td>Why</td>
