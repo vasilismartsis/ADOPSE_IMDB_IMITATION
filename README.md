@@ -20,6 +20,6 @@
   </tr>
   <tr>
     <td>How was it implemented:</td>
-    <td>This project was implemented as a desktop application using the .Net framework and the MySQL database for the data storage. The project was developed on the IDE named "Visiual Studio"</td>
+    <td>This project was implemented as a desktop application using the .Net framework and the MySQL database for the data storage. The project was developed on the IDE "Visual Studio"</td>
   </tr>
 </table>
