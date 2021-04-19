@@ -3,22 +3,23 @@ This project is a partial implementation of the functionality of the site imdb.c
 
 <table>
   <tr>
-    <th>Company</th>
+    <td>What</td>
+    <td></td>
   </tr>
   <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
+    <td>Why</td>
+    <td></td>
   </tr>
   <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
+    <td>For whom</td>
+    <td></td>
   </tr>
   <tr>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
+    <td>By whom</td>
+    <td></td>
   </tr>
   <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
+    <td>How</td>
+    <td></td>
   </tr>
 </table>
