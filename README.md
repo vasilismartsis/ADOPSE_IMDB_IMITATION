@@ -7,15 +7,15 @@
       IMDb.com is a site that gives his user the ability to browse through a collection of movies, tv shows, actors, news and many more related stuff.</td>
   </tr>
   <tr>
-    <td>Why was it implemented</td>
+    <td>Why was it created</td>
     <td>This project was created for education purposes for the class "Development of Integrated Information Systems", of the "International University of Greece", under the guidance of "Salabasis Michalis".</td>
   </tr>
   <tr>
-    <td>For whom was it implemented</td>
+    <td>For whom was it created</td>
     <td>This project was created to give his users the ability to browse through a collection of movies, tv shows, actors, news and many more related stuff</td>
   </tr>
   <tr>
-    <td>By whom was it implemented</td>
+    <td>By whom was it created</td>
     <td>This project was created by a team of four students of the "International University of Greece". The names of the participands are Μάρτσης Βασίλειος, Πετριανός Αθανάσιος, Τσουρελάς Μάριος and Μιχαηλίδου Παρθένα"</td>
   </tr>
   <tr>
