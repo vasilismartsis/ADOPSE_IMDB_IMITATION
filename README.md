@@ -27,14 +27,4 @@ This project is a partial implementation of the functionality of the site imdb.c
     <td>Helen Bennett</td>
     <td>UK</td>
   </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
-    <td>Canada</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
-  </tr>
 </table>
