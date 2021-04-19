@@ -4,7 +4,6 @@ This project is a partial implementation of the functionality of the site imdb.c
 <table>
   <tr>
     <th>Company</th>
-    <th>Contact</th>
   </tr>
   <tr>
     <td>Alfreds Futterkiste</td>
