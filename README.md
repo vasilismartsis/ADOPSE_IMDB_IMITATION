@@ -3,7 +3,7 @@
 <table>
   <tr>
     <td><b>What is it:</b></td>
-    <td>This project is a partial implementation of the functionality of the site IMDb.com.<br>
+    <td>This project is a desktop application which is a partial implementation of the functionality of the site IMDb.com.<br>
       IMDb.com is a site that gives his user the ability to browse through a collection of movies, tv shows, actors, news and many more related stuff.</td>
   </tr>
   <tr>
