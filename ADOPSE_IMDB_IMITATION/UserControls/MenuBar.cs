@@ -108,11 +108,6 @@ namespace ADOPSE_IMDB_IMITATION
             MainPanelUserControlOpener.OpenUserControl(new AddEditActorUserControl());
         }
 
-        private void EditActorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanelUserControlOpener.OpenUserControl(new ShowAllActorsUserControl());
-        }
-
         private void reportAProblemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanelUserControlOpener.OpenUserControl(new Complaints());
@@ -184,5 +179,10 @@ namespace ADOPSE_IMDB_IMITATION
         }
 
         #endregion
+
+        private void showAllActorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new ShowAllActorsUserControl());
+        }
     }
 }

@@ -114,3 +114,35 @@ D:\Google Drive\Έγγραφα Βασίλη\Projects\C# visual studio desktop ap
 D:\Google Drive\Έγγραφα Βασίλη\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\aa-ER\ADOPSE_IMDB_IMITATION.resources.dll
 D:\Google Drive\Έγγραφα Βασίλη\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.exe
 D:\Google Drive\Έγγραφα Βασίλη\Projects\C# visual studio desktop apps .net framework\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.pdb
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\bin\Debug\Databases\ADOPSE_IMDB_IMITATION.mdf
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\bin\Debug\Databases\ADOPSE_IMDB_IMITATION_log.ldf
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\bin\Debug\ADOPSE_IMDB_IMITATION.exe.config
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\bin\Debug\ADOPSE_IMDB_IMITATION.exe
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\bin\Debug\ADOPSE_IMDB_IMITATION.pdb
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\bin\Debug\aa-ER\ADOPSE_IMDB_IMITATION.resources.dll
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csprojAssemblyReference.cache
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Complaints.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.Nena.AddEditActorUserControl.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.Nena.ShowAllActorsUserControl.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.MainPage.MainPageCategory.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.AddEditMovie.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.BrowseMovies.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.CreateList.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.ListUserControl.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Login.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MainPage.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.Movies.ShowAllMovies.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MovieUserControl.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MyLists.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.ProfileSettings.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Register.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MainForm.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MenuBar.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Properties.Resources.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.SmallWindowMovie.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.MainPage.MainPageCategory.aa-ER.resources
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csproj.GenerateResource.cache
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csproj.CoreCompileInputs.cache
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\aa-ER\ADOPSE_IMDB_IMITATION.resources.dll
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.exe
+C:\Users\Nena Michailidou\Desktop\adopse2\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.pdb
