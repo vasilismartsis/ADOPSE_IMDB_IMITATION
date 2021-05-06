@@ -44,5 +44,15 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Nena
         {
             MainPanelUserControlOpener.OpenUserControl(new AddEditActorUserControl(((Actor)AllActorsDataGridView.CurrentRow.DataBoundItem).ID));
         }
+
+        private void OpenSelectedActorBtn_Click(object sender, EventArgs e)
+        {
+            var selectedActor = AllActorsDataGridView.CurrentRow.DataBoundItem as Actor;
+
+            if (selectedActor != null)
+                MainPanelUserControlOpener.OpenUserControl(new AddEditActorUserControl(selectedActor.ID));
+            else
+                PopupMessage1.ShowToolTip(ParentForm, "Please select an actor!", Color.Red);
+        }
     }
 }
