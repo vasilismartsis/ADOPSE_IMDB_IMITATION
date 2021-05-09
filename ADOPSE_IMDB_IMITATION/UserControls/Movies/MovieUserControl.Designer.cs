@@ -33,6 +33,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.ImageOfMovie = new System.Windows.Forms.PictureBox();
             this.SummaryOfMovie = new System.Windows.Forms.Label();
             this.RatingOfMovie = new System.Windows.Forms.Label();
+            this.flowLayoutMovie = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.ImageOfMovie)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,15 +75,23 @@ namespace ADOPSE_IMDB_IMITATION
             this.RatingOfMovie.TabIndex = 3;
             this.RatingOfMovie.Text = "RatingOfMovie";
             // 
-            // Movie
+            // flowLayoutMovie
+            // 
+            this.flowLayoutMovie.Location = new System.Drawing.Point(22, 235);
+            this.flowLayoutMovie.Name = "flowLayoutMovie";
+            this.flowLayoutMovie.Size = new System.Drawing.Size(322, 100);
+            this.flowLayoutMovie.TabIndex = 4;
+            // 
+            // MovieUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.flowLayoutMovie);
             this.Controls.Add(this.RatingOfMovie);
             this.Controls.Add(this.SummaryOfMovie);
             this.Controls.Add(this.ImageOfMovie);
             this.Controls.Add(this.NameOfMovie);
-            this.Name = "Movie";
+            this.Name = "MovieUserControl";
             this.Size = new System.Drawing.Size(647, 529);
             this.Load += new System.EventHandler(this.Movie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ImageOfMovie)).EndInit();
@@ -97,5 +106,6 @@ namespace ADOPSE_IMDB_IMITATION
         private System.Windows.Forms.PictureBox ImageOfMovie;
         private System.Windows.Forms.Label SummaryOfMovie;
         private System.Windows.Forms.Label RatingOfMovie;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutMovie;
     }
 }

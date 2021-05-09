@@ -46,7 +46,8 @@ namespace ADOPSE_IMDB_IMITATION
 
         private void NameOfMovie_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new MovieUserControl(movie.Id));
+           
+            MainPanelUserControlOpener.OpenUserControl(new MovieUserControl(movie));
         }
 
         private void InitializeComponent()

@@ -189,5 +189,31 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 Session.SetThemeColor(MainForm.menuBar);
             }
         }
+
+        public static void UpdateUserHistory(UserHistory ids)
+        {
+            
+            if(ids.userId != 0) { 
+            DateTime time = DateTime.Now;
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+                {
+                    const string commandText = "" +
+                            "INSERT INTO UsersMovieHistory(userId, movieId, datetimeBrowsed) " +
+                            "VALUES (@userId,  @movieId, @time)" +
+                            ";";
+
+                    SqlCommand command = new SqlCommand(commandText, connection);
+
+                    command.Parameters.AddWithValue("@userId", ids.userId);
+                    command.Parameters.AddWithValue("@movieId", ids.movieId);
+                    command.Parameters.AddWithValue("@time", time);
+
+                    connection.Open();
+
+                    command.ExecuteNonQuery();
+
+                }
+            }
+        }
     }
 }
