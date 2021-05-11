@@ -44,6 +44,8 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SearchMovieLabel = new System.Windows.Forms.Label();
+            this.SearchMovieTextBox = new PlaceholderTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDOPSE_IMDB_IMITATIONDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MoviesGridView)).BeginInit();
@@ -64,11 +66,11 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
             this.DoubleClickToEditLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.DoubleClickToEditLabel.AutoSize = true;
             this.DoubleClickToEditLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.DoubleClickToEditLabel.Location = new System.Drawing.Point(154, 14);
+            this.DoubleClickToEditLabel.Location = new System.Drawing.Point(121, 0);
             this.DoubleClickToEditLabel.Name = "DoubleClickToEditLabel";
-            this.DoubleClickToEditLabel.Size = new System.Drawing.Size(228, 20);
+            this.DoubleClickToEditLabel.Size = new System.Drawing.Size(329, 20);
             this.DoubleClickToEditLabel.TabIndex = 1;
-            this.DoubleClickToEditLabel.Text = "Double click a movie to edit";
+            this.DoubleClickToEditLabel.Text = "*Double click any movie you want to edit";
             // 
             // moviesTableAdapter
             // 
@@ -99,9 +101,9 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
             this.dataGridViewCheckBoxColumn1,
             this.dataGridViewTextBoxColumn7});
             this.MoviesGridView.DataSource = this.moviesBindingSource;
-            this.MoviesGridView.Location = new System.Drawing.Point(0, 49);
+            this.MoviesGridView.Location = new System.Drawing.Point(0, 91);
             this.MoviesGridView.Name = "MoviesGridView";
-            this.MoviesGridView.Size = new System.Drawing.Size(560, 398);
+            this.MoviesGridView.Size = new System.Drawing.Size(560, 356);
             this.MoviesGridView.TabIndex = 1;
             this.MoviesGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MoviesGridView_CellContentDoubleClick);
             // 
@@ -162,10 +164,34 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Width = 83;
             // 
+            // SearchMovieLabel
+            // 
+            this.SearchMovieLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.SearchMovieLabel.AutoSize = true;
+            this.SearchMovieLabel.Location = new System.Drawing.Point(236, 34);
+            this.SearchMovieLabel.Name = "SearchMovieLabel";
+            this.SearchMovieLabel.Size = new System.Drawing.Size(76, 13);
+            this.SearchMovieLabel.TabIndex = 4;
+            this.SearchMovieLabel.Text = "Search Movie:";
+            // 
+            // SearchMovieTextBox
+            // 
+            this.SearchMovieTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.SearchMovieTextBox.ForeColor = System.Drawing.Color.DarkGray;
+            this.SearchMovieTextBox.Location = new System.Drawing.Point(208, 50);
+            this.SearchMovieTextBox.Name = "SearchMovieTextBox";
+            this.SearchMovieTextBox.Placeholder = "Search Movie";
+            this.SearchMovieTextBox.Size = new System.Drawing.Size(135, 20);
+            this.SearchMovieTextBox.TabIndex = 3;
+            this.SearchMovieTextBox.Text = "Search Movie";
+            this.SearchMovieTextBox.TextChanged += new System.EventHandler(this.SearchMovieTextBox_TextChanged);
+            // 
             // ShowAllMovies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.SearchMovieLabel);
+            this.Controls.Add(this.SearchMovieTextBox);
             this.Controls.Add(this.MoviesGridView);
             this.Controls.Add(this.DoubleClickToEditLabel);
             this.Name = "ShowAllMovies";
@@ -194,5 +220,7 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private PlaceholderTextBox SearchMovieTextBox;
+        private System.Windows.Forms.Label SearchMovieLabel;
     }
 }

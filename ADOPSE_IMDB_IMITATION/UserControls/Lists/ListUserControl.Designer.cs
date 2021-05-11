@@ -43,11 +43,10 @@ namespace ADOPSE_IMDB_IMITATION
             this.MoviesLayoutPanel.Padding = new System.Windows.Forms.Padding(10);
             this.MoviesLayoutPanel.Size = new System.Drawing.Size(557, 444);
             this.MoviesLayoutPanel.TabIndex = 0;
-            this.MoviesLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MoviesLayoutPanel_Paint);
             // 
             // ListNameLabel
             // 
-            this.ListNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ListNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ListNameLabel.AutoSize = true;
             this.ListNameLabel.Location = new System.Drawing.Point(230, 16);
             this.ListNameLabel.Name = "ListNameLabel";
@@ -55,13 +54,13 @@ namespace ADOPSE_IMDB_IMITATION
             this.ListNameLabel.TabIndex = 1;
             this.ListNameLabel.Text = "ListNameLabel";
             // 
-            // List
+            // ListUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.ListNameLabel);
             this.Controls.Add(this.MoviesLayoutPanel);
-            this.Name = "List";
+            this.Name = "ListUserControl";
             this.Size = new System.Drawing.Size(557, 489);
             this.Load += new System.EventHandler(this.List_Load);
             this.ResumeLayout(false);

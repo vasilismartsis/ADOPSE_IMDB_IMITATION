@@ -29,7 +29,7 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 command.Parameters.AddWithValue("@firstName", user.FirstName);
                 command.Parameters.AddWithValue("@lastName", user.LastName);
                 command.Parameters.AddWithValue("@dateOfBirth", DateTime.Parse(user.DateOfBirth));
-                command.Parameters.AddWithValue("@isAdministrator", user.DateOfBirth);
+                command.Parameters.AddWithValue("@isAdministrator", user.IsAdministrator);
 
                 connection.Open();
 
@@ -192,9 +192,10 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
 
         public static void UpdateUserHistory(UserHistory ids)
         {
-            
-            if(ids.userId != 0) { 
-            DateTime time = DateTime.Now;
+
+            if (ids.userId != 0)
+            {
+                DateTime time = DateTime.Now;
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
                 {
                     const string commandText = "" +

@@ -23,18 +23,9 @@ namespace ADOPSE_IMDB_IMITATION
         private Image img;
 
         public MovieUserControl(Movie movie)
-
         {
-            
             this.movie = movie;
             InitializeComponent();
-            Session.SetThemeColor(this);
-        }
-
-        public MovieUserControl(int movieId)
-        {
-            movie = MovieDataAccess.GetMovieById(movieId);
-
             Session.SetThemeColor(this);
         }
 
@@ -94,8 +85,8 @@ namespace ADOPSE_IMDB_IMITATION
         }
 
         void DisplayMovieDetails()
-        { 
-           
+        {
+
             NameOfMovie.Text = movie.Name;
             RatingOfMovie.Text = "Rating : " + movie.Score + "/10";
             ImageOfMovie.Image = this.setImage(movie.Image);
@@ -107,13 +98,13 @@ namespace ADOPSE_IMDB_IMITATION
             }
 
                 );
-            if (movie.IsSeries == true) 
+            if (movie.IsSeries == true)
             {
                 EpisodesUserControl x = new EpisodesUserControl();
                 flowLayoutMovie.Controls.Add(x);
-           }
-            
-          
+            }
+
+
         }
     }
 }

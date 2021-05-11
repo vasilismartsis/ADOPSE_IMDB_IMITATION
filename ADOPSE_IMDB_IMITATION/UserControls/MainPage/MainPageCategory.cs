@@ -43,16 +43,16 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.MainPage
 
             for (int i = 0; i < movies.Count; i++)
             {
-                int movieId = movies[i].Id;
+                Movie movie = movies[i];
 
                 PictureBox moviePictureBox = new PictureBox
                 {
-                    ImageLocation = movies[i].Image,
+                    ImageLocation = movie.Image,
                     Size = moviePictureBoxSize,
-                    Location = new Point((i * moviePictureBoxSize.Width) + i * panelMargin, Location.Y),
+                    Location = new Point((i * moviePictureBoxSize.Width) + i * panelMargin, Location.Y)
                 };
 
-                moviePictureBox.MouseClick += new MouseEventHandler((o, e) => { MainPanelUserControlOpener.OpenUserControl(new MovieUserControl(movieId)); });
+                moviePictureBox.MouseClick += new MouseEventHandler((o, e) => { MainPanelUserControlOpener.OpenUserControl(new MovieUserControl(movie)); });
 
                 MoviePanel.Controls.Add(moviePictureBox);
             }

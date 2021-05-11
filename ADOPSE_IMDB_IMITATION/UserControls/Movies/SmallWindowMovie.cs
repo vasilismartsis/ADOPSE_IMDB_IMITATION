@@ -22,7 +22,7 @@ namespace ADOPSE_IMDB_IMITATION
         {
             movie = MovieDataAccess.GetMovieById(movieId);
 
-            m = new MovieUserControl(movieId);
+            m = new MovieUserControl(movie);
 
             m.setImage(movie.Image);
 
@@ -46,7 +46,7 @@ namespace ADOPSE_IMDB_IMITATION
 
         private void NameOfMovie_Click(object sender, EventArgs e)
         {
-           
+
             MainPanelUserControlOpener.OpenUserControl(new MovieUserControl(movie));
         }
 
