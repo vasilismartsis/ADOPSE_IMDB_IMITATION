@@ -12,20 +12,23 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
 {
 
 
-    public partial class RateMovieUserControl : Form
+    public partial class GenericRatingUserControl : Form
     {
         public delegate void RatingEventHandler(object sender, RateMovieEventArgs e);
 
         public event RatingEventHandler RateMovieEvent;
 
-        public RateMovieUserControl()
+        public GenericRatingUserControl(string whoToRate)
         {
             InitializeComponent();
+
+            Text = $"Rate {whoToRate}";
+            RatingRadioButtonGroupBox.Text = $"Rate the {whoToRate}";
         }
 
         private void SaveRatingBtn_Click(object sender, EventArgs e)
         {
-            var checkedButton = RateMovieRadioButtonGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            var checkedButton = RatingRadioButtonGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
 
             //Close();
 

@@ -189,5 +189,10 @@ namespace ADOPSE_IMDB_IMITATION
         {
 
         }
+
+        private void browseActorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new BrowseActorsUserControl());
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace ADOPSE_IMDB_IMITATION
     public partial class SmallWindowMovie : UserControl, IDisposable
     {
         Movie movie;
-
+        private GenericRatingUserControl _genericRatingUserControl;
         MovieUserControl m;
 
         public SmallWindowMovie(int movieId)
@@ -125,21 +125,20 @@ namespace ADOPSE_IMDB_IMITATION
 
         }
 
-        private RateMovieUserControl _rateMovieUserControl;
 
         private void RateMovieBtn_Click(object sender, EventArgs e)
         {
-            if(_rateMovieUserControl != null)
-                _rateMovieUserControl.RateMovieEvent -= RateMovieUserControl_RateMovieEvent;
+            if(_genericRatingUserControl != null)
+                _genericRatingUserControl.RateMovieEvent -= GenericRatingUserControl_RateMovieEvent;
 
-            _rateMovieUserControl = new RateMovieUserControl();
-            _rateMovieUserControl.RateMovieEvent += RateMovieUserControl_RateMovieEvent;
-            _rateMovieUserControl.ShowDialog();
+            _genericRatingUserControl = new GenericRatingUserControl("Movie");
+            _genericRatingUserControl.RateMovieEvent += GenericRatingUserControl_RateMovieEvent;
+            _genericRatingUserControl.ShowDialog();
         }
 
-        private void RateMovieUserControl_RateMovieEvent(object sender, RateMovieEventArgs e)
+        private void GenericRatingUserControl_RateMovieEvent(object sender, RateMovieEventArgs e)
         {
-            _rateMovieUserControl.DialogResult = DialogResult.OK;//.Close();
+            _genericRatingUserControl.DialogResult = DialogResult.OK;//.Close();
 
             MovieRatingDataAccess.AddOrUpdateMovieRating(new MovieRatingFromDB() { userId = Session.userId, movieId = movie.Id, score = int.Parse(e.Rating) });
 
