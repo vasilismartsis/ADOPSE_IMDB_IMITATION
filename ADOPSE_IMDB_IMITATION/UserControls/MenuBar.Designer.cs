@@ -47,9 +47,9 @@ namespace ADOPSE_IMDB_IMITATION
             this.browseMoviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TypeComboBox = new System.Windows.Forms.ComboBox();
             this.SearchPanel = new System.Windows.Forms.Panel();
-            this.SearchIMDBInput = new PlaceholderTextBox();
             this.ComboBoxTimer = new System.Windows.Forms.Timer(this.components);
-            this.showAllActorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SearchIMDBInput = new PlaceholderTextBox();
+            this.EditActorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SearchPanel.SuspendLayout();
             this.SuspendLayout();
@@ -139,7 +139,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.AddMovieToolStripMenuItem,
             this.EditMovieToolStripMenuItem,
             this.AddActorToolStripMenuItem,
-            this.showAllActorsToolStripMenuItem});
+            this.EditActorToolStripMenuItem});
             this.AdministratorFunctionsToolStripMenuItem.Name = "AdministratorFunctionsToolStripMenuItem";
             this.AdministratorFunctionsToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.AdministratorFunctionsToolStripMenuItem.Text = "Administrator Functions";
@@ -206,6 +206,10 @@ namespace ADOPSE_IMDB_IMITATION
             this.SearchPanel.Size = new System.Drawing.Size(213, 21);
             this.SearchPanel.TabIndex = 3;
             // 
+            // ComboBoxTimer
+            // 
+            this.ComboBoxTimer.Tick += new System.EventHandler(this.ComboBoxTimer_Tick);
+            // 
             // SearchIMDBInput
             // 
             this.SearchIMDBInput.AcceptsReturn = true;
@@ -221,16 +225,12 @@ namespace ADOPSE_IMDB_IMITATION
             this.SearchIMDBInput.TabIndex = 1;
             this.SearchIMDBInput.Text = "Search IMDB";
             // 
-            // ComboBoxTimer
+            // EditActorToolStripMenuItem
             // 
-            this.ComboBoxTimer.Tick += new System.EventHandler(this.ComboBoxTimer_Tick);
-            // 
-            // showAllActorsToolStripMenuItem
-            // 
-            this.showAllActorsToolStripMenuItem.Name = "showAllActorsToolStripMenuItem";
-            this.showAllActorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.showAllActorsToolStripMenuItem.Text = "Show all Actors";
-            this.showAllActorsToolStripMenuItem.Click += new System.EventHandler(this.showAllActorsToolStripMenuItem_Click);
+            this.EditActorToolStripMenuItem.Name = "EditActorToolStripMenuItem";
+            this.EditActorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.EditActorToolStripMenuItem.Text = "Edit Actor";
+            this.EditActorToolStripMenuItem.Click += new System.EventHandler(this.EditActorToolStripMenuItem_Click);
             // 
             // MenuBar
             // 
@@ -270,6 +270,6 @@ namespace ADOPSE_IMDB_IMITATION
         private System.Windows.Forms.ComboBox TypeComboBox;
         private System.Windows.Forms.Panel SearchPanel;
         private System.Windows.Forms.Timer ComboBoxTimer;
-        private System.Windows.Forms.ToolStripMenuItem showAllActorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem EditActorToolStripMenuItem;
     }
 }

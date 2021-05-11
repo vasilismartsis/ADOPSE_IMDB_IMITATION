@@ -1,5 +1,6 @@
 ﻿using ADOPSE_IMDB_IMITATION.DataAccess;
 using ADOPSE_IMDB_IMITATION.Models;
+using ADOPSE_IMDB_IMITATION.UserControls.Movies;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace ADOPSE_IMDB_IMITATION
 {
-    public partial class SmallWindowMovie : UserControl
+    public partial class SmallWindowMovie : UserControl, IDisposable
     {
         Movie movie;
 
@@ -26,7 +27,7 @@ namespace ADOPSE_IMDB_IMITATION
 
             m.setImage(movie.Image);
 
-            InitializeComponent1();
+            InitializeComponent();  //change this shit to InitializeComponent1
 
             Session.SetThemeColor(this);
         }
@@ -34,9 +35,9 @@ namespace ADOPSE_IMDB_IMITATION
         public void ShowInfo(MovieUserControl m)
         {
             NameOfMovie.Text = movie.Name;
-            RatingOfMovie.Text = "Rating : " + movie.Score + "/10";
+            RatingOfMovie.Text = "Rating xxxx: " + movie.Score + "/10";
             ImageOfMovie.Image = m.getImage();
-
+            RateMovieBtn.Visible = true;
         }
 
         private void SmallWindowMovie_Load(object sender, EventArgs e)
@@ -55,6 +56,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.SummaryOfMovie = new System.Windows.Forms.Label();
             this.RatingOfMovie = new System.Windows.Forms.Label();
             this.ImageOfMovie = new System.Windows.Forms.PictureBox();
+            this.RateMovieBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ImageOfMovie)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +81,7 @@ namespace ADOPSE_IMDB_IMITATION
             // RatingOfMovie
             // 
             this.RatingOfMovie.AutoSize = true;
-            this.RatingOfMovie.Location = new System.Drawing.Point(157, 96);
+            this.RatingOfMovie.Location = new System.Drawing.Point(157, 58);
             this.RatingOfMovie.Name = "RatingOfMovie";
             this.RatingOfMovie.Size = new System.Drawing.Size(78, 13);
             this.RatingOfMovie.TabIndex = 2;
@@ -93,8 +95,20 @@ namespace ADOPSE_IMDB_IMITATION
             this.ImageOfMovie.TabIndex = 3;
             this.ImageOfMovie.TabStop = false;
             // 
+            // RateMovieBtn
+            // 
+            this.RateMovieBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.RateMovieBtn.Location = new System.Drawing.Point(157, 74);
+            this.RateMovieBtn.Name = "RateMovieBtn";
+            this.RateMovieBtn.Size = new System.Drawing.Size(75, 23);
+            this.RateMovieBtn.TabIndex = 4;
+            this.RateMovieBtn.Text = "rate me";
+            this.RateMovieBtn.UseVisualStyleBackColor = false;
+            this.RateMovieBtn.Click += new System.EventHandler(this.RateMovieBtn_Click);
+            // 
             // SmallWindowMovie
             // 
+            this.Controls.Add(this.RateMovieBtn);
             this.Controls.Add(this.ImageOfMovie);
             this.Controls.Add(this.RatingOfMovie);
             this.Controls.Add(this.SummaryOfMovie);
@@ -106,6 +120,31 @@ namespace ADOPSE_IMDB_IMITATION
             this.PerformLayout();
 
         }
+
+        private RateMovieUserControl _rateMovieUserControl;
+
+        private void RateMovieBtn_Click(object sender, EventArgs e)
+        {
+            if(_rateMovieUserControl != null)
+                _rateMovieUserControl.RateMovieEvent -= RateMovieUserControl_RateMovieEvent;
+
+            _rateMovieUserControl = new RateMovieUserControl();
+            _rateMovieUserControl.RateMovieEvent += RateMovieUserControl_RateMovieEvent;
+            _rateMovieUserControl.ShowDialog();
+        }
+
+        private void RateMovieUserControl_RateMovieEvent(object sender, RateMovieEventArgs e)
+        {
+            _rateMovieUserControl.DialogResult = DialogResult.OK;//.Close();
+
+            MessageBox.Show($"The selected Rating, for the movie {movie.Name} is {e.Rating}", "Movie Rating");
+            //PopupMessage1.ShowToolTip(ParentForm, $"The selected Rating, for the movie {movie.Name} is {e.Rating}", Color.Green);
+
+            //#1: write rating to the MovieRatings table
+
+            //#2: test that it is added succesfully. loaded from the database again, with this userId and this movieId, show the message with the added rating
+        }
+
     }
 
     /*  private void InitializeComponent()

@@ -88,5 +88,6 @@ namespace ADOPSE_IMDB_IMITATION
         private System.Windows.Forms.Label SummaryOfMovie;
         private System.Windows.Forms.Label RatingOfMovie;
         private System.Windows.Forms.PictureBox ImageOfMovie;
+        private System.Windows.Forms.Button RateMovieBtn;
     }
 }

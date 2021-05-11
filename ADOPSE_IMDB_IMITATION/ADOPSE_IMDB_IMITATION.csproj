@@ -130,6 +130,12 @@
     <Compile Include="UserControls\Lists\ListUserControl.Designer.cs">
       <DependentUpon>ListUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Movies\RateMovieUserControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\Movies\RateMovieUserControl.Designer.cs">
+      <DependentUpon>RateMovieUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Users\Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Lists\ListUserControl.resx">
       <DependentUpon>ListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Movies\RateMovieUserControl.resx">
+      <DependentUpon>RateMovieUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Users\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
