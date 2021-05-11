@@ -15,11 +15,11 @@ namespace ADOPSE_IMDB_IMITATION
         public static bool administrator;
         public static Color ThemeColor()
         {
-            if (Session.userId != 0)
+            if (userId != 0)
             {
-                if (UserDataAccess.GetUserById(Session.userId).UserSettings.Theme == "Light")
+                if (UserDataAccess.GetUserById(userId).UserSettings.Theme == "Light")
                     return SystemColors.Control;
-                else if (UserDataAccess.GetUserById(Session.userId).UserSettings.Theme == "Dark")
+                else if (UserDataAccess.GetUserById(userId).UserSettings.Theme == "Dark")
                     return Color.FromArgb(0, 0, 0);
                 else
                     return SystemColors.Control;
@@ -29,11 +29,11 @@ namespace ADOPSE_IMDB_IMITATION
         }
         public static Color OpositeThemeColor()
         {
-            if (Session.userId != 0)
+            if (userId != 0)
             {
-                if (UserDataAccess.GetUserById(Session.userId).UserSettings.Theme == "Light")
+                if (UserDataAccess.GetUserById(userId).UserSettings.Theme == "Light")
                     return Color.FromArgb(0, 0, 0);
-                else if (UserDataAccess.GetUserById(Session.userId).UserSettings.Theme == "Dark")
+                else if (UserDataAccess.GetUserById(userId).UserSettings.Theme == "Dark")
                     return SystemColors.Control;
                 else
                     return Color.FromArgb(0, 0, 0);

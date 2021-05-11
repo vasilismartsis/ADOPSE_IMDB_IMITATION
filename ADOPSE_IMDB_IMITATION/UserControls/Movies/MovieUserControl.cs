@@ -1,5 +1,6 @@
 ﻿using ADOPSE_IMDB_IMITATION.DataAccess;
 using ADOPSE_IMDB_IMITATION.Models;
+using ADOPSE_IMDB_IMITATION.UserControls.Movies;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,10 +22,10 @@ namespace ADOPSE_IMDB_IMITATION
 
         private Image img;
 
-        public MovieUserControl(int movieId)
+        public MovieUserControl(Movie movie)
         {
-            movie = MovieDataAccess.GetMovieById(movieId);
-
+            this.movie = movie;
+            InitializeComponent();
             Session.SetThemeColor(this);
         }
 
@@ -85,9 +86,25 @@ namespace ADOPSE_IMDB_IMITATION
 
         void DisplayMovieDetails()
         {
+
             NameOfMovie.Text = movie.Name;
             RatingOfMovie.Text = "Rating : " + movie.Score + "/10";
-            ImageOfMovie.Image = img;
+            ImageOfMovie.Image = this.setImage(movie.Image);
+
+            UserDataAccess.UpdateUserHistory(new UserHistory
+            {
+                userId = Session.userId,
+                movieId = movie.Id
+            }
+
+                );
+            if (movie.IsSeries == true)
+            {
+                EpisodesUserControl x = new EpisodesUserControl();
+                flowLayoutMovie.Controls.Add(x);
+            }
+
+
         }
     }
 }

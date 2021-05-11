@@ -16,5 +16,6 @@ namespace ADOPSE_IMDB_IMITATION.Models
         public string DateOfBirth { get; set; }
         public bool IsAdministrator { get; set; }
         public UserSettings UserSettings { get; set; }
+        public UserHistory UserHistory { get; set; }
     }
 }

@@ -31,6 +31,8 @@ namespace ADOPSE_IMDB_IMITATION
         {
             InitializeComponent();
 
+            Session.SetThemeColor(this, new List<Object> { new Button() });
+
             this.movie = movie;
             isInEditMode = true;
         }

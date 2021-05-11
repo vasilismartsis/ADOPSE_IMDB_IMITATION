@@ -20,7 +20,7 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
         {
             InitializeComponent();
 
-            Session.SetThemeColor(this);
+            Session.SetThemeColor(this, new List<object> { new DataGridView() });
         }
 
         private void EditMovie_Load(object sender, EventArgs e)
@@ -28,11 +28,23 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
             MoviesGridView.DataSource = MovieDataAccess.GetAllMovies();
             MoviesGridView.CellDoubleClick += MoviesGridView_CellContentDoubleClick;
             MoviesGridView.MultiSelect = false;
+
+            foreach (DataGridViewRow dataGridViewRow in MoviesGridView.Rows)
+                dataGridViewRow.ReadOnly = true;
         }
 
         private void MoviesGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             MainPanelUserControlOpener.OpenUserControl(new AddEditMovie((Movie)MoviesGridView.CurrentRow.DataBoundItem));
+        }
+
+        private void SearchMovieTextBox_TextChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow dataGridViewRow in MoviesGridView.Rows)
+                if (dataGridViewRow.Cells[1].Value.ToString().ToLower().Contains(SearchMovieTextBox.Text.ToLower()))
+                    dataGridViewRow.Visible = true;
+                else if (dataGridViewRow.Index != 0 && SearchMovieTextBox.Text != "Search Movie")
+                    dataGridViewRow.Visible = false;
         }
     }
 }

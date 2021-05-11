@@ -19,7 +19,7 @@ namespace ADOPSE_IMDB_IMITATION
         {
             InitializeComponent();
 
-            Session.SetThemeColor(this);
+            Session.SetThemeColor(this, new List<Object> { new PlaceholderTextBox() });
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
