@@ -177,8 +177,10 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
             return movies;
         }
 
-        static float GetMovieScoreByMovieId(int movieId)
+        static float? GetMovieScoreByMovieId(int movieId)
         {
+            float? result = null;       //this Movie has no rating yet
+
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
             {
                 const string commandText = "" +
@@ -198,18 +200,20 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                     int sum = 0;
                     int total = 0;
 
-                    while (reader.Read())
+                    //the movie has already some ratings
+                    if (reader.HasRows)
                     {
-                        sum += reader.GetInt32(0);
-                        total++;
+                        while (reader.Read())
+                        {
+                            sum += reader.GetInt32(0);
+                            total++;
+                        }
+                        result = sum / total;
                     }
-
-                    if (total != 0)
-                        return sum / total;
-                    else
-                        return 10;
                 }
             }
+
+            return result;
         }
 
         public static void RateMovie(int movieId, int score)

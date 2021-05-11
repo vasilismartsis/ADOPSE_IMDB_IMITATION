@@ -38,7 +38,7 @@ namespace ADOPSE_IMDB_IMITATION
         public void ShowInfo(MovieUserControl m)
         {
             NameOfMovie.Text = movie.Name;
-            RatingOfMovie.Text = "Rating: " + movie.Score + "/10";
+            RatingOfMovie.Text = movie.GetRatingDisplayName;
             ImageOfMovie.Image = m.getImage();
         }
 

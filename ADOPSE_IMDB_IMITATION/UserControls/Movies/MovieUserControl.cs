@@ -88,16 +88,15 @@ namespace ADOPSE_IMDB_IMITATION
         {
 
             NameOfMovie.Text = movie.Name;
-            RatingOfMovie.Text = "Rating : " + movie.Score + "/10";
+            RatingOfMovie.Text = movie.GetRatingDisplayName;
             ImageOfMovie.Image = this.setImage(movie.Image);
 
             UserDataAccess.UpdateUserHistory(new UserHistory
             {
                 userId = Session.userId,
                 movieId = movie.Id
-            }
+            });
 
-                );
             if (movie.IsSeries == true)
             {
                 EpisodesUserControl x = new EpisodesUserControl();

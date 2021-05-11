@@ -16,6 +16,8 @@ namespace ADOPSE_IMDB_IMITATION.Models
         public string Director { get; set; }
         public bool IsSeries { get; set; }
         public string Description { get; set; }
-        public float Score { get; set; }
+        public float? Score { get; set; }
+
+        public string GetRatingDisplayName { get { return Score.HasValue ? $"Rating : {Score}/10" : "-- no rating yet --"; } }
     }
 }
