@@ -32,6 +32,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.ImageOfMovie = new System.Windows.Forms.PictureBox();
             this.NameOfMovie = new System.Windows.Forms.Label();
             this.RatingOfMovie = new System.Windows.Forms.Label();
+            this.RateMovieBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ImageOfMovie)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,17 +60,30 @@ namespace ADOPSE_IMDB_IMITATION
             // RatingOfMovie
             // 
             this.RatingOfMovie.AutoSize = true;
-            this.RatingOfMovie.Location = new System.Drawing.Point(259, 95);
+            this.RatingOfMovie.Location = new System.Drawing.Point(259, 70);
             this.RatingOfMovie.Name = "RatingOfMovie";
             this.RatingOfMovie.Size = new System.Drawing.Size(78, 13);
             this.RatingOfMovie.TabIndex = 2;
             this.RatingOfMovie.Text = "RatingOfMovie";
+            // 
+            // RateMovieBtn
+            // 
+            this.RateMovieBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.RateMovieBtn.Location = new System.Drawing.Point(259, 100);
+            this.RateMovieBtn.Name = "RateMovieBtn";
+            this.RateMovieBtn.Size = new System.Drawing.Size(75, 23);
+            this.RateMovieBtn.TabIndex = 4;
+            this.RateMovieBtn.Text = "rate me";
+            this.RateMovieBtn.Visible = false;
+            this.RateMovieBtn.UseVisualStyleBackColor = false;
+            this.RateMovieBtn.Click += new System.EventHandler(this.RateMovieBtn_Click);
             // 
             // SmallWindowMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.RatingOfMovie);
+            this.Controls.Add(this.RateMovieBtn);
             this.Controls.Add(this.NameOfMovie);
             this.Controls.Add(this.ImageOfMovie);
             this.Name = "SmallWindowMovie";

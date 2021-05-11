@@ -67,6 +67,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ADOPSE_IMDB_IMITATIONDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\MovieRatingDataAccess.cs" />
     <Compile Include="DataAccess\GenresDataAccess.cs" />
     <Compile Include="DataAccess\ImdbListDataAccess.cs" />
     <Compile Include="DataAccess\MovieDataAccess.cs" />

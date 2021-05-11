@@ -27,17 +27,19 @@ namespace ADOPSE_IMDB_IMITATION
 
             m.setImage(movie.Image);
 
-            InitializeComponent();  //change this shit to InitializeComponent1
+            InitializeComponent1();
 
             Session.SetThemeColor(this);
+
+            if (Session.userId > 1)
+                RateMovieBtn.Visible = true;
         }
 
         public void ShowInfo(MovieUserControl m)
         {
             NameOfMovie.Text = movie.Name;
-            RatingOfMovie.Text = "Rating xxxx: " + movie.Score + "/10";
+            RatingOfMovie.Text = "Rating: " + movie.Score + "/10";
             ImageOfMovie.Image = m.getImage();
-            RateMovieBtn.Visible = true;
         }
 
         private void SmallWindowMovie_Load(object sender, EventArgs e)
@@ -105,6 +107,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.RateMovieBtn.TabIndex = 4;
             this.RateMovieBtn.Text = "rate me";
             this.RateMovieBtn.UseVisualStyleBackColor = false;
+            this.RateMovieBtn.Visible = false;
             this.RateMovieBtn.Click += new System.EventHandler(this.RateMovieBtn_Click);
             // 
             // SmallWindowMovie
@@ -138,14 +141,10 @@ namespace ADOPSE_IMDB_IMITATION
         {
             _rateMovieUserControl.DialogResult = DialogResult.OK;//.Close();
 
+            MovieRatingDataAccess.AddOrUpdateMovieRating(new MovieRatingFromDB() { userId = Session.userId, movieId = movie.Id, score = int.Parse(e.Rating) });
+
             MessageBox.Show($"The selected Rating, for the movie {movie.Name} is {e.Rating}", "Movie Rating");
-            //PopupMessage1.ShowToolTip(ParentForm, $"The selected Rating, for the movie {movie.Name} is {e.Rating}", Color.Green);
-
-            //#1: write rating to the MovieRatings table
-
-            //#2: test that it is added succesfully. loaded from the database again, with this userId and this movieId, show the message with the added rating
         }
-
     }
 
     /*  private void InitializeComponent()
