@@ -194,5 +194,13 @@ namespace ADOPSE_IMDB_IMITATION
         {
             MainPanelUserControlOpener.OpenUserControl(new BrowseActorsUserControl());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //only run once to create the index
+            //DataAccess.index_test.index_creator();
+
+            DataAccess.index_test.index_searcher_by_name(SearchIMDBInput.Text);
+        }
     }
 }
