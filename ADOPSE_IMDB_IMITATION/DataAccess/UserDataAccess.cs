@@ -216,5 +216,29 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 }
             }
         }
+        public static List<int> GetUserHistory()
+        {
+            var list = new List<int>();
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                const string commandText = "" +
+                    "SELECT DISTINCT movieId " +
+                    "FROM UsersMovieHistory " +
+                   
+                    "WHERE userId= @userId " +
+                   
+                    ";";
+                SqlCommand command = new SqlCommand(commandText, connection);
+                command.Parameters.AddWithValue("@userId", Session.userId);
+                connection.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                     int movieId = int.Parse(reader["movieId"].ToString());
+                    list.Add(movieId);
+                }
+            }
+            return list;
+        }
     }
 }

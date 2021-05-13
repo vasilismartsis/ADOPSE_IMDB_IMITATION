@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace ADOPSE_IMDB_IMITATION.DataAccess
 {
     public static class MovieDataAccess
@@ -285,6 +284,36 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                     return false;
                 }
             }
+        }
+        public static List<int> GetMoviesByGenre(Genre genre) 
+        {
+            List<int> list = new List<int>();
+            int genreId;
+            genreId = GenresDataAccess.GetGenreIdByName(genre.Name);
+            if (genreId != 0)
+            {
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+                {
+                    string commandText = "" +
+                        "SELECT movieId " +
+                        "FROM GenreEntries " +
+                        "WHERE genreId=@genreId " +
+                        ";";
+                    SqlCommand command = new SqlCommand(commandText, connection);
+                    command.Parameters.AddWithValue("@genreId", genreId);
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                            list.Add(int.Parse(reader["movieId"].ToString()));
+                    }
+                }
+            }
+            else
+            {
+                list = null;
+            }
+            return list;
         }
     }
 }
