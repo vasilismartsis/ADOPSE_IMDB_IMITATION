@@ -25,7 +25,7 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
 
         private void EditMovie_Load(object sender, EventArgs e)
         {
-            MoviesGridView.DataSource = MovieDataAccess.GetAllMovies();
+            MoviesGridView.DataSource = MovieDataAccess.GetAllMovies(MovieType.All);
             MoviesGridView.CellDoubleClick += MoviesGridView_CellContentDoubleClick;
             MoviesGridView.MultiSelect = false;
 

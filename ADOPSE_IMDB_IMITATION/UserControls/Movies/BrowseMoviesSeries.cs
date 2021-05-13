@@ -14,30 +14,27 @@ namespace ADOPSE_IMDB_IMITATION.UserControls
 {
     public partial class BrowseMoviesSeries : UserControl
     {
-        List<Movie> movies;
+        private List<Movie> _movies;
+        private MovieType _movieType;
 
-        public void FillList() // Get the ids of the movies
-        {
-            movies = MovieDataAccess.GetAllMovies();
-        }
-        public BrowseMoviesSeries()
+        public BrowseMoviesSeries(MovieType movieType)
         {
             InitializeComponent();
+
+            _movieType = movieType;
 
             Session.SetThemeColor(this);
         }
         public void ShowAllSmallWindowMovie()
         {
-            for (int i = 0; i < movies.Count(); i++)
-            {
-                SmallWindowMovie x = new SmallWindowMovie(movies[i].Id);
-                flowLayoutBrowseMovies.Controls.Add(x);
-            }
+            foreach (var movie in _movies)
+                flowLayoutBrowseMovies.Controls.Add(new SmallWindowMovie(movie.Id));
         }
 
         private void BrowseMoviesUI_Load(object sender, EventArgs e)
         {
-            FillList();
+            _movies = MovieDataAccess.GetAllMovies(_movieType);
+
             ShowAllSmallWindowMovie();
 
         }

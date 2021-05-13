@@ -115,7 +115,7 @@ namespace ADOPSE_IMDB_IMITATION
 
         private void browseMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries());
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(MovieType.Movie));
         }
 
         #endregion
@@ -197,7 +197,7 @@ namespace ADOPSE_IMDB_IMITATION
 
         private void browseSeriesMenuItem_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries());
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(MovieType.Series));
         }
     }
 }

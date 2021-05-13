@@ -45,7 +45,7 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
         {
             List<Movie> listofSeries = new List<Movie>();
             List<Movie> listofAllMovies = new List<Movie>();
-            listofAllMovies = MovieDataAccess.GetAllMovies();
+            listofAllMovies = MovieDataAccess.GetAllMovies(MovieType.All);
             foreach (Movie movie in listofAllMovies) 
             {
                 if (movie.IsSeries == true)
@@ -60,7 +60,7 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
         public static List<Movie> GetOnlyMovies()
         {
             List<Movie> listofMovies = new List<Movie>();
-            List<Movie> listofAllMovies = MovieDataAccess.GetAllMovies();
+            List<Movie> listofAllMovies = MovieDataAccess.GetAllMovies(MovieType.All);
             foreach (Movie movie in listofAllMovies)
             {
                 if (movie.IsSeries == false)
@@ -75,7 +75,7 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
         public static List<Movie> GetMoviesByDirector(String director)
         {
             List<Movie> movies = new List<Movie>();
-            List<Movie> listofAllMovies = MovieDataAccess.GetAllMovies();
+            List<Movie> listofAllMovies = MovieDataAccess.GetAllMovies(MovieType.All);
             foreach (Movie movie in listofAllMovies)
             {
                 if (movie.Director == director)
@@ -101,7 +101,7 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
             
             
             List<Movie> listOfmovies = new List<Movie>();
-            List<Movie> listofAllMovies = MovieDataAccess.GetAllMovies();
+            List<Movie> listofAllMovies = MovieDataAccess.GetAllMovies(MovieType.All);
             foreach (Movie movie in listofAllMovies)
             {
                 if ( Convert.ToDateTime(movie.ReleaseDate) >= earliest )

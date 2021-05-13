@@ -8,18 +8,45 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace ADOPSE_IMDB_IMITATION.DataAccess
 {
+    public enum MovieType
+    {
+        All = 0,
+        Movie = 1,
+        Series = 2,
+    }
+
     public static class MovieDataAccess
     {
-        public static List<Movie> GetAllMovies()
+        /// <summary>
+        /// Retrieves all movies, according to the movieType parameter
+        /// </summary>
+        /// <param name="movieType"></param>
+        /// <returns></returns>
+        public static List<Movie> GetAllMovies(MovieType movieType)
         {
             var movies = new List<Movie>();
+            string whereClause = string.Empty;
+
+            switch (movieType)
+            {
+                case MovieType.Movie:
+                    whereClause = "Where isSeries = 'false'";
+                    break;
+
+                case MovieType.Series:
+                    whereClause = "Where isSeries = 'true'";
+                    break;
+
+                case MovieType.All:
+                default:
+                    break;
+            }
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
             {
-                const string commandText = "" +
-                    "SELECT *" +
-                    "FROM Movies" +
-                    ";";
+                string commandText =
+                    $@"SELECT Id, name, releaseDate, image, trailer, director, isSeries, description 
+                    FROM Movies {whereClause};";
 
                 SqlCommand command = new SqlCommand(commandText, connection);
 
@@ -285,7 +312,7 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 }
             }
         }
-        public static List<int> GetMoviesByGenre(Genre genre) 
+        public static List<int> GetMoviesByGenre(Genre genre)
         {
             List<int> list = new List<int>();
 
