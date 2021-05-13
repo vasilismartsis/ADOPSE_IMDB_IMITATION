@@ -1,4 +1,5 @@
 ﻿using ADOPSE_IMDB_IMITATION.DataAccess;
+using ADOPSE_IMDB_IMITATION.Enums;
 using ADOPSE_IMDB_IMITATION.UserControls;
 using ADOPSE_IMDB_IMITATION.UserControls.Movies;
 using ADOPSE_IMDB_IMITATION.UserControls.Nena;
@@ -115,7 +116,7 @@ namespace ADOPSE_IMDB_IMITATION
 
         private void browseMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(MovieType.Movie));
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Browse, MovieType.Movie));
         }
 
         #endregion
@@ -197,7 +198,22 @@ namespace ADOPSE_IMDB_IMITATION
 
         private void browseSeriesMenuItem_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(MovieType.Series));
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Browse, MovieType.Series));
+        }
+
+        private void showTop10MoviesMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Order, MovieType.Movie));
+        }
+
+        private void showTop10SeriesMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Order, MovieType.Series));
+        }
+
+        private void showTop10ActorsMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

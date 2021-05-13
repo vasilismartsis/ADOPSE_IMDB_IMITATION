@@ -1,4 +1,5 @@
 ﻿using ADOPSE_IMDB_IMITATION.DataAccess;
+using ADOPSE_IMDB_IMITATION.Enums;
 using ADOPSE_IMDB_IMITATION.Models;
 using ADOPSE_IMDB_IMITATION.UserControls.Nena;
 using System;

@@ -48,11 +48,14 @@ namespace ADOPSE_IMDB_IMITATION
             this.ReportAProblemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.browseMoviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.browseActorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TypeComboBox = new System.Windows.Forms.ComboBox();
             this.SearchPanel = new System.Windows.Forms.Panel();
-            this.SearchIMDBInput = new PlaceholderTextBox();
             this.ComboBoxTimer = new System.Windows.Forms.Timer(this.components);
             this.browseSeriesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SearchIMDBInput = new PlaceholderTextBox();
+            this.showTop10MoviesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showTop10SeriesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showTop10ActorsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TypeComboBox = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.SearchPanel.SuspendLayout();
             this.SuspendLayout();
@@ -64,10 +67,13 @@ namespace ADOPSE_IMDB_IMITATION
             this.ProfileButton,
             this.browseMoviesToolStripMenuItem,
             this.browseSeriesMenuItem,
-            this.browseActorsToolStripMenuItem});
+            this.browseActorsToolStripMenuItem,
+            this.showTop10MoviesMenuItem,
+            this.showTop10SeriesMenuItem,
+            this.showTop10ActorsMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(580, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -205,6 +211,64 @@ namespace ADOPSE_IMDB_IMITATION
             this.browseActorsToolStripMenuItem.Text = "Browse Actors";
             this.browseActorsToolStripMenuItem.Click += new System.EventHandler(this.browseActorsToolStripMenuItem_Click);
             // 
+            // SearchPanel
+            // 
+            this.SearchPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.SearchPanel.AutoSize = true;
+            this.SearchPanel.Controls.Add(this.SearchIMDBInput);
+            this.SearchPanel.Controls.Add(this.TypeComboBox);
+            this.SearchPanel.Location = new System.Drawing.Point(330, 3);
+            this.SearchPanel.Name = "SearchPanel";
+            this.SearchPanel.Size = new System.Drawing.Size(213, 21);
+            this.SearchPanel.TabIndex = 3;
+            // 
+            // ComboBoxTimer
+            // 
+            this.ComboBoxTimer.Tick += new System.EventHandler(this.ComboBoxTimer_Tick);
+            // 
+            // browseSeriesMenuItem
+            // 
+            this.browseSeriesMenuItem.Name = "browseSeriesMenuItem";
+            this.browseSeriesMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.browseSeriesMenuItem.Text = "Browse Series";
+            this.browseSeriesMenuItem.Click += new System.EventHandler(this.browseSeriesMenuItem_Click);
+            // 
+            // SearchIMDBInput
+            // 
+            this.SearchIMDBInput.AcceptsReturn = true;
+            this.SearchIMDBInput.AcceptsTab = true;
+            this.SearchIMDBInput.AccessibleName = "";
+            this.SearchIMDBInput.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SearchIMDBInput.ForeColor = System.Drawing.Color.DarkGray;
+            this.SearchIMDBInput.Location = new System.Drawing.Point(39, 0);
+            this.SearchIMDBInput.Multiline = true;
+            this.SearchIMDBInput.Name = "SearchIMDBInput";
+            this.SearchIMDBInput.Placeholder = "Search IMDB";
+            this.SearchIMDBInput.Size = new System.Drawing.Size(174, 21);
+            this.SearchIMDBInput.TabIndex = 1;
+            this.SearchIMDBInput.Text = "Search IMDB";
+            // 
+            // showTop10MoviesMenuItem
+            // 
+            this.showTop10MoviesMenuItem.Name = "showTop10MoviesMenuItem";
+            this.showTop10MoviesMenuItem.Size = new System.Drawing.Size(126, 20);
+            this.showTop10MoviesMenuItem.Text = "Show Top 10 Movies";
+            this.showTop10MoviesMenuItem.Click += new System.EventHandler(this.showTop10MoviesMenuItem_Click);
+            // 
+            // showTop10SeriesMenuItem
+            // 
+            this.showTop10SeriesMenuItem.Name = "showTop10SeriesMenuItem";
+            this.showTop10SeriesMenuItem.Size = new System.Drawing.Size(118, 20);
+            this.showTop10SeriesMenuItem.Text = "Show Top 10 Series";
+            this.showTop10SeriesMenuItem.Click += new System.EventHandler(this.showTop10SeriesMenuItem_Click);
+            // 
+            // showTop10ActorsMenuItem
+            // 
+            this.showTop10ActorsMenuItem.Name = "showTop10ActorsMenuItem";
+            this.showTop10ActorsMenuItem.Size = new System.Drawing.Size(122, 20);
+            this.showTop10ActorsMenuItem.Text = "Show Top 10 Actors";
+            this.showTop10ActorsMenuItem.Click += new System.EventHandler(this.showTop10ActorsMenuItem_Click);
+            // 
             // TypeComboBox
             // 
             this.TypeComboBox.Dock = System.Windows.Forms.DockStyle.Left;
@@ -223,43 +287,6 @@ namespace ADOPSE_IMDB_IMITATION
             this.TypeComboBox.Enter += new System.EventHandler(this.TypeComboBox_Enter);
             this.TypeComboBox.Leave += new System.EventHandler(this.TypeComboBox_Leave);
             // 
-            // SearchPanel
-            // 
-            this.SearchPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.SearchPanel.AutoSize = true;
-            this.SearchPanel.Controls.Add(this.SearchIMDBInput);
-            this.SearchPanel.Controls.Add(this.TypeComboBox);
-            this.SearchPanel.Location = new System.Drawing.Point(228, 3);
-            this.SearchPanel.Name = "SearchPanel";
-            this.SearchPanel.Size = new System.Drawing.Size(213, 21);
-            this.SearchPanel.TabIndex = 3;
-            // 
-            // SearchIMDBInput
-            // 
-            this.SearchIMDBInput.AcceptsReturn = true;
-            this.SearchIMDBInput.AcceptsTab = true;
-            this.SearchIMDBInput.AccessibleName = "";
-            this.SearchIMDBInput.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SearchIMDBInput.ForeColor = System.Drawing.Color.DarkGray;
-            this.SearchIMDBInput.Location = new System.Drawing.Point(39, 0);
-            this.SearchIMDBInput.Multiline = true;
-            this.SearchIMDBInput.Name = "SearchIMDBInput";
-            this.SearchIMDBInput.Placeholder = "Search IMDB";
-            this.SearchIMDBInput.Size = new System.Drawing.Size(174, 21);
-            this.SearchIMDBInput.TabIndex = 1;
-            this.SearchIMDBInput.Text = "Search IMDB";
-            // 
-            // ComboBoxTimer
-            // 
-            this.ComboBoxTimer.Tick += new System.EventHandler(this.ComboBoxTimer_Tick);
-            // 
-            // browseSeriesMenuItem
-            // 
-            this.browseSeriesMenuItem.Name = "browseSeriesMenuItem";
-            this.browseSeriesMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.browseSeriesMenuItem.Text = "Browse Series";
-            this.browseSeriesMenuItem.Click += new System.EventHandler(this.browseSeriesMenuItem_Click);
-            // 
             // MenuBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,7 +294,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.Controls.Add(this.SearchPanel);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MenuBar";
-            this.Size = new System.Drawing.Size(580, 192);
+            this.Size = new System.Drawing.Size(784, 192);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.SearchPanel.ResumeLayout(false);
@@ -295,12 +322,15 @@ namespace ADOPSE_IMDB_IMITATION
         private System.Windows.Forms.ToolStripMenuItem AddActorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ReportAProblemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem browseMoviesToolStripMenuItem;
-        private System.Windows.Forms.ComboBox TypeComboBox;
         private System.Windows.Forms.Panel SearchPanel;
         private System.Windows.Forms.Timer ComboBoxTimer;
         private System.Windows.Forms.ToolStripMenuItem EditActorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showAllActorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem browseActorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem browseSeriesMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showTop10MoviesMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showTop10SeriesMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showTop10ActorsMenuItem;
+        private System.Windows.Forms.ComboBox TypeComboBox;
     }
 }

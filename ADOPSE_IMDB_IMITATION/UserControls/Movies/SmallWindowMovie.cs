@@ -19,7 +19,7 @@ namespace ADOPSE_IMDB_IMITATION
         private GenericRatingUserControl _genericRatingUserControl;
         MovieUserControl m;
 
-        public SmallWindowMovie(int movieId)
+        public SmallWindowMovie(int movieId, bool showOrderLabel, int? orderOfMovie)
         {
             movie = MovieDataAccess.GetMovieById(movieId);
 
@@ -31,8 +31,17 @@ namespace ADOPSE_IMDB_IMITATION
 
             Session.SetThemeColor(this);
 
-            if (Session.userId > 1)
+            if (Session.userId > 1 && !showOrderLabel)
                 RateMovieBtn.Visible = true;
+
+            if (showOrderLabel)
+            {
+                if (!orderOfMovie.HasValue)
+                    throw new NotSupportedException("With showOrderLabel == true you must send a orderOfMovie parameter!");
+
+                MovieOrderLabel.Visible = true;
+                MovieOrderLabel.Text = $"#: {orderOfMovie}";
+            }
         }
 
         public void ShowInfo(MovieUserControl m)
@@ -60,6 +69,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.RatingOfMovie = new System.Windows.Forms.Label();
             this.ImageOfMovie = new System.Windows.Forms.PictureBox();
             this.RateMovieBtn = new System.Windows.Forms.Button();
+            this.MovieOrderLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ImageOfMovie)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,7 +102,7 @@ namespace ADOPSE_IMDB_IMITATION
             // 
             // ImageOfMovie
             // 
-            this.ImageOfMovie.Location = new System.Drawing.Point(3, 3);
+            this.ImageOfMovie.Location = new System.Drawing.Point(27, 3);
             this.ImageOfMovie.Name = "ImageOfMovie";
             this.ImageOfMovie.Size = new System.Drawing.Size(124, 106);
             this.ImageOfMovie.TabIndex = 3;
@@ -110,8 +120,20 @@ namespace ADOPSE_IMDB_IMITATION
             this.RateMovieBtn.Visible = false;
             this.RateMovieBtn.Click += new System.EventHandler(this.RateMovieBtn_Click);
             // 
+            // MovieOrderLabel
+            // 
+            this.MovieOrderLabel.AutoSize = true;
+            this.MovieOrderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MovieOrderLabel.Location = new System.Drawing.Point(210, 55);
+            this.MovieOrderLabel.Name = "MovieOrderLabel";
+            this.MovieOrderLabel.Size = new System.Drawing.Size(17, 17);
+            this.MovieOrderLabel.TabIndex = 6;
+            this.MovieOrderLabel.Text = "#";
+            this.MovieOrderLabel.Visible = false;
+            // 
             // SmallWindowMovie
             // 
+            this.Controls.Add(this.MovieOrderLabel);
             this.Controls.Add(this.RateMovieBtn);
             this.Controls.Add(this.ImageOfMovie);
             this.Controls.Add(this.RatingOfMovie);
@@ -128,7 +150,7 @@ namespace ADOPSE_IMDB_IMITATION
 
         private void RateMovieBtn_Click(object sender, EventArgs e)
         {
-            if(_genericRatingUserControl != null)
+            if (_genericRatingUserControl != null)
                 _genericRatingUserControl.RateMovieEvent -= GenericRatingUserControl_RateMovieEvent;
 
             _genericRatingUserControl = new GenericRatingUserControl("Movie");

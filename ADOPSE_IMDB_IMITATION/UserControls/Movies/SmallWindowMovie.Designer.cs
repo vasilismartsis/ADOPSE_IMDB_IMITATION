@@ -33,6 +33,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.NameOfMovie = new System.Windows.Forms.Label();
             this.RatingOfMovie = new System.Windows.Forms.Label();
             this.RateMovieBtn = new System.Windows.Forms.Button();
+            this.MovieOrderLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ImageOfMovie)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +79,17 @@ namespace ADOPSE_IMDB_IMITATION
             this.RateMovieBtn.UseVisualStyleBackColor = false;
             this.RateMovieBtn.Click += new System.EventHandler(this.RateMovieBtn_Click);
             // 
+            // MovieOrderLabel
+            // 
+            this.MovieOrderLabel.AutoSize = true;
+            this.MovieOrderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MovieOrderLabel.Location = new System.Drawing.Point(210, 55);
+            this.MovieOrderLabel.Name = "MovieOrderLabel";
+            this.MovieOrderLabel.Size = new System.Drawing.Size(17, 17);
+            this.MovieOrderLabel.TabIndex = 6;
+            this.MovieOrderLabel.Text = "#";
+            this.MovieOrderLabel.Visible = false;
+            // 
             // SmallWindowMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -86,6 +98,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.Controls.Add(this.RateMovieBtn);
             this.Controls.Add(this.NameOfMovie);
             this.Controls.Add(this.ImageOfMovie);
+            this.Controls.Add(this.MovieOrderLabel);
             this.Name = "SmallWindowMovie";
             this.Size = new System.Drawing.Size(373, 150);
             this.Load += new System.EventHandler(this.SmallWindowMovie_Load);
@@ -103,5 +116,6 @@ namespace ADOPSE_IMDB_IMITATION
         private System.Windows.Forms.Label RatingOfMovie;
         private System.Windows.Forms.PictureBox ImageOfMovie;
         private System.Windows.Forms.Button RateMovieBtn;
+        private System.Windows.Forms.Label MovieOrderLabel;
     }
 }

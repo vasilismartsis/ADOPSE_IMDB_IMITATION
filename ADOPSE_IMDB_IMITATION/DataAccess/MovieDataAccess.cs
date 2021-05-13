@@ -1,4 +1,5 @@
-﻿using ADOPSE_IMDB_IMITATION.Models;
+﻿using ADOPSE_IMDB_IMITATION.Enums;
+using ADOPSE_IMDB_IMITATION.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -8,13 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace ADOPSE_IMDB_IMITATION.DataAccess
 {
-    public enum MovieType
-    {
-        All = 0,
-        Movie = 1,
-        Series = 2,
-    }
-
     public static class MovieDataAccess
     {
         /// <summary>
@@ -30,11 +24,11 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
             switch (movieType)
             {
                 case MovieType.Movie:
-                    whereClause = "Where isSeries = 'false'";
+                    whereClause = "Where m.isSeries = 'false'";
                     break;
 
                 case MovieType.Series:
-                    whereClause = "Where isSeries = 'true'";
+                    whereClause = "Where m.isSeries = 'true'";
                     break;
 
                 case MovieType.All:
@@ -45,8 +39,25 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
             {
                 string commandText =
-                    $@"SELECT Id, name, releaseDate, image, trailer, director, isSeries, description 
-                    FROM Movies {whereClause};";
+                    $@"SELECT
+                               m.[Id]
+                              ,m.[name]
+                              ,m.[releaseDate]
+                              ,m.[image]
+                              ,m.[trailer]
+                              ,m.[director]
+                              ,m.[isSeries]
+                              ,m.[description]
+	                          ,movRtngs.FinalScore
+                        FROM
+                             Movies m
+                        LEFT OUTER JOIN
+                             (
+                             select movieId, (sum(score) / count(1)) as FinalScore
+			                        from MovieRatings as mr
+			                        group by mr.movieId
+                             ) AS movRtngs ON movRtngs.movieId= m.Id
+                        {whereClause};";
 
                 SqlCommand command = new SqlCommand(commandText, connection);
 
@@ -65,7 +76,8 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                             Trailer = reader["trailer"].ToString(),
                             Director = reader["director"].ToString(),
                             IsSeries = Convert.ToBoolean(reader["isSeries"]),
-                            Description = reader["description"].ToString()
+                            Description = reader["description"].ToString(),
+                            Score = reader["FinalScore"] == System.DBNull.Value ? (double?)null : Convert.ToDouble(reader["FinalScore"])
                         };
 
                         movies.Add(movie);

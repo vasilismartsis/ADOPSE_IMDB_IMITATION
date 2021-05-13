@@ -1,4 +1,5 @@
-﻿using ADOPSE_IMDB_IMITATION.Models;
+﻿using ADOPSE_IMDB_IMITATION.Enums;
+using ADOPSE_IMDB_IMITATION.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
