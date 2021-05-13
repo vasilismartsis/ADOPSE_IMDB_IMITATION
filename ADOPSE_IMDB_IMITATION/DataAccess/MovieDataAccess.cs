@@ -288,9 +288,8 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
         public static List<int> GetMoviesByGenre(Genre genre) 
         {
             List<int> list = new List<int>();
-            int genreId;
-            genreId = GenresDataAccess.GetGenreIdByName(genre.Name);
-            if (genreId != 0)
+
+            if (genre != null)
             {
                 using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
                 {
@@ -300,7 +299,7 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                         "WHERE genreId=@genreId " +
                         ";";
                     SqlCommand command = new SqlCommand(commandText, connection);
-                    command.Parameters.AddWithValue("@genreId", genreId);
+                    command.Parameters.AddWithValue("@genreId", genre.Id);
                     connection.Open();
                     using (var reader = command.ExecuteReader())
                     {
