@@ -50,9 +50,11 @@ namespace ADOPSE_IMDB_IMITATION
             this.browseActorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TypeComboBox = new System.Windows.Forms.ComboBox();
             this.SearchPanel = new System.Windows.Forms.Panel();
+            this.SearchIMDBInput = new PlaceholderTextBox();
             this.ComboBoxTimer = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
-            this.SearchIMDBInput = new PlaceholderTextBox();
+            this.test_genre = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SearchPanel.SuspendLayout();
             this.SuspendLayout();
@@ -233,21 +235,6 @@ namespace ADOPSE_IMDB_IMITATION
             this.SearchPanel.Size = new System.Drawing.Size(213, 21);
             this.SearchPanel.TabIndex = 3;
             // 
-            // ComboBoxTimer
-            // 
-            this.ComboBoxTimer.Tick += new System.EventHandler(this.ComboBoxTimer_Tick);
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Location = new System.Drawing.Point(580, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Search_Test";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // SearchIMDBInput
             // 
             this.SearchIMDBInput.AcceptsReturn = true;
@@ -263,10 +250,47 @@ namespace ADOPSE_IMDB_IMITATION
             this.SearchIMDBInput.TabIndex = 1;
             this.SearchIMDBInput.Text = "Search IMDB";
             // 
+            // ComboBoxTimer
+            // 
+            this.ComboBoxTimer.Tick += new System.EventHandler(this.ComboBoxTimer_Tick);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Location = new System.Drawing.Point(536, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Search_Test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // test_genre
+            // 
+            this.test_genre.Location = new System.Drawing.Point(618, 0);
+            this.test_genre.Name = "test_genre";
+            this.test_genre.Size = new System.Drawing.Size(75, 23);
+            this.test_genre.TabIndex = 5;
+            this.test_genre.Text = "button2";
+            this.test_genre.UseVisualStyleBackColor = true;
+            this.test_genre.Click += new System.EventHandler(this.test_genre_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(225, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "build_index";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // MenuBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.test_genre);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.SearchPanel);
             this.Controls.Add(this.menuStrip1);
@@ -306,5 +330,7 @@ namespace ADOPSE_IMDB_IMITATION
         private System.Windows.Forms.ToolStripMenuItem showAllActorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem browseActorsToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button test_genre;
+        private System.Windows.Forms.Button button2;
     }
 }

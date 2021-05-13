@@ -96,5 +96,67 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 return 0;
             }
         }
+
+        public static String GetGenreNameById(int Id)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                const string commandText = "" +
+                "SELECT name " +
+                "FROM Genres " +
+                "WHERE Id = @Id" +
+                ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@Id", Id);
+
+                connection.Open();
+
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    String name = reader["name"].ToString();
+
+                    return name;
+                }
+
+                connection.Close();
+
+                return null;
+            }
+        }
+
+        public static List<int> GetGenreIdsByMovieID(int movieId)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                const string commandText = "" +
+                "SELECT genreId " +
+                "FROM GenreEntries " +
+                "WHERE movieId = @movieId" +
+                ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@movieId", movieId);
+
+                connection.Open();
+
+                List<int> genreIds = new List<int>();
+
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    genreIds.Add(reader.GetInt32(0));
+                }
+
+                connection.Close();
+
+                return genreIds;
+            }
+        }
     }
 }

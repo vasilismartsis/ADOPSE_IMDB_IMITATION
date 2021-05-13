@@ -59,6 +59,22 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 doc.Add(new Field("Year", year.ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
                 doc.Add(new Field("Director", allMovies[i].Director, Field.Store.YES, Field.Index.ANALYZED));
 
+                //this is to get the genreIDs from GenreEntries that correspond to the movie id
+
+                List<int> genreIds = GenresDataAccess.GetGenreIdsByMovieID(allMovies[i].Id);
+
+                //this is to get the genre names from Genre table through previously fetched genreIds
+
+                List<string> GenresList = new List<string>();
+                foreach (int k in genreIds)
+                {
+                    String genreName = GenresDataAccess.GetGenreNameById(k);
+                    GenresList.Add(genreName.Trim());
+                }
+
+                string Genres = string.Join(" ", GenresList);
+                doc.Add(new Field("Genres", Genres, Field.Store.YES, Field.Index.ANALYZED));
+
                 writer.AddDocument(doc);
             }
 
@@ -89,7 +105,8 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
 
                 //Console.WriteLine("{0}. score {1}", i + 1, score);
                 //Console.WriteLine("ID: {0}", doc.Get("id"));
-                Console.WriteLine("Text found: {0}\r\n", doc.Get("Name"));
+                //Console.WriteLine("Text found: {0}\r\nwith genres {1}", doc.Get("Name"), doc.Get("Genres"));
+                Console.WriteLine("Text found: >" + doc.Get("Name") + "<" + ">" + doc.Get("Genres")  +"<");
             }
         }
 
@@ -101,6 +118,32 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
             IndexSearcher searcher = new IndexSearcher(dir);
             QueryParser parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "Year", analyzer);
             Query query = parser.Parse("2021");
+            TopDocs topDocs = searcher.Search(query, 10);
+
+            int results = topDocs.ScoreDocs.Length;
+            Console.WriteLine("Found {0} results", results);
+
+            for (int i = 0; i < results; i++)
+            {
+                ScoreDoc scoreDoc = topDocs.ScoreDocs[i];
+                float score = scoreDoc.Score;
+                int docId = scoreDoc.Doc;
+                Document doc = searcher.Doc(docId);
+
+                //Console.WriteLine("{0}. score {1}", i + 1, score);
+                //Console.WriteLine("ID: {0}", doc.Get("id"));
+                Console.WriteLine("Text found: {0}\r\n", doc.Get("Name"));
+            }
+        }
+
+        public static void index_searcher_by_genre()
+        {
+            var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
+            var analyzer = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30);
+
+            IndexSearcher searcher = new IndexSearcher(dir);
+            QueryParser parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "Genres", analyzer);
+            Query query = parser.Parse("Drama");
             TopDocs topDocs = searcher.Search(query, 10);
 
             int results = topDocs.ScoreDocs.Length;

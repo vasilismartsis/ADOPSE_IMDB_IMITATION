@@ -202,5 +202,16 @@ namespace ADOPSE_IMDB_IMITATION
 
             DataAccess.index_test.index_searcher_by_name(SearchIMDBInput.Text);
         }
+
+        private void test_genre_Click(object sender, EventArgs e)
+        {
+            DataAccess.index_test.index_searcher_by_genre();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //only run once to create the index
+            DataAccess.index_test.index_creator();
+        }
     }
 }
