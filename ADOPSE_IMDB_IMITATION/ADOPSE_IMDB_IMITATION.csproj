@@ -74,6 +74,7 @@
     <Compile Include="DataAccess\MovieDataAccess.cs" />
     <Compile Include="DataAccess\SearchWithFilters.cs" />
     <Compile Include="DataAccess\UserDataAccess.cs" />
+    <Compile Include="Enums\Enums.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\ImdbList.cs" />
     <Compile Include="Models\Movie.cs" />
