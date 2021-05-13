@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ADOPSE_IMDB_IMITATION.UserControls
 {
-    public partial class BrowseMovies : UserControl
+    public partial class BrowseMoviesSeries : UserControl
     {
         List<Movie> movies;
 
@@ -20,7 +20,7 @@ namespace ADOPSE_IMDB_IMITATION.UserControls
         {
             movies = MovieDataAccess.GetAllMovies();
         }
-        public BrowseMovies()
+        public BrowseMoviesSeries()
         {
             InitializeComponent();
 

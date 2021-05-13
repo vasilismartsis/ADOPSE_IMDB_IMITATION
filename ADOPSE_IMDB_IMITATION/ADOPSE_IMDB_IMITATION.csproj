@@ -122,11 +122,11 @@
     <Compile Include="UserControls\Movies\BrowseActorsUserControl.Designer.cs">
       <DependentUpon>BrowseActorsUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Movies\BrowseMovies.cs">
+    <Compile Include="UserControls\Movies\BrowseMoviesSeries.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Movies\BrowseMovies.Designer.cs">
-      <DependentUpon>BrowseMovies.cs</DependentUpon>
+    <Compile Include="UserControls\Movies\BrowseMoviesSeries.Designer.cs">
+      <DependentUpon>BrowseMoviesSeries.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Lists\CreateList.cs">
       <SubType>UserControl</SubType>
@@ -242,8 +242,8 @@
     <EmbeddedResource Include="UserControls\Movies\BrowseActorsUserControl.resx">
       <DependentUpon>BrowseActorsUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Movies\BrowseMovies.resx">
-      <DependentUpon>BrowseMovies.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Movies\BrowseMoviesSeries.resx">
+      <DependentUpon>BrowseMoviesSeries.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Lists\CreateList.resx">
       <DependentUpon>CreateList.cs</DependentUpon>

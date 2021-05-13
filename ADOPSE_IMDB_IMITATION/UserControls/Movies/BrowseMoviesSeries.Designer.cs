@@ -1,7 +1,7 @@
 ﻿
 namespace ADOPSE_IMDB_IMITATION.UserControls
 {
-    partial class BrowseMovies
+    partial class BrowseMoviesSeries
     {
         /// <summary> 
         /// Required designer variable.
