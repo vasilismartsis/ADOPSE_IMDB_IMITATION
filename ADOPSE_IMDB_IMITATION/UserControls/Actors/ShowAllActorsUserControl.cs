@@ -18,7 +18,7 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Nena
         {
             InitializeComponent();
 
-            Session.SetThemeColor(this);
+            Session.SetThemeColor(this, new List<object> { new DataGridView() });
 
             var myViewModel = new ActorViewModel();
 
