@@ -13,28 +13,35 @@ namespace ADOPSE_IMDB_IMITATION
     {
         public static int userId;
         public static bool administrator;
+        public static string Theme()
+        {
+            if (userId != 0)
+                return UserDataAccess.GetUserById(userId).UserSettings.Theme;
+            else
+                return "Light";
+        }
         public static Color ThemeColor()
         {
             if (userId != 0)
             {
-                if (UserDataAccess.GetUserById(userId).UserSettings.Theme == "Light")
-                    return SystemColors.Control;
-                else if (UserDataAccess.GetUserById(userId).UserSettings.Theme == "Dark")
+                if (Theme() == "Light")
+                    return Color.White;
+                else if (Theme() == "Dark")
                     return Color.FromArgb(0, 0, 0);
                 else
-                    return SystemColors.Control;
+                    return Color.White;
             }
             else
-                return SystemColors.Control;
+                return Color.White;
         }
         public static Color OpositeThemeColor()
         {
             if (userId != 0)
             {
-                if (UserDataAccess.GetUserById(userId).UserSettings.Theme == "Light")
+                if (Theme() == "Light")
                     return Color.FromArgb(0, 0, 0);
-                else if (UserDataAccess.GetUserById(userId).UserSettings.Theme == "Dark")
-                    return SystemColors.Control;
+                else if (Theme() == "Dark")
+                    return Color.White;
                 else
                     return Color.FromArgb(0, 0, 0);
             }
@@ -51,17 +58,24 @@ namespace ADOPSE_IMDB_IMITATION
                 child.ForeColor = OpositeThemeColor();
             }
         }
-        public static void SetThemeColor(UserControl userControl, List<Object> userControlChildTypeExeption)
+        public static void SetThemeColor(UserControl userControl, List<Object> userControlChildTypeException)
         {
             userControl.BackColor = ThemeColor();
 
             foreach (Control child in userControl.Controls)
-                foreach (Control childTypeExeption in userControlChildTypeExeption)
-                    if (child.GetType() != childTypeExeption.GetType())
-                    {
-                        child.BackColor = ThemeColor();
-                        child.ForeColor = OpositeThemeColor();
-                    }
+            {
+                bool exceptionFound = false;
+
+                foreach (Control childTypeException in userControlChildTypeException)
+                    if (child.GetType() == childTypeException.GetType())
+                        exceptionFound = true;
+
+                if (!exceptionFound)
+                {
+                    child.BackColor = ThemeColor();
+                    child.ForeColor = OpositeThemeColor();
+                }
+            }
         }
     }
 }

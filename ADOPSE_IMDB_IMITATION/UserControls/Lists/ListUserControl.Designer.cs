@@ -29,37 +29,34 @@ namespace ADOPSE_IMDB_IMITATION
         /// </summary>
         private void InitializeComponent()
         {
-            this.MoviesLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ListNameLabel = new System.Windows.Forms.Label();
+            this.MoviesLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
-            // 
-            // MoviesLayoutPanel
-            // 
-            this.MoviesLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.MoviesLayoutPanel.Location = new System.Drawing.Point(0, 45);
-            this.MoviesLayoutPanel.Name = "MoviesLayoutPanel";
-            this.MoviesLayoutPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.MoviesLayoutPanel.Size = new System.Drawing.Size(557, 444);
-            this.MoviesLayoutPanel.TabIndex = 0;
             // 
             // ListNameLabel
             // 
             this.ListNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ListNameLabel.AutoSize = true;
-            this.ListNameLabel.Location = new System.Drawing.Point(230, 16);
+            this.ListNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.ListNameLabel.Location = new System.Drawing.Point(205, 18);
             this.ListNameLabel.Name = "ListNameLabel";
-            this.ListNameLabel.Size = new System.Drawing.Size(77, 13);
+            this.ListNameLabel.Size = new System.Drawing.Size(155, 25);
             this.ListNameLabel.TabIndex = 1;
             this.ListNameLabel.Text = "ListNameLabel";
+            // 
+            // MoviesLayoutPanel
+            // 
+            this.MoviesLayoutPanel.Location = new System.Drawing.Point(0, 63);
+            this.MoviesLayoutPanel.Name = "MoviesLayoutPanel";
+            this.MoviesLayoutPanel.Size = new System.Drawing.Size(557, 426);
+            this.MoviesLayoutPanel.TabIndex = 2;
             // 
             // ListUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ListNameLabel);
             this.Controls.Add(this.MoviesLayoutPanel);
+            this.Controls.Add(this.ListNameLabel);
             this.Name = "ListUserControl";
             this.Size = new System.Drawing.Size(557, 489);
             this.Load += new System.EventHandler(this.List_Load);
@@ -69,8 +66,7 @@ namespace ADOPSE_IMDB_IMITATION
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel MoviesLayoutPanel;
         private System.Windows.Forms.Label ListNameLabel;
+        private System.Windows.Forms.FlowLayoutPanel MoviesLayoutPanel;
     }
 }

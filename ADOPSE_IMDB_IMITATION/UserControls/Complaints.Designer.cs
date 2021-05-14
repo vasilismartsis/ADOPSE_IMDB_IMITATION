@@ -40,7 +40,7 @@ namespace ADOPSE_IMDB_IMITATION
             // BodyRichTextBox
             // 
             this.BodyRichTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BodyRichTextBox.Location = new System.Drawing.Point(209, 217);
+            this.BodyRichTextBox.Location = new System.Drawing.Point(150, 223);
             this.BodyRichTextBox.Name = "BodyRichTextBox";
             this.BodyRichTextBox.Size = new System.Drawing.Size(317, 141);
             this.BodyRichTextBox.TabIndex = 1;
@@ -50,16 +50,17 @@ namespace ADOPSE_IMDB_IMITATION
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(256, 49);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label1.Location = new System.Drawing.Point(192, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.Size = new System.Drawing.Size(220, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Send your complaints";
             // 
             // SendButton
             // 
             this.SendButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SendButton.Location = new System.Drawing.Point(259, 406);
+            this.SendButton.Location = new System.Drawing.Point(260, 399);
             this.SendButton.Name = "SendButton";
             this.SendButton.Size = new System.Drawing.Size(75, 23);
             this.SendButton.TabIndex = 3;
@@ -71,27 +72,27 @@ namespace ADOPSE_IMDB_IMITATION
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 280);
+            this.label2.Location = new System.Drawing.Point(80, 286);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Body";
+            this.label2.Text = "Body:";
             // 
             // SubjectLabel
             // 
             this.SubjectLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SubjectLabel.AutoSize = true;
-            this.SubjectLabel.Location = new System.Drawing.Point(74, 138);
+            this.SubjectLabel.Location = new System.Drawing.Point(80, 144);
             this.SubjectLabel.Name = "SubjectLabel";
-            this.SubjectLabel.Size = new System.Drawing.Size(43, 13);
+            this.SubjectLabel.Size = new System.Drawing.Size(46, 13);
             this.SubjectLabel.TabIndex = 5;
-            this.SubjectLabel.Text = "Subject";
+            this.SubjectLabel.Text = "Subject:";
             // 
             // SubjectTextBox
             // 
             this.SubjectTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SubjectTextBox.ForeColor = System.Drawing.Color.DarkGray;
-            this.SubjectTextBox.Location = new System.Drawing.Point(209, 135);
+            this.SubjectTextBox.Location = new System.Drawing.Point(150, 141);
             this.SubjectTextBox.Name = "SubjectTextBox";
             this.SubjectTextBox.Placeholder = "Write subject";
             this.SubjectTextBox.Size = new System.Drawing.Size(317, 20);
@@ -109,7 +110,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BodyRichTextBox);
             this.Name = "Complaints";
-            this.Size = new System.Drawing.Size(609, 481);
+            this.Size = new System.Drawing.Size(572, 481);
             this.ResumeLayout(false);
             this.PerformLayout();
 

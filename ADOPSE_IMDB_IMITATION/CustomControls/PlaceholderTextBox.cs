@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ADOPSE_IMDB_IMITATION;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -27,10 +28,10 @@ class PlaceholderTextBox : TextBox
     {
         base.OnCreateControl();
 
-        setPlaceholderValue();
+        SetPlaceholderValue();
     }
 
-    void setPlaceholderValue()
+    void SetPlaceholderValue()
     {
         placeholderValue = Placeholder;
     }
@@ -42,7 +43,11 @@ class PlaceholderTextBox : TextBox
         if (Text == placeholderValue)
         {
             Text = "";
-            ForeColor = Color.Black;
+
+            if (Session.Theme() == "Light")
+                ForeColor = Color.Black;
+            else
+                ForeColor = Color.White;
         }
     }
 
@@ -53,6 +58,7 @@ class PlaceholderTextBox : TextBox
         if (Text == "")
         {
             Text = placeholderValue;
+
             ForeColor = Color.DarkGray;
         }
     }

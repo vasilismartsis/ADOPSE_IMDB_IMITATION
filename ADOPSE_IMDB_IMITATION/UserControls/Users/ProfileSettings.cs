@@ -19,7 +19,7 @@ namespace ADOPSE_IMDB_IMITATION
         {
             InitializeComponent();
 
-            Session.SetThemeColor(this);
+            Session.SetThemeColor(this, new List<object> { new Button() });
 
             StateComboBox.SelectedIndex = StateComboBox.FindStringExact(UserDataAccess.GetUserById(Session.userId).UserSettings.State);
             ThemeComboBox.SelectedIndex = ThemeComboBox.FindStringExact(UserDataAccess.GetUserById(Session.userId).UserSettings.Theme);

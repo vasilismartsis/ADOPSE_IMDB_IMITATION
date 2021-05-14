@@ -110,7 +110,7 @@ namespace ADOPSE_IMDB_IMITATION
 
         #endregion
 
-     
+
         private System.Windows.Forms.Label NameOfMovie;
         private System.Windows.Forms.Label SummaryOfMovie;
         private System.Windows.Forms.Label RatingOfMovie;

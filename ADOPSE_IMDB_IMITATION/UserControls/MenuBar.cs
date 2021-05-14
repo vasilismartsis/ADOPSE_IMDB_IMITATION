@@ -168,7 +168,6 @@ namespace ADOPSE_IMDB_IMITATION
             ComboBoxTimer.Interval = 1;
             ComboBoxTimer.Start();
 
-
             label1.Dispose();
         }
 

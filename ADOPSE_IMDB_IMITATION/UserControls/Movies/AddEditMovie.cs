@@ -47,18 +47,15 @@ namespace ADOPSE_IMDB_IMITATION
 
         void InitializeEditUserControl()
         {
+            //List<Control> userControls = new List<Control>() { NameTextBox, ImageTextBox, TrailerTextBox, DirectorTextBox, DescriptionTextBox };
+
             NameTextBox.Placeholder = movie.Name;
-            NameTextBox.ForeColor = Color.Black;
             ReleaseDateTimePicker.Value = DateTime.Parse(movie.ReleaseDate);
             ImageTextBox.Text = movie.Image;
-            ImageTextBox.ForeColor = Color.Black;
             TrailerTextBox.Text = movie.Trailer;
-            TrailerTextBox.ForeColor = Color.Black;
             DirectorTextBox.Text = movie.Director;
-            DirectorTextBox.ForeColor = Color.Black;
             IsSeriesCheckBox.Checked = movie.IsSeries;
             DescriptionTextBox.Text = movie.Description;
-            DescriptionTextBox.ForeColor = Color.Black;
             AddMovieLabel.Text = "Edit Movie or Series";
             AddEditMovieButton.Text = "Edit Movie";
             DeleteMovieButton.Show();

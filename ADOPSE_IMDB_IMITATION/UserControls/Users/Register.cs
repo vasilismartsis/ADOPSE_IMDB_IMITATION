@@ -37,9 +37,8 @@ namespace ADOPSE_IMDB_IMITATION
         void AddUser()
         {
             int userId;
-
             //Check if user exists
-            if (UserDataAccess.GetUserByUsernameAndPassword(UsernameTextBox.Text, PasswordTextBox.Text).Id == 0)
+            if (UserDataAccess.GetUserByUsernameAndPassword(UsernameTextBox.Text, PasswordTextBox.Text).Id != 0)
                 PopupMessage1.ShowToolTip(ParentForm, "User already exists!", Color.Red);
             //If user doesn't exist, add user to the database
             else

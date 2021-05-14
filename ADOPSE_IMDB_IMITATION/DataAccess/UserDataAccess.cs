@@ -192,7 +192,6 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
 
         public static void UpdateUserHistory(UserHistory ids)
         {
-
             if (ids.userId != 0)
             {
                 DateTime time = DateTime.Now;
@@ -216,6 +215,7 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 }
             }
         }
+
         public static List<int> GetUserHistory()
         {
             var list = new List<int>();
@@ -224,9 +224,9 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 const string commandText = "" +
                     "SELECT DISTINCT movieId " +
                     "FROM UsersMovieHistory " +
-                   
+
                     "WHERE userId= @userId " +
-                   
+
                     ";";
                 SqlCommand command = new SqlCommand(commandText, connection);
                 command.Parameters.AddWithValue("@userId", Session.userId);
@@ -234,7 +234,7 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                     int movieId = int.Parse(reader["movieId"].ToString());
+                    int movieId = int.Parse(reader["movieId"].ToString());
                     list.Add(movieId);
                 }
             }

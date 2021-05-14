@@ -38,17 +38,20 @@ namespace ADOPSE_IMDB_IMITATION
             // 
             this.ListNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ListNameLabel.AutoSize = true;
-            this.ListNameLabel.Location = new System.Drawing.Point(64, 18);
+            this.ListNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.ListNameLabel.Location = new System.Drawing.Point(-2, 0);
             this.ListNameLabel.Name = "ListNameLabel";
-            this.ListNameLabel.Size = new System.Drawing.Size(120, 13);
+            this.ListNameLabel.Size = new System.Drawing.Size(245, 25);
             this.ListNameLabel.TabIndex = 0;
             this.ListNameLabel.Text = "Give a name to your list:";
             // 
             // ListNameText
             // 
             this.ListNameText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ListNameText.ForeColor = System.Drawing.Color.DarkGray;
             this.ListNameText.Location = new System.Drawing.Point(12, 91);
             this.ListNameText.Name = "ListNameText";
+            this.ListNameText.Placeholder = "";
             this.ListNameText.Size = new System.Drawing.Size(220, 20);
             this.ListNameText.TabIndex = 1;
             // 

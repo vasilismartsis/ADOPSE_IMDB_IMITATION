@@ -35,8 +35,9 @@ namespace ADOPSE_IMDB_IMITATION
                 {
                     Text = list.Name,
                     AutoSize = true,
-                    TextAlign = ContentAlignment.MiddleCenter
+                    TextAlign = ContentAlignment.MiddleCenter,
                 };
+
                 listButton.MouseClick += (o, e) => { MainPanelUserControlOpener.OpenUserControl(new ListUserControl(list.Id, list.Name)); };
                 ListLayoutPanel.Controls.Add(listButton);
             }

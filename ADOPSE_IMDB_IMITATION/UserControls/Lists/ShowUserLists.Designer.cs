@@ -30,6 +30,7 @@ namespace ADOPSE_IMDB_IMITATION
         private void InitializeComponent()
         {
             this.ListLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ListLayoutPanel
@@ -37,17 +38,29 @@ namespace ADOPSE_IMDB_IMITATION
             this.ListLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListLayoutPanel.AutoScroll = true;
             this.ListLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.ListLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.ListLayoutPanel.Location = new System.Drawing.Point(0, 61);
             this.ListLayoutPanel.Name = "ListLayoutPanel";
             this.ListLayoutPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.ListLayoutPanel.Size = new System.Drawing.Size(674, 500);
+            this.ListLayoutPanel.Size = new System.Drawing.Size(674, 439);
             this.ListLayoutPanel.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label1.Location = new System.Drawing.Point(301, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "My Lists";
             // 
             // MyLists
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ListLayoutPanel);
             this.Name = "MyLists";
             this.Size = new System.Drawing.Size(674, 500);
@@ -59,5 +72,6 @@ namespace ADOPSE_IMDB_IMITATION
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel ListLayoutPanel;
+        private System.Windows.Forms.Label label1;
     }
 }
