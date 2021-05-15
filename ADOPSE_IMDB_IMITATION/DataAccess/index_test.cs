@@ -32,7 +32,9 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
             //var indexPath = Path.Combine(basePath, "index");
             //Directory directory = FSDirectory.Open(indexPath);
 
-            var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
+            string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\Databases\\index_test\\";
+            var dir = FSDirectory.Open(new DirectoryInfo(appPath));
+            //var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
             var analyzer = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30);
             var writer = new IndexWriter(dir, analyzer, IndexWriter.MaxFieldLength.UNLIMITED);
 
@@ -85,7 +87,10 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
 
         public static void index_searcher_by_name(string title_to_search)
         {
-            var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
+            string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\Databases\\index_test\\";
+            var dir = FSDirectory.Open(new DirectoryInfo(appPath));
+
+            //var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
             var analyzer = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30);
 
             IndexSearcher searcher = new IndexSearcher(dir);
@@ -112,7 +117,9 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
 
         public static void index_searcher_by_year()
         {
-            var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
+            string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\Databases\\index_test\\";
+            var dir = FSDirectory.Open(new DirectoryInfo(appPath));
+            //var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
             var analyzer = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30);
 
             IndexSearcher searcher = new IndexSearcher(dir);
@@ -138,7 +145,9 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
 
         public static void index_searcher_by_genre()
         {
-            var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
+            string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\Databases\\index_test\\";
+            var dir = FSDirectory.Open(new DirectoryInfo(appPath));
+            //var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
             var analyzer = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30);
 
             IndexSearcher searcher = new IndexSearcher(dir);
