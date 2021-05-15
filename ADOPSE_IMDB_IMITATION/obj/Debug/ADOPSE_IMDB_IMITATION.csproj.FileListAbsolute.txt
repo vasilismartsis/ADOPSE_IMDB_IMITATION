@@ -179,3 +179,36 @@ D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .n
 D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.exe
 D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.pdb
 D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.BrowseMoviesSeries.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\Databases\ADOPSE_IMDB_IMITATION.mdf
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\Databases\ADOPSE_IMDB_IMITATION_log.ldf
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\ADOPSE_IMDB_IMITATION.exe.config
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\ADOPSE_IMDB_IMITATION.exe
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\ADOPSE_IMDB_IMITATION.pdb
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csprojAssemblyReference.cache
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Complaints.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.Nena.AddEditActorUserControl.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.Nena.ShowAllActorsUserControl.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.MainPage.MainPageCategory.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.AddEditMovie.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.BrowseActorsUserControl.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.BrowseMoviesSeries.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.CreateList.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.ListUserControl.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.Movies.GenericRatingUserControl.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.Movies.EpisodesUserControl.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.Movies.ActorThumbnailuserControl.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Login.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MainPage.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.UserControls.Movies.ShowAllMovies.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MovieUserControl.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MyLists.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.ProfileSettings.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Register.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MainForm.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.MenuBar.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.Properties.Resources.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.SmallWindowMovie.resources
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csproj.GenerateResource.cache
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csproj.CoreCompileInputs.cache
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.exe
+C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.pdb
