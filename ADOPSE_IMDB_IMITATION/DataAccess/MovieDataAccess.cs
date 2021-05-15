@@ -90,6 +90,47 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
             return movies;
         }
 
+        public static List<Movie> GetAllMovies()
+        {
+            var movies = new List<Movie>();
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                const string commandText = "" +
+                    "SELECT *" +
+                    "FROM Movies" +
+                    ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                connection.Open();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Movie movie = new Movie
+                        {
+                            Id = int.Parse(reader["Id"].ToString()),
+                            Name = reader["name"].ToString(),
+                            ReleaseDate = reader["releaseDate"].ToString(),
+                            Image = reader["image"].ToString(),
+                            Trailer = reader["trailer"].ToString(),
+                            Director = reader["director"].ToString(),
+                            IsSeries = Convert.ToBoolean(reader["isSeries"]),
+                            Description = reader["description"].ToString()
+                        };
+
+                        movies.Add(movie);
+                    }
+                }
+
+                connection.Close();
+            }
+
+            return movies;
+        }
+
         public static void AddMovie(Movie movie, List<int> genreIds)
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
@@ -253,7 +294,6 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
 
         public static int GetMovieByImdbId(String ImdbID)
         {
-            //Movie movie = new Movie();
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
             {
@@ -270,7 +310,6 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 connection.Open();
 
                 var reader = command.ExecuteReader();
-                //var ep = command.ExecuteNonQuery();
 
                 while (reader.Read())
                 {

@@ -105,6 +105,7 @@
       <DependentUpon>ADOPSE_IMDB_IMITATIONDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\ActorRatingDataAccess.cs" />
+    <Compile Include="DataAccess\index_test.cs" />
     <Compile Include="DataAccess\MovieRatingDataAccess.cs" />
     <Compile Include="DataAccess\GenresDataAccess.cs" />
     <Compile Include="DataAccess\ImdbListDataAccess.cs" />
@@ -407,6 +408,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Databases\index_test\" />
     <Folder Include="TempScripts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

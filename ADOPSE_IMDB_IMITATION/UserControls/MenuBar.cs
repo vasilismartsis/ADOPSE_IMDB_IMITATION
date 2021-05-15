@@ -214,5 +214,19 @@ namespace ADOPSE_IMDB_IMITATION
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //method to build index, run only once
+
+            DataAccess.index_test.index_creator();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // uses the search bar text to search titles
+
+            DataAccess.index_test.index_searcher_by_name(SearchIMDBInput.Text);
+        }
     }
 }
