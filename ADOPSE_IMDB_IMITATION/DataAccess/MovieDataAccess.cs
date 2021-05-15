@@ -120,6 +120,42 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
             }
         }
 
+        public static void AddMovie2(Movie movie, List<int> genreIds, List<int> actorIds)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                const string commandText = "" +
+                    "INSERT INTO Movies (name, releaseDate, image, trailer, director, isSeries, description, imdbID, imdbRating, imdbVotes) " +
+                    "VALUES (@name, @releaseDate, @image, @trailer, @director, @isSeries, @description, @imdbID, @imdbRating, @imdbVotes);" +
+                    "SELECT SCOPE_IDENTITY()" +
+                    ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                //movie.ImdbID = "ttestxxx";
+
+                command.Parameters.AddWithValue("@name", movie.Name);
+                command.Parameters.AddWithValue("@releaseDate", DateTime.Parse(movie.ReleaseDate).Date);
+                command.Parameters.AddWithValue("@image", movie.Image);
+                command.Parameters.AddWithValue("@trailer", "Add Trailer");
+                command.Parameters.AddWithValue("@director", movie.Director);
+                command.Parameters.AddWithValue("@isSeries", movie.IsSeries);
+                command.Parameters.AddWithValue("@description", movie.Description);
+                command.Parameters.AddWithValue("@imdbID", movie.ImdbID);
+                command.Parameters.AddWithValue("@imdbRating", movie.ImdbRating);
+                command.Parameters.AddWithValue("@imdbVotes", movie.ImdbVotes);
+
+                connection.Open();
+
+                int movieId = Convert.ToInt32(command.ExecuteScalar());
+
+                connection.Close();
+
+                GenresDataAccess.AddMovieToGenreEntriesTable(movieId, genreIds);
+                ActorDataAccess.AddMovieToActorEntriesTable(movieId, actorIds);
+            }
+        }
+
         public static void DeleteMovie(int movieId)
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
@@ -213,6 +249,39 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 }
 
             return movies;
+        }
+
+        public static int GetMovieByImdbId(String ImdbID)
+        {
+            //Movie movie = new Movie();
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                const string commandText = "" +
+                    "SELECT Id " +
+                    "FROM Movies " +
+                    "WHERE ImdbID = @ImdbID" +
+                    ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@ImdbID", ImdbID);
+
+                connection.Open();
+
+                var reader = command.ExecuteReader();
+                //var ep = command.ExecuteNonQuery();
+
+                while (reader.Read())
+                {
+                    return reader.GetInt32(0);
+                }
+
+                connection.Close();
+
+                return 0;
+            }
+
         }
 
         static float? GetMovieScoreByMovieId(int movieId)

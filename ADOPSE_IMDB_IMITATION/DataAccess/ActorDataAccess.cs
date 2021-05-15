@@ -238,5 +238,86 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 }
             }
         }
+
+        public static int GetActorIdByName(String name)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                const string commandText = "" +
+                "SELECT Id " +
+                "FROM Actors " +
+                "WHERE actorName = @name" +
+                ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@name", name);
+
+                connection.Open();
+
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    return reader.GetInt32(0);
+                }
+
+                connection.Close();
+
+                return 0;
+            }
+        }
+
+        public static int AddActorIdByName3(Person actorToAdd)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                int ep = 0;
+                const string commandText = "" +
+                    "INSERT INTO Actors (actorName, actorId, dateOfBirth, poster) " +
+                    "VALUES (@name, @actorId, @birthday, @profile_path)" +
+                    "SELECT SCOPE_IDENTITY()" +
+                    ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@name", actorToAdd.name);
+                command.Parameters.AddWithValue("@actorId", actorToAdd.id);
+                command.Parameters.AddWithValue("@birthday", actorToAdd.birthday);
+                command.Parameters.AddWithValue("@profile_path", actorToAdd.profile_path);
+
+                connection.Open();
+
+                ep = Convert.ToInt32(command.ExecuteScalar());
+
+                connection.Close();
+                return ep;
+            }
+        }
+
+        public static void AddMovieToActorEntriesTable(int movieId, List<int> actorIds)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                foreach (int actorId in actorIds)
+                {
+                    const string commandText = "" +
+                        "INSERT INTO ActorEntries (movieId, actorId) " +
+                        "VALUES (@movieId, @actorId)" +
+                        ";";
+
+                    SqlCommand command = new SqlCommand(commandText, connection);
+
+                    command.Parameters.AddWithValue("@movieId", movieId);
+                    command.Parameters.AddWithValue("@actorId", actorId);
+
+                    connection.Open();
+
+                    command.ExecuteNonQuery();
+
+                    connection.Close();
+                }
+            }
+        }
     }
 }

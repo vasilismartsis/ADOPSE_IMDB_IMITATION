@@ -96,5 +96,30 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 return 0;
             }
         }
+
+        public static int AddGenreIdByName(String name)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                int ep = 0;
+                const string commandText = "" +
+                    "INSERT INTO Genres (name) " +
+                    "VALUES (@name)" +
+                    "SELECT SCOPE_IDENTITY()" +
+                    ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@name", name);
+
+                connection.Open();
+
+                ep = Convert.ToInt32(command.ExecuteScalar());
+                //ep=command.ExecuteNonQuery();
+
+                connection.Close();
+                return ep;
+            }
+        }
     }
 }
