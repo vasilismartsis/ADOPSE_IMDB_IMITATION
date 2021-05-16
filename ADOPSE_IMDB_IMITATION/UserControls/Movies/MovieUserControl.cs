@@ -19,7 +19,7 @@ namespace ADOPSE_IMDB_IMITATION
     public partial class MovieUserControl : UserControl
     {
         Movie movie;
-
+        public Size Size = new Size(182, 268);
         private Image img;
 
         public MovieUserControl(Movie movie)
@@ -86,11 +86,74 @@ namespace ADOPSE_IMDB_IMITATION
 
         void DisplayMovieDetails()
         {
+            //imageLayout
+            // PictureBox image = new PictureBox();
+            // image.Image = setImage(movie.Image);
+            // image.
+            // image.Size = Size;
 
+            //ImageLayout.Controls.Add(image);
+            ImageOfMovie.Image = setImage(movie.Image);
+            ImageOfMovie.Size = new Size();
+            NameOfMovie.Text = movie.Name;
+            NameOfMovie.Font = new Font("Arial", 24, FontStyle.Bold);
+            DescriptionOfMovie.Text = movie.Description;
+            DescriptionOfMovie.Font = new Font("Arial", 15);
+            if (movie.ImdbRating != null)
+            {
+
+                RatingOfMovie.Text = "Rating : " + movie.ImdbRating + "/10";
+            }
+            else
+            {
+                RatingOfMovie.Text = null;
+            }
+            ReleaseDate.Text = movie.ReleaseDate;
+
+
+            //InfoLayout
+            /*  Label title = new Label();
+              title.Text = movie.Name;
+              MovieInfoPanel.Controls.Add(title);
+
+              title.Font = new Font("Arial", 24, FontStyle.Bold);
+              title.Dock = DockStyle.Fill;
+
+              Label summary = new Label();
+              summary.Text = movie.Description;
+              MovieInfoPanel.Controls.Add(summary);
+              summary.AutoSize = true;
+              summary.Dock = DockStyle.Fill;
+
+              Label rating = new Label();
+              if (movie.ImdbRating != null)
+              {
+
+                  rating.Text = "Rating : " + movie.ImdbRating + "/10";
+              }
+              Label date = new Label();
+
+
+              date.Text = "Release Date: " + movie.ReleaseDate;
+              Label director = new Label();
+              director.Text = "Director :" + movie.Director;
+
+
+
+
+
+              MovieInfoPanel.Controls.Add(rating);
+              rating.AutoSize = true;
+              MovieInfoPanel.Controls.Add(date);
+              date.AutoSize = true;
+              MovieInfoPanel.Controls.Add(director);*/
+            /*
+            SummaryOfMovie.Text = movie.Description;
             NameOfMovie.Text = movie.Name;
             RatingOfMovie.Text = movie.GetRatingDisplayName;
             ImageOfMovie.Image = this.setImage(movie.Image);
-
+            ImageOfMovie.Size = Size;*/
+            //  ImageOfMovie.Size = new Size(182, 268);
             UserDataAccess.UpdateUserHistory(new UserHistory
             {
                 userId = Session.userId,
@@ -99,13 +162,16 @@ namespace ADOPSE_IMDB_IMITATION
 
             if (movie.IsSeries == true)
             {
+               
                 EpisodesUserControl x = new EpisodesUserControl();
-                flowLayoutMovie.Controls.Add(x);
+                SeriesLayout.Controls.Add(x);
             }
 
 
         }
 
         
+
+       
     }
 }
