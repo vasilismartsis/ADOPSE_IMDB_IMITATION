@@ -119,7 +119,6 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                     Console.WriteLine("Text found: >" + doc.Get("Name") + "<" + ">" + doc.Get("Genres") + "<");
                     int movieId = MovieDataAccess.GetMovieIdByName(doc.Get("Name"));
                     selectedMovies.Add(movieId);
-
                 }
             }
             catch (Lucene.Net.QueryParsers.ParseException e)

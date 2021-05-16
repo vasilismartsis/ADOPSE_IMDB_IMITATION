@@ -25,21 +25,14 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
         {
             int counter = 45100;
             int success = 0;
+            string API_KEY = "b55278248781020077030462c2f64f46";
+
             do
             {
-
                 counter++;
-
-                //int alreadyExists = 0;
-                //char pad = '0';
                 string ss = counter.ToString();
-                //string ss = (100000 + counter).ToString();
-                //string tt = "tt" + ss.PadLeft(7, pad);
 
-                //var rand = new Random();
-                //int rr = rand.Next(0, 10000000);
-
-                string url = "https://api.themoviedb.org/3/movie/" + ss + "?api_key=b55278248781020077030462c2f64f46";
+                string url = "https://api.themoviedb.org/3/movie/" + ss + "?api_key=" + API_KEY;
 
                 using (WebClient wc = new WebClient())
                 {
@@ -49,10 +42,10 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                         var jsonString = wc.DownloadString(url);
                         TmdbEntity obj = JsonSerializer.Deserialize<TmdbEntity>(jsonString);
                         //TmdbEntity obj = JsonConvert.DeserializeObject<TmdbEntity>(jsonString);
-                
+
                         int id = obj.id;
 
-                        alreadyExists = MovieDataAccess.GetMovieByImdbId(id.ToString());
+                        alreadyExists = MovieDataAccess.GetMovieByImdbId(id.ToString(), false); // false is movie
                         if (alreadyExists != 0) continue;
 
                         string Title = obj.title;
@@ -67,7 +60,7 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
 
                         long votes = Int64.Parse(imdbVotes);
 
-                        Console.WriteLine("Total Records searched : " + counter +"   " + votes + " " + Title);
+                        Console.WriteLine("Total Records searched : " + counter + "   " + votes + " " + Title);
 
 
                         if (votes > 5000)
@@ -99,7 +92,7 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                         }
 
                         //  make a second search to search for cast and crew by the movie's id
-                        string url_credits = "https://api.themoviedb.org/3/movie/" + ImdbId + "/credits?api_key=b55278248781020077030462c2f64f46";
+                        string url_credits = "https://api.themoviedb.org/3/movie/" + ImdbId + "/credits?api_key=" + API_KEY;
 
                         var jsonString2 = wc.DownloadString(url_credits);
                         TmdbCredits obj2 = JsonSerializer.Deserialize<TmdbCredits>(jsonString2);
@@ -166,6 +159,134 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
             while (success < 1000);
         }
 
+        public static void SearchSeries()
+        {
+            int page = 0;
+            int success = 0;
+            string API_KEY = "b55278248781020077030462c2f64f46";
+            do
+            {
+                page++;
+
+                //int alreadyExists = 0;
+                //char pad = '0';
+                //string ss = page.ToString();
+                //string ss = (100000 + counter).ToString();
+                //string tt = "tt" + ss.PadLeft(7, pad);
+
+                //var rand = new Random();
+                //int rr = rand.Next(0, 10000000);
+
+                //string url = "https://api.themoviedb.org/3/movie/top_rated?api_key=b55278248781020077030462c2f64f46&language=en-US&page=1";
+                //string url = "https://api.themoviedb.org/3/movie/popular?api_key=b55278248781020077030462c2f64f46&language=en-US&page=1"
+
+                //string url = "https://api.themoviedb.org/3/movie/" + ss + "?api_key=b55278248781020077030462c2f64f46";
+
+                string url = "https://api.themoviedb.org/3/tv/popular?api_key=" + API_KEY + "&language=en-US&page=" + page;
+
+                using (WebClient wc = new WebClient())
+                {
+                    int alreadyExists = 0;
+                    try
+                    {
+                        var jsonString = wc.DownloadString(url);
+                        Root series = JsonSerializer.Deserialize<Root>(jsonString);
+
+                        var results = series.results;
+
+                        foreach (var obj in results)
+                        {  //  Result result = obj.results[0];
+
+                            int id = obj.id;
+                            string Title = obj.name;
+                            string release_date = obj.first_air_date;
+                            string overview = obj.overview;
+                            string director = "-";
+                            string poster_path = TmdbEntitySeries.base_poster_path + obj.poster_path;
+                            string ImdbId = id.ToString();
+                            string imdbRating = obj.vote_average.ToString();
+                            string imdbVotes = obj.vote_count.ToString();
+
+                            List<int> genres = new List<int>();
+
+                            long votes = Int64.Parse(imdbVotes);
+
+                            Console.WriteLine("Series -  Total Records searched : " + page + "   " + votes + " " + Title);
+
+                            alreadyExists = MovieDataAccess.GetMovieByImdbId(id.ToString(), true);      // true is series
+                            if (alreadyExists != 0) continue;
+
+                            success++;
+                            Console.WriteLine("Success : " + success);
+
+                            List<int> gens = new List<int>();
+                            var genr = obj.genre_ids;
+                            //Console.WriteLine(genr.Count);
+                            //Console.WriteLine(genr[0] + "--" + genr[1]);
+                            for (int i = 0; i < genr.Count; i++)
+                            {
+                                var gId = genr[i];
+                                var returnedId = GenresDataAccess.GetGenreIdByTmdbId(gId.ToString());
+
+                                if (returnedId == 0)        // if returns 0, then the genre doesn't exist and has to be added
+                                {
+                                    returnedId = GenresDataAccess.AddGenreByTmdbId("unknown", gId.ToString());
+                                }
+                                gens.Add(returnedId);
+                            }
+
+                            //  make a second search to search for cast and crew by the movie's id
+                            string url_credits = "https://api.themoviedb.org/3/tv/" + ImdbId + "/credits?api_key=" + API_KEY;
+
+                            var jsonString2 = wc.DownloadString(url_credits);
+                            TmdbCredits obj2 = JsonSerializer.Deserialize<TmdbCredits>(jsonString2);
+
+                            List<int> actors = new List<int>();
+
+                            var actor = obj2.cast;
+                            //Console.WriteLine(actor.Count);
+                            //Console.WriteLine(actor[0].id + "--" + actor[0].name);
+                            var castCount = (actor.Count < 3 ? actor.Count : 3);
+
+                            for (int i = 0; i < castCount; i++)
+                            {
+                                var returnedId = ActorDataAccess.GetActorIdByName(actor[i].name);
+
+                                if (returnedId == 0)        // if returns 0, then the actor doesn't exist and has to be added
+                                {
+                                    Person actorToAdd = Person.GetActorDetails(actor[i].id.ToString());
+                                    returnedId = ActorDataAccess.AddActorIdByName3(actorToAdd);
+                                }
+                                actors.Add(returnedId);
+                            }
+
+                            Movie mymovie = new Movie
+                            {
+                                Name = Title,                               //obj.title,
+                                ReleaseDate = release_date,
+                                Image = poster_path,                        //obj.Poster,
+                                Director = director,                        // obj.Director,
+                                IsSeries = true,
+                                Description = overview,                     //obj.Plot,
+                                ImdbID = ImdbId,
+                                ImdbRating = imdbRating,
+                                ImdbVotes = imdbVotes
+                            };
+
+                            //  add the movie to the DB and update entries with the ids
+                            MovieDataAccess.AddMovie2(mymovie, gens, actors);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                        //counter++;
+                        continue;
+                    }
+                }
+            }
+            while (page < 10);
+        }
     }
 
     public class Person
@@ -189,8 +310,15 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
 
                 string id = actor.id.ToString();
                 string name = actor.name;
+
+                if (actor.birthday == null) actor.birthday = "";
+
                 string birthday = actor.birthday;
-                actor.profile_path = Person.poster_base + actor.profile_path;
+                if (actor.profile_path != null)
+                {
+                    actor.profile_path = Person.poster_base + actor.profile_path;
+                }
+                else actor.profile_path = "-";
 
                 return actor;
             }
@@ -216,14 +344,12 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
         public string job { get; set; }
     }
 
-
     public class TmdbCredits
     {
         public int id { get; set; }                     // movie id
         public List<Cast> cast { get; set; }
         public List<Crew> crew { get; set; }        //crew.job
     }
-
 
     public class TmdbEntity
     {
@@ -245,5 +371,52 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
         //public string Type { get; set; }
         public string Response { get; set; }
         public Boolean success { get; set; }
+    }
+
+    public class TmdbEntitySeries
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string first_air_date { get; set; }
+
+        public List<Genres> genres { get; set; }
+
+        //public string Credits { get; set; }          //to get cast names
+
+        public string overview { get; set; }        // description
+        public string poster_path { get; set; }     //image
+
+        public static string base_poster_path = "https://image.tmdb.org/t/p/original/"; //base poster path
+
+        public long vote_count { get; set; }      // imdb votes count
+        public double vote_average { get; set; }    // imdb rating
+        //public string Type { get; set; }
+        public string Response { get; set; }
+        public Boolean success { get; set; }
+    }
+
+    public class Result
+    {
+        public string backdrop_path { get; set; }
+        public string first_air_date { get; set; }
+        public List<int> genre_ids { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public List<string> origin_country { get; set; }
+        public string original_language { get; set; }
+        public string original_name { get; set; }
+        public string overview { get; set; }
+        public double popularity { get; set; }
+        public string poster_path { get; set; }
+        public double vote_average { get; set; }
+        public int vote_count { get; set; }
+    }
+
+    public class Root
+    {
+        public int page { get; set; }
+        public List<Result> results { get; set; }
+        public int total_pages { get; set; }
+        public int total_results { get; set; }
     }
 }

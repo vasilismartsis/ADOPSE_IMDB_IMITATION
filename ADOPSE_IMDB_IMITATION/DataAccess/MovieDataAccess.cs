@@ -292,7 +292,7 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
             return movies;
         }
 
-        public static int GetMovieByImdbId(String ImdbID)
+        public static int GetMovieByImdbId(String ImdbID, bool isSeries)
         {
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
@@ -300,12 +300,13 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                 const string commandText = "" +
                     "SELECT Id " +
                     "FROM Movies " +
-                    "WHERE ImdbID = @ImdbID" +
+                    "WHERE ImdbID = @ImdbID AND isSeries = @isSeries" +
                     ";";
 
                 SqlCommand command = new SqlCommand(commandText, connection);
 
                 command.Parameters.AddWithValue("@ImdbID", ImdbID);
+                command.Parameters.AddWithValue("@isSeries", isSeries);
 
                 connection.Open();
 
