@@ -125,15 +125,18 @@
   <data name="CategoryName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="CategoryName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
+  </data>
   <data name="CategoryName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="CategoryName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 22</value>
+    <value>320, 16</value>
   </data>
   <data name="CategoryName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 13</value>
+    <value>178, 26</value>
   </data>
   <data name="CategoryName.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

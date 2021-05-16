@@ -252,7 +252,8 @@ namespace ADOPSE_IMDB_IMITATION
         private void button2_Click(object sender, EventArgs e)
         {
             // uses the search bar text to search titles
-            if (SearchIMDBInput.Text.Length > 0  &&  (SearchIMDBInput.Text.Substring(0, 1) == "*" || SearchIMDBInput.Text.Substring(0, 1) == "?")) { 
+            if (SearchIMDBInput.Text.Length > 0 && (SearchIMDBInput.Text.Substring(0, 1) == "*" || SearchIMDBInput.Text.Substring(0, 1) == "?"))
+            {
                 SearchIMDBInput.Text = "";
                 return;
             }
@@ -260,7 +261,7 @@ namespace ADOPSE_IMDB_IMITATION
             if (SearchIMDBInput.Text.Length == 0) return;
 
             int searchBy = TypeComboBox.SelectedIndex;
-            switch(searchBy)
+            switch (searchBy)
             {
                 case 0:
                     DataAccess.index_test.index_searcher_by_name(SearchIMDBInput.Text);

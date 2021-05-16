@@ -26,11 +26,11 @@ namespace ADOPSE_IMDB_IMITATION
 
         void SpawnCategories()
         {
-            CategoriesPanel.Controls.Add(new MainPageCategory(new int[] { 35, 36, 37, 38, 39, 40, 41, 42 }) { Dock = DockStyle.Top });
-            CategoriesPanel.Controls.Add(new MainPageCategory(new int[] { 35, 36, 37, 38, 39, 40, 41, 42 }) { Dock = DockStyle.Top });
-            CategoriesPanel.Controls.Add(new MainPageCategory(new int[] { 35, 36, 37, 38, 39, 40, 41, 42 }) { Dock = DockStyle.Top });
-            CategoriesPanel.Controls.Add(new MainPageCategory(new int[] { 35, 36, 37, 38, 39, 40, 41, 42 }) { Dock = DockStyle.Top });
-            CategoriesPanel.Controls.Add(new MainPageCategory(new int[] { 35, 36, 37, 38, 39, 40, 41, 42 }) { Dock = DockStyle.Top });
+            CategoriesPanel.Controls.Add(new MainPageCategory(new int[] { 35, 36, 37, 38, 39, 40, 41, 42 }, "Featured") { Dock = DockStyle.Top });
+            CategoriesPanel.Controls.Add(new MainPageCategory(new int[] { 35, 36, 37, 38, 39, 40, 41, 42 }, "Most Popular") { Dock = DockStyle.Top });
+            CategoriesPanel.Controls.Add(new MainPageCategory(new int[] { 35, 36, 37, 38, 39, 40, 41, 42 }, "Top Comedies") { Dock = DockStyle.Top });
+            CategoriesPanel.Controls.Add(new MainPageCategory(new int[] { 35, 36, 37, 38, 39, 40, 41, 42 }, "Most Viewed") { Dock = DockStyle.Top });
+            CategoriesPanel.Controls.Add(new MainPageCategory(new int[] { 35, 36, 37, 38, 39, 40, 41, 42 }, "Suggested Just For You") { Dock = DockStyle.Top });
         }
     }
 }

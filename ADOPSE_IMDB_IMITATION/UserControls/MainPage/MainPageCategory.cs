@@ -26,13 +26,15 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.MainPage
 
         int[] movieIds;
 
-        public MainPageCategory(int[] movieIds)
+        public MainPageCategory(int[] movieIds, string categoryName)
         {
             InitializeComponent();
 
             this.movieIds = movieIds;
 
             Session.SetThemeColor(this);
+
+            CategoryName.Text = categoryName;
 
             AddMovies();
         }
