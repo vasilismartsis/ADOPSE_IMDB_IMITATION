@@ -116,7 +116,7 @@ namespace ADOPSE_IMDB_IMITATION
 
         private void browseMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(UserControlType.Browse, MovieType.Movie));
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Browse, MovieType.Movie));
         }
 
         #endregion
@@ -180,14 +180,38 @@ namespace ADOPSE_IMDB_IMITATION
 
         #endregion
 
-       private void showAllActorsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void showAllActorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          MainPanelUserControlOpener.OpenUserControl(new ShowAllActorsUserControl());    
+            MainPanelUserControlOpener.OpenUserControl(new ShowAllActorsUserControl());
         }
 
         private void EditActorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new ShowAllActorsUserControl());
+
+        }
+
+        private void browseActorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new BrowseActorsUserControl());
+        }
+
+        private void browseSeriesMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Browse, MovieType.Series));
+        }
+
+        private void showTop10MoviesMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Order, MovieType.Movie));
+        }
+
+        private void showTop10SeriesMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Order, MovieType.Series));
+        }
+
+        private void showTop10ActorsMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -203,42 +227,6 @@ namespace ADOPSE_IMDB_IMITATION
             // uses the search bar text to search titles
 
             DataAccess.index_test.index_searcher_by_name(SearchIMDBInput.Text);
-        }
-
-        private void browseSeriesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(UserControlType.Browse, MovieType.Series));
-        }
-
-        private void BrowseMoviesToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(UserControlType.Browse, MovieType.Movie));
-        }
-
-        private void BrowseActorsToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseActorsUserControl(UserControlType.Browse));
-
-        }
-
-        private void ShowTop10MoviesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(UserControlType.Order, MovieType.Movie));
-        }
-
-        private void ShowTop10SeriesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(UserControlType.Order, MovieType.Series));
-        }
-
-        private void ShowTop10ActorsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseActorsUserControl(UserControlType.Order));
-        }
-
-        private void MenuBar_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

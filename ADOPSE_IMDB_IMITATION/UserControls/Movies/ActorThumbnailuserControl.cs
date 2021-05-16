@@ -41,7 +41,6 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
             FirstNameTextBox.Text = $"FirstName: {_actor.FirstName}";
             LastNameTextBox.Text = $"LastName: {_actor.LastName}";
             DateOfBirthTextBox.Text = $"Birthdate: {_actor.Birthday.ToString("dd.MM.yyyy")}";
-            ActorRatingTextBox.Text = _actor.GetRatingDisplayName;
         }
 
         private void RateActorBtn_Click(object sender, EventArgs e)

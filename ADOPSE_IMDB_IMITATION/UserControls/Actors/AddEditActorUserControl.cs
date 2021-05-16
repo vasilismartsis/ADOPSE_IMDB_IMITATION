@@ -55,15 +55,21 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Nena
             _myViewModel.SelectedActor.Birthday = BirthDateDatePicker.Value;
 
             _myViewModel.SaveSelectedActor();
-
         }
 
         private void SaveActorBtn_Click(object sender, EventArgs e)
         {
             Save();
+        }
+
+        private void AddNewActorBtn_Click(object sender, EventArgs e)
+        {
             MainPanelUserControlOpener.OpenUserControl(new AddEditActorUserControl());
         }
 
-    
+        private void ShowAllActorsBtn_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new ShowAllActorsUserControl());
+        }
     }
 }

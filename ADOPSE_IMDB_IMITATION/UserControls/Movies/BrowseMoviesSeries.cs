@@ -18,9 +18,9 @@ namespace ADOPSE_IMDB_IMITATION.UserControls
         private static readonly int AMOUNT_OF_ITEMS_TO_SHOW_IN_TOPXXX_TYPE = 10;
         private List<Movie> _movies;
         private MovieType _movieType;
-        private UserControlType _userControlType;
+        private BrowseMoviesSeriesUserControlType _userControlType;
 
-        public BrowseMoviesSeries(UserControlType userControlType, MovieType movieType)
+        public BrowseMoviesSeries(BrowseMoviesSeriesUserControlType userControlType, MovieType movieType)
         {
             InitializeComponent();
 
@@ -37,7 +37,7 @@ namespace ADOPSE_IMDB_IMITATION.UserControls
             //first we get all the movies that have score
             //then we order then descending based on score
             //then we take the first AMOUNT_OF_ITEMS_TO_SHOW_IN_TOPXXX_TYPE elements
-            if (_userControlType == UserControlType.Order)
+            if (_userControlType == BrowseMoviesSeriesUserControlType.Order)
                 moviesToShow = (from movie in _movies
                                 where movie.Score.HasValue
                                 orderby movie.Score descending
@@ -45,7 +45,7 @@ namespace ADOPSE_IMDB_IMITATION.UserControls
 
             for (int i = 0; i < moviesToShow.Count; i++)
             {
-                flowLayoutBrowseMovies.Controls.Add(new SmallWindowMovie(_movies[i].Id, _userControlType == UserControlType.Order, i + 1));
+                flowLayoutBrowseMovies.Controls.Add(new SmallWindowMovie(_movies[i].Id, _userControlType == BrowseMoviesSeriesUserControlType.Order, i + 1));
             }
         }
 

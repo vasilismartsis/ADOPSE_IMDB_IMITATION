@@ -37,6 +37,8 @@
             this.BirthDateDatePicker = new System.Windows.Forms.DateTimePicker();
             this.UserControlHeader = new System.Windows.Forms.Label();
             this.SaveActorBtn = new System.Windows.Forms.Button();
+            this.AddNewActorBtn = new System.Windows.Forms.Button();
+            this.ShowAllActorsBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -120,6 +122,32 @@
             this.SaveActorBtn.UseVisualStyleBackColor = true;
             this.SaveActorBtn.Click += new System.EventHandler(this.SaveActorBtn_Click);
             // 
+            // AddNewActorBtn
+            // 
+            this.AddNewActorBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddNewActorBtn.Image")));
+            this.AddNewActorBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddNewActorBtn.Location = new System.Drawing.Point(305, 168);
+            this.AddNewActorBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AddNewActorBtn.Name = "AddNewActorBtn";
+            this.AddNewActorBtn.Size = new System.Drawing.Size(139, 32);
+            this.AddNewActorBtn.TabIndex = 10;
+            this.AddNewActorBtn.Text = "Add new Actor";
+            this.AddNewActorBtn.UseVisualStyleBackColor = true;
+            this.AddNewActorBtn.Click += new System.EventHandler(this.AddNewActorBtn_Click);
+            // 
+            // ShowAllActorsBtn
+            // 
+            this.ShowAllActorsBtn.Image = ((System.Drawing.Image)(resources.GetObject("ShowAllActorsBtn.Image")));
+            this.ShowAllActorsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ShowAllActorsBtn.Location = new System.Drawing.Point(448, 168);
+            this.ShowAllActorsBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.ShowAllActorsBtn.Name = "ShowAllActorsBtn";
+            this.ShowAllActorsBtn.Size = new System.Drawing.Size(144, 32);
+            this.ShowAllActorsBtn.TabIndex = 11;
+            this.ShowAllActorsBtn.Text = "Show all Actors";
+            this.ShowAllActorsBtn.UseVisualStyleBackColor = true;
+            this.ShowAllActorsBtn.Click += new System.EventHandler(this.ShowAllActorsBtn_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -136,6 +164,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ShowAllActorsBtn);
+            this.Controls.Add(this.AddNewActorBtn);
             this.Controls.Add(this.SaveActorBtn);
             this.Controls.Add(this.UserControlHeader);
             this.Controls.Add(this.BirthDateDatePicker);
@@ -163,6 +193,8 @@
         private System.Windows.Forms.DateTimePicker BirthDateDatePicker;
         private System.Windows.Forms.Label UserControlHeader;
         private System.Windows.Forms.Button SaveActorBtn;
+        private System.Windows.Forms.Button AddNewActorBtn;
+        private System.Windows.Forms.Button ShowAllActorsBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

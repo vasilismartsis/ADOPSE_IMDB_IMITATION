@@ -33,13 +33,12 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
             this.DateOfBirthTextBox = new System.Windows.Forms.Label();
             this.LastNameTextBox = new System.Windows.Forms.Label();
             this.FirstNameTextBox = new System.Windows.Forms.Label();
-            this.ActorRatingTextBox = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // RateActorBtn
             // 
             this.RateActorBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.RateActorBtn.Location = new System.Drawing.Point(179, 114);
+            this.RateActorBtn.Location = new System.Drawing.Point(176, 90);
             this.RateActorBtn.Name = "RateActorBtn";
             this.RateActorBtn.Size = new System.Drawing.Size(75, 23);
             this.RateActorBtn.TabIndex = 12;
@@ -51,7 +50,7 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
             // DateOfBirthTextBox
             // 
             this.DateOfBirthTextBox.AutoSize = true;
-            this.DateOfBirthTextBox.Location = new System.Drawing.Point(176, 63);
+            this.DateOfBirthTextBox.Location = new System.Drawing.Point(176, 71);
             this.DateOfBirthTextBox.Name = "DateOfBirthTextBox";
             this.DateOfBirthTextBox.Size = new System.Drawing.Size(101, 13);
             this.DateOfBirthTextBox.TabIndex = 11;
@@ -60,7 +59,7 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
             // LastNameTextBox
             // 
             this.LastNameTextBox.AutoSize = true;
-            this.LastNameTextBox.Location = new System.Drawing.Point(176, 39);
+            this.LastNameTextBox.Location = new System.Drawing.Point(176, 47);
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(94, 13);
             this.LastNameTextBox.TabIndex = 10;
@@ -69,26 +68,16 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
             // FirstNameTextBox
             // 
             this.FirstNameTextBox.AutoSize = true;
-            this.FirstNameTextBox.Location = new System.Drawing.Point(176, 11);
+            this.FirstNameTextBox.Location = new System.Drawing.Point(176, 19);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
             this.FirstNameTextBox.Size = new System.Drawing.Size(93, 13);
             this.FirstNameTextBox.TabIndex = 9;
             this.FirstNameTextBox.Text = "FirstNameTextBox";
             // 
-            // ActorRatingTextBox
-            // 
-            this.ActorRatingTextBox.AutoSize = true;
-            this.ActorRatingTextBox.Location = new System.Drawing.Point(179, 89);
-            this.ActorRatingTextBox.Name = "ActorRatingTextBox";
-            this.ActorRatingTextBox.Size = new System.Drawing.Size(102, 13);
-            this.ActorRatingTextBox.TabIndex = 13;
-            this.ActorRatingTextBox.Text = "ActorRatingTextBox";
-            // 
             // ActorThumbnailuserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ActorRatingTextBox);
             this.Controls.Add(this.RateActorBtn);
             this.Controls.Add(this.DateOfBirthTextBox);
             this.Controls.Add(this.LastNameTextBox);
@@ -106,6 +95,5 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Movies
         private System.Windows.Forms.Label DateOfBirthTextBox;
         private System.Windows.Forms.Label LastNameTextBox;
         private System.Windows.Forms.Label FirstNameTextBox;
-        private System.Windows.Forms.Label ActorRatingTextBox;
     }
 }
