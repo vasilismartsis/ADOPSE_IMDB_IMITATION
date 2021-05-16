@@ -13,7 +13,7 @@ namespace ADOPSE_IMDB_IMITATION.Enums
         Series = 2,
     }
 
-    public enum BrowseMoviesSeriesUserControlType
+    public enum UserControlType
     {
         Browse = 0,
         Order = 1,

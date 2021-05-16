@@ -60,6 +60,8 @@ namespace ADOPSE_IMDB_IMITATION.UserControls.Nena
         private void SaveActorBtn_Click(object sender, EventArgs e)
         {
             Save();
+
+            MainPanelUserControlOpener.OpenUserControl(new AddEditActorUserControl());
         }
 
         private void AddNewActorBtn_Click(object sender, EventArgs e)

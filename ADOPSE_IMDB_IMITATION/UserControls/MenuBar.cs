@@ -114,24 +114,19 @@ namespace ADOPSE_IMDB_IMITATION
             MainPanelUserControlOpener.OpenUserControl(new Complaints());
         }
 
-        private void browseMoviesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Browse, MovieType.Movie));
-        }
-
         private void moviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Browse, MovieType.Movie));
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(UserControlType.Browse, MovieType.Movie));
         }
 
         private void seriesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Browse, MovieType.Series));
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(UserControlType.Browse, MovieType.Series));
         }
 
         private void actorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseActorsUserControl());
+            MainPanelUserControlOpener.OpenUserControl(new ShowAllActorsUserControl());
         }
         #endregion
 
@@ -216,29 +211,20 @@ namespace ADOPSE_IMDB_IMITATION
 
         private void moviesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Order, MovieType.Movie));
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(UserControlType.Order, MovieType.Movie));
         }
 
         private void seriesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Order, MovieType.Series));
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(UserControlType.Order, MovieType.Series));
         }
         private void showTop10MoviesMenuItem_Click(object sender, EventArgs e)
         {
         }
 
-        private void actorsToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void ShowTop10ActorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void showTop10SeriesMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void showTop10ActorsMenuItem_Click(object sender, EventArgs e)
-        {
-
+            MainPanelUserControlOpener.OpenUserControl(new BrowseActorsUserControl(UserControlType.Order));
         }
 
         private void button1_Click(object sender, EventArgs e)

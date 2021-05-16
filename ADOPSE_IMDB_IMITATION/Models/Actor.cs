@@ -14,8 +14,12 @@ namespace ADOPSE_IMDB_IMITATION.Models
         public string LastName { get; set; }
         public DateTime Birthday { get; set; }
 
+        public double? Score { get; set; }
+
         [Browsable(false)]
         public bool IsNew { get { return ID == 0; } }
+
+        public string GetRatingDisplayName { get { return Score.HasValue ? $"Rating : {Score}/10" : "-- no rating yet --"; } }
         #endregion
 
         #region Ctor
@@ -35,6 +39,7 @@ namespace ADOPSE_IMDB_IMITATION.Models
             FirstName = actorFromDB.firstName;
             LastName = actorFromDB.lastName;
             Birthday = actorFromDB.dateOfBirth;
+            Score = actorFromDB.Score;
         }
 
         public ActorFromDB MapActorToDB()
@@ -45,6 +50,7 @@ namespace ADOPSE_IMDB_IMITATION.Models
             result.firstName = FirstName;
             result.lastName = LastName;
             result.dateOfBirth = Birthday;
+            result.Score = Score;
 
             return result;
         }

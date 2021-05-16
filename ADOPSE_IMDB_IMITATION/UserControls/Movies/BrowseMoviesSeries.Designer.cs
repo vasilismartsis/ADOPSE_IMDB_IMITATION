@@ -30,7 +30,6 @@ namespace ADOPSE_IMDB_IMITATION.UserControls
         private void InitializeComponent()
         {
             this.flowLayoutBrowseMovies = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutBrowseMovies.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutBrowseMovies
@@ -49,8 +48,7 @@ namespace ADOPSE_IMDB_IMITATION.UserControls
             this.Controls.Add(this.flowLayoutBrowseMovies);
             this.Name = "BrowseMoviesSeries";
             this.Size = new System.Drawing.Size(365, 639);
-            this.Load += new System.EventHandler(this.BrowseMoviesUI_Load);
-            this.flowLayoutBrowseMovies.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.BrowseMoviesSeries_Load);
             this.ResumeLayout(false);
 
         }
