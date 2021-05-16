@@ -25,66 +25,75 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
         List<int> movies = new List<int>();
         List<int> userHistory = UserDataAccess.GetUserHistory();
         List<UserSuggetions> list = new List<UserSuggetions>();
+        List<int> genreIds = new List<int>();
+
         private int counter { get; set; }
         private int id { get; set; }
         private string genreName { get; set; }
-        public List<int> MovieSuggestions() 
+        public static List<int> MovieSuggestions()
         {
+            List<int> movie = new List<int>();
+            return movie;
+        }
+        /*public static List<int> MovieSuggestions() 
+        {
+            UserSuggetions sug = new UserSuggetions();
            
-            
-            foreach (int movieid in userHistory)
+
+
+            foreach (int movieid in sug.userHistory)
             {
-                genrename = GenresDataAccess.GetGenreNameById(movieid);
-                genreid = GenresDataAccess.GetGenreIdByName(genrename);
+                genreIds= GenresDataAccess.GetGenreIdsByMovieID(movieid);
+                //sug.genreid = GenresDataAccess.GetGenreIdByName(sug.genrename);
                 //genre.Id = genreid;
                 //genre.Name = genrename;
-                userPrefferedGenresid.Add(genreid);
+                sug.userPrefferedGenresid.Add(sug.genreid);
                 
 
                 
             }
-            var g = userPrefferedGenresid.GroupBy(i=>i);
+            var g = sug.userPrefferedGenresid.GroupBy(i=>i);
             foreach (var grp in g)
             {
-                if (genreName.Equals(list))
+                if (sug.genreName.Equals(sug.list))
                 {
-                    this.counter++;
+                    sug.counter++;
                 }
                 else
                 {
-                    list.Add(new UserSuggetions { genreName = GenresDataAccess.GetGenreNameById(grp.Key), counter = 1 });
+                    sug.list.Add(new UserSuggetions { genreName = GenresDataAccess.GetGenreNameById(grp.Key), counter = 1 });
                 }
             }
-            list.Sort();
-            if (list[0] != null)
+            sug.list.Sort();
+            if (sug.list[0] != null)
             {
-                mostsearched = list[0];
-                mostSearchedGenre = new Genre { Id = GenresDataAccess.GetGenreIdByName(list[0].genreName), Name= list[0].genreName };
+                sug.mostsearched = sug.list[0];
+                sug.mostSearchedGenre = new Genre { Id = GenresDataAccess.GetGenreIdByName(sug.list[0].genreName), Name= sug.list[0].genreName };
             }
-            if (list[1] != null) 
-            { 
-                secondmostsearched = list[1];
-                secondMostSearchedGenre = new Genre { Id = GenresDataAccess.GetGenreIdByName(list[1].genreName), Name = list[1].genreName };
+            if (sug.list[1] != null) 
+            {
+                sug.secondmostsearched = sug.list[1];
+                sug.secondMostSearchedGenre = new Genre { Id = GenresDataAccess.GetGenreIdByName(sug.list[1].genreName), Name = sug.list[1].genreName };
             }
            
-            if (list[2] != null)
+            if (sug.list[2] != null)
             {
-                thirdmostsearched = list[2];
-                thirdMostSearchedGenre = new Genre { Id = GenresDataAccess.GetGenreIdByName(list[2].genreName), Name = list[2].genreName };
+                sug.thirdmostsearched = sug.list[2];
+                sug.thirdMostSearchedGenre = new Genre { Id = GenresDataAccess.GetGenreIdByName(sug.list[2].genreName), Name = sug.list[2].genreName };
             }
-            MoviesofthatGenre = MovieDataAccess.GetMoviesByGenre(mostSearchedGenre);
-            movies.Add(MoviesofthatGenre[0]);
-            movies.Add(MoviesofthatGenre[1]);
-            movies.Add(MoviesofthatGenre[2]);
-            MoviesofthatGenre = MovieDataAccess.GetMoviesByGenre(secondMostSearchedGenre);
-            movies.Add(MoviesofthatGenre[3]);
-            movies.Add(MoviesofthatGenre[4]);
-            MoviesofthatGenre = MovieDataAccess.GetMoviesByGenre(thirdMostSearchedGenre);
-            movies.Add(MoviesofthatGenre[5]);
+            sug.MoviesofthatGenre = MovieDataAccess.GetMoviesByGenre(sug.mostSearchedGenre);
+            sug.movies.Add(sug.MoviesofthatGenre[0]);
+            sug.movies.Add(sug.MoviesofthatGenre[1]);
+            sug.movies.Add(sug.MoviesofthatGenre[2]);
+            sug.MoviesofthatGenre = MovieDataAccess.GetMoviesByGenre(sug.secondMostSearchedGenre);
+            sug.movies.Add(sug.MoviesofthatGenre[3]);
+            sug.movies.Add(sug.MoviesofthatGenre[4]);
+            sug.MoviesofthatGenre = MovieDataAccess.GetMoviesByGenre(sug.thirdMostSearchedGenre);
+            sug.movies.Add(sug.MoviesofthatGenre[5]);
 
 
-            return movies;
-        }
+            return sug.movies;
+        }*/
 
         
     }

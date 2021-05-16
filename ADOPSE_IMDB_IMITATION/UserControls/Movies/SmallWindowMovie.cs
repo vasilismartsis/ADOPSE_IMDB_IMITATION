@@ -15,6 +15,7 @@ namespace ADOPSE_IMDB_IMITATION
 {
     public partial class SmallWindowMovie : UserControl, IDisposable
     {
+        public Size moviePictureBoxSize = new Size(182, 268);
         Movie movie;
         private GenericRatingUserControl _genericRatingUserControl;
         MovieUserControl m;
@@ -49,6 +50,7 @@ namespace ADOPSE_IMDB_IMITATION
             NameOfMovie.Text = movie.Name;
             RatingOfMovie.Text = movie.GetRatingDisplayName;
             ImageOfMovie.Image = m.getImage();
+            ImageOfMovie.MouseClick += new MouseEventHandler((o, e) => { MainPanelUserControlOpener.OpenUserControl(new MovieUserControl(movie)); });
         }
 
         private void SmallWindowMovie_Load(object sender, EventArgs e)
@@ -76,7 +78,7 @@ namespace ADOPSE_IMDB_IMITATION
             // NameOfMovie
             // 
             this.NameOfMovie.AutoSize = true;
-            this.NameOfMovie.Location = new System.Drawing.Point(157, 3);
+            this.NameOfMovie.Location = new System.Drawing.Point(279, 18);
             this.NameOfMovie.Name = "NameOfMovie";
             this.NameOfMovie.Size = new System.Drawing.Size(75, 13);
             this.NameOfMovie.TabIndex = 0;
@@ -85,7 +87,7 @@ namespace ADOPSE_IMDB_IMITATION
             // SummaryOfMovie
             // 
             this.SummaryOfMovie.AutoSize = true;
-            this.SummaryOfMovie.Location = new System.Drawing.Point(157, 34);
+            this.SummaryOfMovie.Location = new System.Drawing.Point(264, 43);
             this.SummaryOfMovie.Name = "SummaryOfMovie";
             this.SummaryOfMovie.Size = new System.Drawing.Size(90, 13);
             this.SummaryOfMovie.TabIndex = 1;
@@ -94,7 +96,7 @@ namespace ADOPSE_IMDB_IMITATION
             // RatingOfMovie
             // 
             this.RatingOfMovie.AutoSize = true;
-            this.RatingOfMovie.Location = new System.Drawing.Point(157, 58);
+            this.RatingOfMovie.Location = new System.Drawing.Point(264, 91);
             this.RatingOfMovie.Name = "RatingOfMovie";
             this.RatingOfMovie.Size = new System.Drawing.Size(78, 13);
             this.RatingOfMovie.TabIndex = 2;
@@ -102,16 +104,18 @@ namespace ADOPSE_IMDB_IMITATION
             // 
             // ImageOfMovie
             // 
-            this.ImageOfMovie.Location = new System.Drawing.Point(27, 3);
+            this.ImageOfMovie.Location = new System.Drawing.Point(3, 3);
             this.ImageOfMovie.Name = "ImageOfMovie";
-            this.ImageOfMovie.Size = new System.Drawing.Size(124, 106);
+            this.ImageOfMovie.Size = new System.Drawing.Size(182, 268);
+            this.ImageOfMovie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.ImageOfMovie.TabIndex = 3;
             this.ImageOfMovie.TabStop = false;
+            this.ImageOfMovie.Click += new System.EventHandler(this.ImageOfMovie_Click);
             // 
             // RateMovieBtn
             // 
             this.RateMovieBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.RateMovieBtn.Location = new System.Drawing.Point(157, 74);
+            this.RateMovieBtn.Location = new System.Drawing.Point(267, 116);
             this.RateMovieBtn.Name = "RateMovieBtn";
             this.RateMovieBtn.Size = new System.Drawing.Size(75, 23);
             this.RateMovieBtn.TabIndex = 4;
@@ -124,7 +128,7 @@ namespace ADOPSE_IMDB_IMITATION
             // 
             this.MovieOrderLabel.AutoSize = true;
             this.MovieOrderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovieOrderLabel.Location = new System.Drawing.Point(210, 55);
+            this.MovieOrderLabel.Location = new System.Drawing.Point(325, 87);
             this.MovieOrderLabel.Name = "MovieOrderLabel";
             this.MovieOrderLabel.Size = new System.Drawing.Size(17, 17);
             this.MovieOrderLabel.TabIndex = 6;
@@ -133,6 +137,7 @@ namespace ADOPSE_IMDB_IMITATION
             // 
             // SmallWindowMovie
             // 
+            this.AutoSize = true;
             this.Controls.Add(this.MovieOrderLabel);
             this.Controls.Add(this.RateMovieBtn);
             this.Controls.Add(this.ImageOfMovie);
@@ -140,7 +145,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.Controls.Add(this.SummaryOfMovie);
             this.Controls.Add(this.NameOfMovie);
             this.Name = "SmallWindowMovie";
-            this.Size = new System.Drawing.Size(285, 125);
+            this.Size = new System.Drawing.Size(432, 284);
             ((System.ComponentModel.ISupportInitialize)(this.ImageOfMovie)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,6 +170,11 @@ namespace ADOPSE_IMDB_IMITATION
             MovieRatingDataAccess.AddOrUpdateMovieRating(new MovieRatingFromDB() { userId = Session.userId, movieId = movie.Id, score = int.Parse(e.Rating) });
 
             MessageBox.Show($"The selected Rating, for the movie {movie.Name} is {e.Rating}", "Movie Rating");
+        }
+
+        private void ImageOfMovie_Click(object sender, EventArgs e)
+        {
+        MainPanelUserControlOpener.OpenUserControl(new MovieUserControl(movie)); 
         }
     }
 
