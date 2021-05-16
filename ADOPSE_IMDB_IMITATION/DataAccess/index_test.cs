@@ -32,10 +32,13 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
             //var indexPath = Path.Combine(basePath, "index");
             //Directory directory = FSDirectory.Open(indexPath);
 
-            var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
+            string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\Databases\\index_test\\";
+            var dir = FSDirectory.Open(new DirectoryInfo(appPath));
+            //var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
             var analyzer = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30);
             var writer = new IndexWriter(dir, analyzer, IndexWriter.MaxFieldLength.UNLIMITED);
 
+            writer.DeleteAll();
             List<Movie> allMovies = new List<Movie>();
             allMovies = MovieDataAccess.GetAllMovies();
 
@@ -85,39 +88,57 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
 
         public static void index_searcher_by_name(string title_to_search)
         {
-            var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
+            string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\Databases\\index_test\\";
+            var dir = FSDirectory.Open(new DirectoryInfo(appPath));
+
+            //var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
             var analyzer = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30);
 
-            IndexSearcher searcher = new IndexSearcher(dir);
-            QueryParser parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "Name", analyzer);
-            Query query = parser.Parse(title_to_search);
-            TopDocs topDocs = searcher.Search(query, 10);
-
-            int results = topDocs.ScoreDocs.Length;
-            Console.WriteLine("Found {0} results", results);
-
-            for (int i = 0; i < results; i++)
+            try
             {
-                ScoreDoc scoreDoc = topDocs.ScoreDocs[i];
-                float score = scoreDoc.Score;
-                int docId = scoreDoc.Doc;
-                Document doc = searcher.Doc(docId);
+                IndexSearcher searcher = new IndexSearcher(dir);
+                QueryParser parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "Name", analyzer);
+                Query query = parser.Parse(title_to_search);
+                TopDocs topDocs = searcher.Search(query, 10);
 
-                //Console.WriteLine("{0}. score {1}", i + 1, score);
-                //Console.WriteLine("ID: {0}", doc.Get("id"));
-                //Console.WriteLine("Text found: {0}\r\nwith genres {1}", doc.Get("Name"), doc.Get("Genres"));
-                Console.WriteLine("Text found: >" + doc.Get("Name") + "<" + ">" + doc.Get("Genres")  +"<");
+                int results = topDocs.ScoreDocs.Length;
+                Console.WriteLine("Found {0} results", results);
+
+                List<int> selectedMovies = new List<int>();
+
+                for (int i = 0; i < results; i++)
+                {
+                    ScoreDoc scoreDoc = topDocs.ScoreDocs[i];
+                    float score = scoreDoc.Score;
+                    int docId = scoreDoc.Doc;
+                    Document doc = searcher.Doc(docId);
+
+                    //Console.WriteLine("{0}. score {1}", i + 1, score);
+                    //Console.WriteLine("ID: {0}", doc.Get("id"));
+                    //Console.WriteLine("Text found: {0}\r\nwith genres {1}", doc.Get("Name"), doc.Get("Genres"));
+                    Console.WriteLine("Text found: >" + doc.Get("Name") + "<" + ">" + doc.Get("Genres") + "<");
+                    int movieId = MovieDataAccess.GetMovieIdByName(doc.Get("Name"));
+                    selectedMovies.Add(movieId);
+
+                }
+            }
+            catch (Lucene.Net.QueryParsers.ParseException e)
+            {
+                Console.WriteLine("ERROR: " + e);
             }
         }
 
-        public static void index_searcher_by_year()
+        public static void index_searcher_by_year(string year)
         {
-            var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
+            //var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
+            string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\Databases\\index_test\\";
+            var dir = FSDirectory.Open(new DirectoryInfo(appPath));
+
             var analyzer = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30);
 
             IndexSearcher searcher = new IndexSearcher(dir);
             QueryParser parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "Year", analyzer);
-            Query query = parser.Parse("2021");
+            Query query = parser.Parse(year);
             TopDocs topDocs = searcher.Search(query, 10);
 
             int results = topDocs.ScoreDocs.Length;
@@ -136,14 +157,17 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
             }
         }
 
-        public static void index_searcher_by_genre()
+        public static void index_searcher_by_genre(string genre)
         {
-            var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
+            //var dir = FSDirectory.Open(new DirectoryInfo(@"C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\Databases\index_test\"));
+            string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\Databases\\index_test\\";
+            var dir = FSDirectory.Open(new DirectoryInfo(appPath));
+
             var analyzer = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30);
 
             IndexSearcher searcher = new IndexSearcher(dir);
             QueryParser parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "Genres", analyzer);
-            Query query = parser.Parse("Drama");
+            Query query = parser.Parse(genre);
             TopDocs topDocs = searcher.Search(query, 10);
 
             int results = topDocs.ScoreDocs.Length;

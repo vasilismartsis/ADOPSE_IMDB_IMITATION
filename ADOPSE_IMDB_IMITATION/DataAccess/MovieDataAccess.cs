@@ -461,5 +461,35 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
             }
             return list;
         }
+        public static int GetMovieIdByName(String name)
+        {
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                const string commandText = "" +
+                    "SELECT id " +
+                    "FROM Movies " +
+                    "WHERE name = @name" +
+                    ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@name", name);
+
+                connection.Open();
+
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    return reader.GetInt32(0);
+                }
+
+                connection.Close();
+
+                return 0;
+            }
+
+        }
     }
 }
