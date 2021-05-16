@@ -32,21 +32,21 @@ namespace ADOPSE_IMDB_IMITATION.UserControls
             this.flowLayoutBrowseActors = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // flowLayoutBrowseMovies
+            // flowLayoutBrowseActors
             // 
             this.flowLayoutBrowseActors.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutBrowseActors.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutBrowseActors.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutBrowseActors.Name = "flowLayoutBrowseMovies";
+            this.flowLayoutBrowseActors.Name = "flowLayoutBrowseActors";
             this.flowLayoutBrowseActors.Size = new System.Drawing.Size(365, 639);
             this.flowLayoutBrowseActors.TabIndex = 0;
             // 
-            // BrowseMoviesUI
+            // BrowseActorsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flowLayoutBrowseActors);
-            this.Name = "BrowseMoviesUI";
+            this.Name = "BrowseActorsUserControl";
             this.Size = new System.Drawing.Size(365, 639);
             this.ResumeLayout(false);
 

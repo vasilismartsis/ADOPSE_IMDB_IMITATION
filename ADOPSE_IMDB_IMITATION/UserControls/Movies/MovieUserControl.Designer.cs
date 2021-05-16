@@ -60,7 +60,7 @@ namespace ADOPSE_IMDB_IMITATION
             // SummaryOfMovie
             // 
             this.SummaryOfMovie.AutoSize = true;
-            this.SummaryOfMovie.Location = new System.Drawing.Point(423, 122);
+            this.SummaryOfMovie.Location = new System.Drawing.Point(426, 102);
             this.SummaryOfMovie.Name = "SummaryOfMovie";
             this.SummaryOfMovie.Size = new System.Drawing.Size(90, 13);
             this.SummaryOfMovie.TabIndex = 2;
@@ -69,7 +69,7 @@ namespace ADOPSE_IMDB_IMITATION
             // RatingOfMovie
             // 
             this.RatingOfMovie.AutoSize = true;
-            this.RatingOfMovie.Location = new System.Drawing.Point(423, 216);
+            this.RatingOfMovie.Location = new System.Drawing.Point(426, 147);
             this.RatingOfMovie.Name = "RatingOfMovie";
             this.RatingOfMovie.Size = new System.Drawing.Size(78, 13);
             this.RatingOfMovie.TabIndex = 3;

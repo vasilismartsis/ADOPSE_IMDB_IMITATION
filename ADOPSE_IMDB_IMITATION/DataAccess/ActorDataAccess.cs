@@ -13,6 +13,7 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
         public string firstName { get; set; }
         public string lastName { get; set; }
         public DateTime dateOfBirth { get; set; }
+        public double? Score { get; set; }
         #endregion
     }
 
@@ -24,9 +25,21 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
             {
-                const string commandText = "" +
-                    "SELECT Id, firstName, lastName, dateOfBirth " +
-                    "FROM Actors;";
+                string commandText =
+                 $@"SELECT
+                               a.[Id]
+                              ,a.[firstName]
+                              ,a.[lastName]
+                              ,a.[dateOfBirth]
+	                          ,actorRtngs.FinalScore
+                        FROM
+                             Actors a
+                        LEFT OUTER JOIN
+                             (
+                             select actorId, (sum(score) / count(1)) as FinalScore
+			                        from ActorRatings as ar
+			                        group by ar.actorId
+                             ) AS actorRtngs ON actorRtngs.actorId= a.Id;";
 
                 SqlCommand command = new SqlCommand(commandText, connection);
 
@@ -42,6 +55,7 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
                         newActor.firstName = reader["firstName"].ToString();
                         newActor.lastName = reader["lastName"].ToString();
                         newActor.dateOfBirth = DateTime.Parse(reader["dateOfBirth"].ToString());
+                        newActor.Score = reader["FinalScore"] == System.DBNull.Value ? (double?)null : Convert.ToDouble(reader["FinalScore"]);
 
                         result.Add(newActor);
                     }

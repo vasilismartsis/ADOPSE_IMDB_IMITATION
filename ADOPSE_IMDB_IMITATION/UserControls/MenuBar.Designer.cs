@@ -46,18 +46,19 @@ namespace ADOPSE_IMDB_IMITATION
             this.EditActorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showAllActorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportAProblemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.browseMoviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.browseSeriesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.browseActorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showTop10MoviesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showTop10SeriesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showTop10ActorsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BrowseMoviesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.BrowseSeriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BrowseActorsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowTop10MoviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowTop10SeriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowTop10ActorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchPanel = new System.Windows.Forms.Panel();
             this.TypeComboBox = new System.Windows.Forms.ComboBox();
             this.ComboBoxTimer = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
-            this.SearchIMDBInput = new PlaceholderTextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.SearchIMDBInput = new PlaceholderTextBox();
             this.menuStrip1.SuspendLayout();
             this.SearchPanel.SuspendLayout();
             this.SuspendLayout();
@@ -67,15 +68,10 @@ namespace ADOPSE_IMDB_IMITATION
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.HomePageButton,
             this.ProfileButton,
-            this.browseMoviesToolStripMenuItem,
-            this.browseSeriesMenuItem,
-            this.browseActorsToolStripMenuItem,
-            this.showTop10MoviesMenuItem,
-            this.showTop10SeriesMenuItem,
-            this.showTop10ActorsMenuItem});
+            this.actionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(982, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -162,36 +158,37 @@ namespace ADOPSE_IMDB_IMITATION
             // AddMovieToolStripMenuItem
             // 
             this.AddMovieToolStripMenuItem.Name = "AddMovieToolStripMenuItem";
-            this.AddMovieToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.AddMovieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.AddMovieToolStripMenuItem.Text = "Add Movie";
             this.AddMovieToolStripMenuItem.Click += new System.EventHandler(this.AddMovieToolStripMenuItem_Click);
             // 
             // EditMovieToolStripMenuItem
             // 
             this.EditMovieToolStripMenuItem.Name = "EditMovieToolStripMenuItem";
-            this.EditMovieToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.EditMovieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.EditMovieToolStripMenuItem.Text = "Edit Movie";
             this.EditMovieToolStripMenuItem.Click += new System.EventHandler(this.EditMovieToolStripMenuItem_Click);
             // 
             // AddActorToolStripMenuItem
             // 
             this.AddActorToolStripMenuItem.Name = "AddActorToolStripMenuItem";
-            this.AddActorToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.AddActorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.AddActorToolStripMenuItem.Text = "Add Actor";
             this.AddActorToolStripMenuItem.Click += new System.EventHandler(this.AddActorToolStripMenuItem_Click);
             // 
             // EditActorToolStripMenuItem
             // 
             this.EditActorToolStripMenuItem.Name = "EditActorToolStripMenuItem";
-            this.EditActorToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.EditActorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.EditActorToolStripMenuItem.Text = "Edit Actor";
             this.EditActorToolStripMenuItem.Click += new System.EventHandler(this.EditActorToolStripMenuItem_Click);
             // 
             // showAllActorsToolStripMenuItem
             // 
             this.showAllActorsToolStripMenuItem.Name = "showAllActorsToolStripMenuItem";
-            this.showAllActorsToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.showAllActorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.showAllActorsToolStripMenuItem.Text = "Show all Actors";
+            this.showAllActorsToolStripMenuItem.Click += new System.EventHandler(this.showAllActorsToolStripMenuItem_Click);
             // 
             // ReportAProblemToolStripMenuItem
             // 
@@ -200,47 +197,60 @@ namespace ADOPSE_IMDB_IMITATION
             this.ReportAProblemToolStripMenuItem.Text = "Report a Problem";
             this.ReportAProblemToolStripMenuItem.Click += new System.EventHandler(this.reportAProblemToolStripMenuItem_Click);
             // 
-            // browseMoviesToolStripMenuItem
+            // actionsToolStripMenuItem
             // 
-            this.browseMoviesToolStripMenuItem.Name = "browseMoviesToolStripMenuItem";
-            this.browseMoviesToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
-            this.browseMoviesToolStripMenuItem.Text = "Browse Movies";
-            this.browseMoviesToolStripMenuItem.Click += new System.EventHandler(this.browseMoviesToolStripMenuItem_Click);
+            this.actionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BrowseMoviesToolStripMenuItem1,
+            this.BrowseSeriesToolStripMenuItem,
+            this.BrowseActorsToolStripMenuItem1,
+            this.ShowTop10MoviesToolStripMenuItem,
+            this.ShowTop10SeriesToolStripMenuItem,
+            this.ShowTop10ActorsToolStripMenuItem});
+            this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
+            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.actionsToolStripMenuItem.Text = "Actions";
             // 
-            // browseSeriesMenuItem
+            // BrowseMoviesToolStripMenuItem1
             // 
-            this.browseSeriesMenuItem.Name = "browseSeriesMenuItem";
-            this.browseSeriesMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.browseSeriesMenuItem.Text = "Browse Series";
-            this.browseSeriesMenuItem.Click += new System.EventHandler(this.browseSeriesMenuItem_Click);
+            this.BrowseMoviesToolStripMenuItem1.Name = "BrowseMoviesToolStripMenuItem1";
+            this.BrowseMoviesToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.BrowseMoviesToolStripMenuItem1.Text = "Browse Movies";
+            this.BrowseMoviesToolStripMenuItem1.Click += new System.EventHandler(this.BrowseMoviesToolStripMenuItem1_Click);
             // 
-            // browseActorsToolStripMenuItem
+            // BrowseSeriesToolStripMenuItem
             // 
-            this.browseActorsToolStripMenuItem.Name = "browseActorsToolStripMenuItem";
-            this.browseActorsToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.browseActorsToolStripMenuItem.Text = "Browse Actors";
-            this.browseActorsToolStripMenuItem.Click += new System.EventHandler(this.browseActorsToolStripMenuItem_Click);
+            this.BrowseSeriesToolStripMenuItem.Name = "BrowseSeriesToolStripMenuItem";
+            this.BrowseSeriesToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.BrowseSeriesToolStripMenuItem.Text = "Browse Series";
+            this.BrowseSeriesToolStripMenuItem.Click += new System.EventHandler(this.browseSeriesToolStripMenuItem_Click);
             // 
-            // showTop10MoviesMenuItem
+            // BrowseActorsToolStripMenuItem1
             // 
-            this.showTop10MoviesMenuItem.Name = "showTop10MoviesMenuItem";
-            this.showTop10MoviesMenuItem.Size = new System.Drawing.Size(126, 20);
-            this.showTop10MoviesMenuItem.Text = "Show Top 10 Movies";
-            this.showTop10MoviesMenuItem.Click += new System.EventHandler(this.showTop10MoviesMenuItem_Click);
+            this.BrowseActorsToolStripMenuItem1.Name = "BrowseActorsToolStripMenuItem1";
+            this.BrowseActorsToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.BrowseActorsToolStripMenuItem1.Text = "Browse Actors";
+            this.BrowseActorsToolStripMenuItem1.Click += new System.EventHandler(this.BrowseActorsToolStripMenuItem1_Click);
             // 
-            // showTop10SeriesMenuItem
+            // ShowTop10MoviesToolStripMenuItem
             // 
-            this.showTop10SeriesMenuItem.Name = "showTop10SeriesMenuItem";
-            this.showTop10SeriesMenuItem.Size = new System.Drawing.Size(118, 20);
-            this.showTop10SeriesMenuItem.Text = "Show Top 10 Series";
-            this.showTop10SeriesMenuItem.Click += new System.EventHandler(this.showTop10SeriesMenuItem_Click);
+            this.ShowTop10MoviesToolStripMenuItem.Name = "ShowTop10MoviesToolStripMenuItem";
+            this.ShowTop10MoviesToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.ShowTop10MoviesToolStripMenuItem.Text = "Show Top 10 Movies";
+            this.ShowTop10MoviesToolStripMenuItem.Click += new System.EventHandler(this.ShowTop10MoviesToolStripMenuItem_Click);
             // 
-            // showTop10ActorsMenuItem
+            // ShowTop10SeriesToolStripMenuItem
             // 
-            this.showTop10ActorsMenuItem.Name = "showTop10ActorsMenuItem";
-            this.showTop10ActorsMenuItem.Size = new System.Drawing.Size(122, 20);
-            this.showTop10ActorsMenuItem.Text = "Show Top 10 Actors";
-            this.showTop10ActorsMenuItem.Click += new System.EventHandler(this.showTop10ActorsMenuItem_Click);
+            this.ShowTop10SeriesToolStripMenuItem.Name = "ShowTop10SeriesToolStripMenuItem";
+            this.ShowTop10SeriesToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.ShowTop10SeriesToolStripMenuItem.Text = "Show Top 10 Series";
+            this.ShowTop10SeriesToolStripMenuItem.Click += new System.EventHandler(this.ShowTop10SeriesToolStripMenuItem_Click);
+            // 
+            // ShowTop10ActorsToolStripMenuItem
+            // 
+            this.ShowTop10ActorsToolStripMenuItem.Name = "ShowTop10ActorsToolStripMenuItem";
+            this.ShowTop10ActorsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.ShowTop10ActorsToolStripMenuItem.Text = "Show Top 10 Actors";
+            this.ShowTop10ActorsToolStripMenuItem.Click += new System.EventHandler(this.ShowTop10ActorsToolStripMenuItem_Click);
             // 
             // SearchPanel
             // 
@@ -248,7 +258,7 @@ namespace ADOPSE_IMDB_IMITATION
             this.SearchPanel.AutoSize = true;
             this.SearchPanel.Controls.Add(this.SearchIMDBInput);
             this.SearchPanel.Controls.Add(this.TypeComboBox);
-            this.SearchPanel.Location = new System.Drawing.Point(330, 2);
+            this.SearchPanel.Location = new System.Drawing.Point(429, 2);
             this.SearchPanel.Name = "SearchPanel";
             this.SearchPanel.Size = new System.Drawing.Size(213, 21);
             this.SearchPanel.TabIndex = 3;
@@ -285,6 +295,16 @@ namespace ADOPSE_IMDB_IMITATION
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(566, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "search_button";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // SearchIMDBInput
             // 
             this.SearchIMDBInput.AcceptsReturn = true;
@@ -300,16 +320,6 @@ namespace ADOPSE_IMDB_IMITATION
             this.SearchIMDBInput.TabIndex = 1;
             this.SearchIMDBInput.Text = "Search IMDB";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(566, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "search_button";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // MenuBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,7 +329,8 @@ namespace ADOPSE_IMDB_IMITATION
             this.Controls.Add(this.SearchPanel);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MenuBar";
-            this.Size = new System.Drawing.Size(784, 192);
+            this.Size = new System.Drawing.Size(982, 192);
+            this.Load += new System.EventHandler(this.MenuBar_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.SearchPanel.ResumeLayout(false);
@@ -346,18 +357,19 @@ namespace ADOPSE_IMDB_IMITATION
         private System.Windows.Forms.ToolStripMenuItem EditMovieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AddActorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ReportAProblemToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem browseMoviesToolStripMenuItem;
         private System.Windows.Forms.Panel SearchPanel;
         private System.Windows.Forms.Timer ComboBoxTimer;
         private System.Windows.Forms.ToolStripMenuItem EditActorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showAllActorsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem browseActorsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem browseSeriesMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem showTop10MoviesMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem showTop10SeriesMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem showTop10ActorsMenuItem;
         private System.Windows.Forms.ComboBox TypeComboBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem actionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BrowseMoviesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem BrowseSeriesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BrowseActorsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ShowTop10MoviesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ShowTop10SeriesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ShowTop10ActorsToolStripMenuItem;
     }
 }
