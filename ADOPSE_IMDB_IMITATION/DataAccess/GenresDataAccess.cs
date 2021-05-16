@@ -97,7 +97,61 @@ namespace ADOPSE_IMDB_IMITATION.DataAccess
             }
         }
 
+        public static int GetGenreIdByTmdbId(String tmdbId)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                const string commandText = "" +
+                "SELECT Id " +
+                "FROM Genres " +
+                "WHERE tmdbId = @tmdbId" +
+                ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@tmdbId", tmdbId);
+
+                connection.Open();
+
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    return reader.GetInt32(0);
+                }
+
+                connection.Close();
+
+                return 0;
+            }
+        }
+
         public static int AddGenreIdByName(String name)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
+            {
+                int ep = 0;
+                const string commandText = "" +
+                    "INSERT INTO Genres (name) " +
+                    "VALUES (@name)" +
+                    "SELECT SCOPE_IDENTITY()" +
+                    ";";
+
+                SqlCommand command = new SqlCommand(commandText, connection);
+
+                command.Parameters.AddWithValue("@name", name);
+
+                connection.Open();
+
+                ep = Convert.ToInt32(command.ExecuteScalar());
+                //ep=command.ExecuteNonQuery();
+
+                connection.Close();
+                return ep;
+            }
+        }
+
+        public static int AddGenreByTmdbId(String name, String tmdbId)
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.MyConnectionString))
             {

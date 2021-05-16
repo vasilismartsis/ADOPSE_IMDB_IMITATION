@@ -237,3 +237,28 @@ C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\b
 C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.ValueTuple.xml
 C:\Users\thanasis\Documents\GitHub\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csproj.CopyComplete
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\Lucene.Net.dll
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\Newtonsoft.Json.dll
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Buffers.dll
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Memory.dll
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Numerics.Vectors.dll
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Text.Encodings.Web.dll
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Text.Json.dll
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.ValueTuple.dll
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\Lucene.Net.pdb
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\Lucene.Net.xml
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\Newtonsoft.Json.xml
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Buffers.xml
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Memory.xml
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Numerics.Vectors.xml
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Text.Encodings.Web.xml
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Text.Json.xml
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\bin\Debug\System.ValueTuple.xml
+D:\Google Drive\Έγγραφα Βασίλη\Projects\Desktop Applications\C#  .net framework visual studio desktop apps\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\ADOPSE_IMDB_IMITATION\obj\Debug\ADOPSE_IMDB_IMITATION.csproj.CopyComplete

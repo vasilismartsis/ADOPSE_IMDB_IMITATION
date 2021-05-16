@@ -116,9 +116,23 @@ namespace ADOPSE_IMDB_IMITATION
 
         private void browseMoviesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Browse, MovieType.Movie));
+        }
+
+        private void moviesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Browse, MovieType.Movie));
         }
 
+        private void seriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Browse, MovieType.Series));
+        }
+
+        private void actorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanelUserControlOpener.OpenUserControl(new BrowseActorsUserControl());
+        }
         #endregion
 
         #region TypeCombobox
@@ -192,22 +206,34 @@ namespace ADOPSE_IMDB_IMITATION
 
         private void browseActorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseActorsUserControl());
+            //MainPanelUserControlOpener.OpenUserControl(new BrowseActorsUserControl());
         }
 
         private void browseSeriesMenuItem_Click(object sender, EventArgs e)
         {
-            MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Browse, MovieType.Series));
+            //MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Browse, MovieType.Series));
         }
 
-        private void showTop10MoviesMenuItem_Click(object sender, EventArgs e)
+        private void moviesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Order, MovieType.Movie));
         }
 
-        private void showTop10SeriesMenuItem_Click(object sender, EventArgs e)
+        private void seriesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MainPanelUserControlOpener.OpenUserControl(new BrowseMoviesSeries(BrowseMoviesSeriesUserControlType.Order, MovieType.Series));
+        }
+        private void showTop10MoviesMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void actorsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showTop10SeriesMenuItem_Click(object sender, EventArgs e)
+        {
         }
 
         private void showTop10ActorsMenuItem_Click(object sender, EventArgs e)
@@ -219,14 +245,49 @@ namespace ADOPSE_IMDB_IMITATION
         {
             //method to build index, run only once
 
-            DataAccess.index_test.index_creator();
+            // DataAccess.index_test.index_creator();
+            //SearchTMDB.SearchSeries();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             // uses the search bar text to search titles
+            if (SearchIMDBInput.Text.Length > 0 && (SearchIMDBInput.Text.Substring(0, 1) == "*" || SearchIMDBInput.Text.Substring(0, 1) == "?"))
+            {
+                SearchIMDBInput.Text = "";
+                return;
+            }
 
-            DataAccess.index_test.index_searcher_by_name(SearchIMDBInput.Text);
+            if (SearchIMDBInput.Text.Length == 0) return;
+
+            int searchBy = TypeComboBox.SelectedIndex;
+            switch (searchBy)
+            {
+                case 0:
+                    DataAccess.index_test.index_searcher_by_name(SearchIMDBInput.Text);
+                    break;
+                case 1:
+                    DataAccess.index_test.index_searcher_by_genre(SearchIMDBInput.Text);
+                    break;
+                case 2:
+                    DataAccess.index_test.index_searcher_by_year(SearchIMDBInput.Text);
+                    break;
+            }
+
+            //DataAccess.index_test.index_searcher_by_name(SearchIMDBInput.Text);
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void createIndexToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //method to build index, run only once
+
+            DataAccess.index_test.index_creator();
+
         }
     }
 }
