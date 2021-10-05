@@ -1,3 +1,5 @@
+**This project was created for education purposes for a class of International Hellenic University*
+
 # IMDB IMITATION
 <h1>Summary of this project:</h1>
 <table>
