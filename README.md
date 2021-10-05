@@ -25,3 +25,5 @@
     <td>This project was implemented as a desktop application using the .Net framework and the MySQL database for the data storage. The project was developed on the IDE "Visual Studio"</td>
   </tr>
 </table>
+
+**additional information can be found on repository's wiki*
