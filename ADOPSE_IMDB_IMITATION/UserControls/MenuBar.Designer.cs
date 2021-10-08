@@ -101,21 +101,21 @@ namespace ADOPSE_IMDB_IMITATION
             // moviesToolStripMenuItem
             // 
             this.moviesToolStripMenuItem.Name = "moviesToolStripMenuItem";
-            this.moviesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.moviesToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.moviesToolStripMenuItem.Text = "Movies";
             this.moviesToolStripMenuItem.Click += new System.EventHandler(this.moviesToolStripMenuItem_Click);
             // 
             // seriesToolStripMenuItem
             // 
             this.seriesToolStripMenuItem.Name = "seriesToolStripMenuItem";
-            this.seriesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.seriesToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.seriesToolStripMenuItem.Text = "Series";
             this.seriesToolStripMenuItem.Click += new System.EventHandler(this.seriesToolStripMenuItem_Click);
             // 
             // actorsToolStripMenuItem
             // 
             this.actorsToolStripMenuItem.Name = "actorsToolStripMenuItem";
-            this.actorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.actorsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.actorsToolStripMenuItem.Text = "Actors";
             this.actorsToolStripMenuItem.Click += new System.EventHandler(this.actorsToolStripMenuItem_Click);
             // 
@@ -133,21 +133,21 @@ namespace ADOPSE_IMDB_IMITATION
             // moviesToolStripMenuItem1
             // 
             this.moviesToolStripMenuItem1.Name = "moviesToolStripMenuItem1";
-            this.moviesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.moviesToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
             this.moviesToolStripMenuItem1.Text = "Movies";
             this.moviesToolStripMenuItem1.Click += new System.EventHandler(this.moviesToolStripMenuItem1_Click);
             // 
             // seriesToolStripMenuItem1
             // 
             this.seriesToolStripMenuItem1.Name = "seriesToolStripMenuItem1";
-            this.seriesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.seriesToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
             this.seriesToolStripMenuItem1.Text = "Series";
             this.seriesToolStripMenuItem1.Click += new System.EventHandler(this.seriesToolStripMenuItem1_Click);
             // 
             // ShowTop10ActorsToolStripMenuItem
             // 
             this.ShowTop10ActorsToolStripMenuItem.Name = "ShowTop10ActorsToolStripMenuItem";
-            this.ShowTop10ActorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ShowTop10ActorsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.ShowTop10ActorsToolStripMenuItem.Text = "Actors";
             this.ShowTop10ActorsToolStripMenuItem.Click += new System.EventHandler(this.ShowTop10ActorsToolStripMenuItem_Click);
             // 
